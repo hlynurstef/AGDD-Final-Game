@@ -4,14 +4,14 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
-  productGUID: dcff7dc0640c2294d80109be752449ac
+  productGUID: 014341a4b9baaf94ca97c04d8f6893ac
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: G U S H
+  companyName: DefaultCompany
   productName: ADGG Final Game
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -557,14 +557,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Doodle Studio Test
+  metroPackageName: ADGG Final Game
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Doodle Studio Test
+  metroApplicationDescription: ADGG Final Game
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -632,8 +632,8 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: cbe8beed-f6a5-41d0-9858-3717c9bef014
-  projectName: Doodle Studio Test
+  cloudProjectId: f490709a-429a-4e05-92e9-3aca35085264
+  projectName: ADGG Final Game
   organizationId: hlynurstef
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

@@ -94,6 +94,10 @@ public class BasicBehaviour : MonoBehaviour
 		else {
 			h = 0;
 			v = 0;
+			if (Input.GetButtonDown("Fly") == true) {
+				Camera.main.GetComponent<ThirdPersonOrbitCamBasic>().enabled = true;
+				GetComponent<BasicBehaviour>().inputEnabled = true;
+			}
 		}
 	}
 

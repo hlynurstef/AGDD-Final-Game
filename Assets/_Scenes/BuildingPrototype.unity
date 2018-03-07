@@ -734,7 +734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 690.4, y: -159.9}
+  m_AnchoredPosition: {x: 706, y: -169}
   m_SizeDelta: {x: 313.7, y: 319.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475240345
@@ -761,6 +761,11 @@ MonoBehaviour:
     E
 
     Q
+
+
+    T
+
+    R
 
 
     Left mouse click
@@ -794,8 +799,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -812,7 +817,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 29
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_enableKerning: 1
@@ -831,15 +836,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.5435987, y: 0, z: -2.2646708, w: -2.272967}
+  m_margin: {x: -109.73555, y: 0, z: 166.67824, w: -62.836834}
   m_textInfo:
     textComponent: {fileID: 1475240345}
-    characterCount: 30
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 8
-    wordCount: 7
+    spaceCount: 11
+    wordCount: 9
     linkCount: 0
-    lineCount: 6
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -898,7 +903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 254.5, y: -85}
+  m_AnchoredPosition: {x: 270.1, y: -94.100044}
   m_SizeDelta: {x: 508.9, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548338434
@@ -925,6 +930,11 @@ MonoBehaviour:
     Rotate clockwise:
 
     Rotate counter-clockwise:
+
+
+    Increase Mass:
+
+    Decrease Mass:
 
 
     Place plank:
@@ -958,8 +968,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -976,7 +986,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 75
+  m_firstOverflowCharacterIndex: 93
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_enableKerning: 1
@@ -998,12 +1008,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -2.2681184, w: -140.78809}
   m_textInfo:
     textComponent: {fileID: 1548338434}
-    characterCount: 96
+    characterCount: 127
     spriteCount: 0
-    spaceCount: 13
-    wordCount: 12
+    spaceCount: 18
+    wordCount: 16
     linkCount: 0
-    lineCount: 6
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0

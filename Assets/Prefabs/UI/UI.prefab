@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4594221157407778}
   - component: {fileID: 212407631308064302}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Flame  Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4631770127625730}
   - component: {fileID: 212648042464830060}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Lavander fields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4288244821391946}
   - component: {fileID: 212028995241389364}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Crystal Cave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

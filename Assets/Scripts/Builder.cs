@@ -14,7 +14,7 @@ public class Builder : MonoBehaviour {
 
 	private Vector2 mousePos;
 	private bool spawnNewItem = false;
-	private bool stuckToMouse = true;
+	private bool stuckToMouse = false;
 	private bool placeItem = false;
 	private bool play = false;
 	private float rotation = 0;

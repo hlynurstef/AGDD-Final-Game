@@ -517,7 +517,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.010280682, y: 13.189404, z: 0.07607968, w: -13.975548}
+  m_margin: {x: 0.010280682, y: 13.189404, z: 14.46757, w: 6.878322}
   m_textInfo:
     textComponent: {fileID: 553808518}
     characterCount: 35
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.1
   gravityModifier: 2
-  maxSpeed: 5
+  maxSpeed: 4.01
   jumpTakeOffSpeed: 7
 --- !u!1001 &1009956128
 Prefab:

@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour {
 	
 	public void StartDialogue(Dialogue dialogue) {
 
-		//animator.SetBool ("IsOpen", true);
+		animator.SetBool ("IsOpen", true);
 
 		nameText.text = dialogue.name;
 		sentences.Clear ();
@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		Debug.Log ("End of conversation");
-		//animator.SetBool ("IsOpen", false);
+		animator.SetBool ("IsOpen", false);
 	}
 
 }

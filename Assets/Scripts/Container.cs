@@ -23,6 +23,8 @@ public class Container : MonoBehaviour, IInteractable
 
 	/// <summary>
 	/// Should get called when, for example, the lumberjack is adding wood to the container
+	/// You can only add wood to a container that is set to accept wood in the inspector.
+	/// This is done to prevent bugs like the miner adding ore to the lumberjacks container and such
 	/// </summary>
 	/// <param name="type">The type of item to be added to the container, e.g. the lumberjack is adding wood to it</param>
 	/// <param name="count">The number of items to add to the container, this could increase when the lumberjack has a new axe</param>

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Container : MonoBehaviour, IInteractable
 {
 	public int count;							// The amount of resources inside the container at any given time
-	public MaterialType type;					// The type of resources stored in this container. There can only be one type per container. 
+	public ItemType type;					// The type of resources stored in this container. There can only be one type per container. 
 	private int capacity = 15;					// The maximum amount of resources this container can carry, possibly upgradable by talking to people
 
 
@@ -21,7 +21,7 @@ public class Container : MonoBehaviour, IInteractable
 	/// </summary>
 	/// <param name="type">The type of item to be added to the container, e.g. the lumberjack is adding wood to it</param>
 	/// <param name="count">The number of items to add to the container, this could increase when the lumberjack has a new axe</param>
-	public void AddItem(MaterialType matType, int matCount)
+	public void AddItem(ItemType matType, int matCount)
 	{
 		if (type == matType && count < capacity)
 		{
@@ -35,11 +35,11 @@ public class Container : MonoBehaviour, IInteractable
 		print ("This container has: " + count + " "+ type);
 		// TODO: Talk to the inventory manager, let him know you now have a bunch of new stuff like wood and sjitz
 		// The function call could like something like this:
-		// InventoryManager.Instance.AddMaterial(count, type);
+		InventoryManager.Instance.AddMaterial(type, count);
 		count = 0;
 	}
 
-	public MaterialType GetContainerType()
+	public ItemType GetContainerType()
 	{
 		return type;
 	}
@@ -48,7 +48,7 @@ public class Container : MonoBehaviour, IInteractable
 		if (other.gameObject.CompareTag("Player") == true)
 		{
 			// TODO: Show interact button icon here
-			other.gameObject.GetComponent<PlayerController2D>().SetInteractableContainer(this);
+			other.gameObject.GetComponent<PlayerController2D>().SetInteractable(this);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class Container : MonoBehaviour, IInteractable
 		if (other.gameObject.CompareTag("Player") == true)
 		{
 			// TODO: Hide interact button icon here
-			other.gameObject.GetComponent<PlayerController2D>().SetInteractableContainer(null);
+			other.gameObject.GetComponent<PlayerController2D>().SetInteractable(null);
 		}
 	}
 }

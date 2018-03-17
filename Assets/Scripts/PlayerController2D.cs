@@ -65,9 +65,9 @@ public class PlayerController2D : PhysicsObject {
 		targetVelocity = move * maxSpeed;
 	}
 
-	public void SetInteractableContainer(Container cont)
+	public void SetInteractable(IInteractable newInteractable)
 	{
-		interactable = cont;
+		interactable = newInteractable;
 	}
 
 	public void Interact()

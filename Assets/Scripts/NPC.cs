@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC: MonoBehaviour {
+public class NPC : MonoBehaviour, IInteractable {
 
 	public GameObject player;
 	public GameObject speechReady;
@@ -14,19 +14,35 @@ public class NPC: MonoBehaviour {
 	void Start () {
 		player = GameObject.Find("Player");
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	public void Interact()
+	{
 		// Check if the player is in speech distance
 		if ((player.transform.position - this.transform.position).sqrMagnitude < speechDistance) {
 			speechReady.GetComponent<SpriteRenderer>().enabled = true;
 			// Start conversation
-			if (Input.GetKeyDown("e") && !speaking) {
+			if (speaking == false) {
 				speaking = true;
 				GetComponent<DialogueTrigger>().TriggerDialogue ();
 			}
 		} else {
 			speechReady.GetComponent<SpriteRenderer> ().enabled = false;
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("Player") == true)
+		{
+			other.gameObject.GetComponent<PlayerController2D>().SetInteractable(this);
+		}	
+	}
+
+	void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("Player") == true)
+		{
+			other.gameObject.GetComponent<PlayerController2D>().SetInteractable(null);
+		}		
 	}
 }

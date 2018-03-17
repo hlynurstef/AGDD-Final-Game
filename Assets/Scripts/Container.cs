@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class represents the containers in the world
+/// These are for example the container that the forester uses to store his wood in,
+/// the cart that the miner stores his ore in and more
+/// </summary>
 public class Container : MonoBehaviour, IInteractable
 {
 	public int count;							// The amount of resources inside the container at any given time
@@ -30,24 +35,23 @@ public class Container : MonoBehaviour, IInteractable
 		}
 	}
 
+	/// <summary>
+	/// This function is called when the player is standing close to this container and presses the interact button
+	/// </summary>
 	public void Interact()
 	{
+		// TODO: Remove print statement when we are sure everything works as intended
 		print ("This container has: " + count + " "+ type);
 		// TODO: Talk to the inventory manager, let him know you now have a bunch of new stuff like wood and sjitz
 		// The function call could like something like this:
-		InventoryManager.Instance.AddMaterial(type, count);
+		InventoryManager.Instance.AddItem(type, count);
 		count = 0;
-	}
-
-	public ItemType GetContainerType()
-	{
-		return type;
 	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.CompareTag("Player") == true)
 		{
-			// TODO: Show interact button icon here
+			// TODO: Show interact button icon here or do it from the player script ? 
 			other.gameObject.GetComponent<PlayerController2D>().SetInteractable(this);
 		}
 	}

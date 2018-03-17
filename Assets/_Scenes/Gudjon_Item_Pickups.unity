@@ -801,11 +801,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 861358257}
---- !u!1 &974817481 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1310394858931890, guid: 410fd9eed4bd7a24db22ec2c12aef044,
-    type: 2}
-  m_PrefabInternal: {fileID: 1922551127}
 --- !u!4 &974817483 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4707492063160116, guid: 410fd9eed4bd7a24db22ec2c12aef044,
@@ -1096,8 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e2c362b08b7d143a464a8be1752d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 974817481}
-  speechReady: {fileID: 1995528065}
+  interactIcon: {fileID: 1995528065}
 --- !u!114 &1238400704
 MonoBehaviour:
   m_ObjectHideFlags: 0

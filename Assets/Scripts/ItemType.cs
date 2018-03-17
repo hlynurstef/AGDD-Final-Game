@@ -8,5 +8,6 @@ using UnityEngine;
 /// </summary>
 public enum ItemType 
 {
+	// TODO: Add the rest of the items available to this enum
 	Wood, Ore 
 }

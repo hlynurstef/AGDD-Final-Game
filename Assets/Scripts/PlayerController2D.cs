@@ -70,6 +70,11 @@ public class PlayerController2D : PhysicsObject {
 		interactable = newInteractable;
 	}
 
+	/// <summary>
+	/// This function is called when the player presses the interact button
+	/// If the player is standing close to an interactable objet, he will
+	/// call the interact function of that object
+	/// </summary>
 	public void Interact()
 	{
 		if (interactable != null)

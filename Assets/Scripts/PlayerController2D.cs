@@ -11,6 +11,8 @@ public class PlayerController2D : PhysicsObject {
 
 	//private SpriteRenderer spriteRenderer;
 	private Animator animator;
+	[SerializeField]
+	private IInteractable interactable;
 
 	// Use this for initialization
 	void Awake () 
@@ -40,6 +42,11 @@ public class PlayerController2D : PhysicsObject {
 			}
 		}
 
+		if (Input.GetButtonDown("Interact") == true)
+		{
+			Interact();
+		}
+
 		//bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
 		if (move.x > 0.0f && !right) {
 			//spriteRenderer.flipX = !spriteRenderer.flipX;
@@ -56,5 +63,18 @@ public class PlayerController2D : PhysicsObject {
 
 
 		targetVelocity = move * maxSpeed;
+	}
+
+	public void SetInteractableContainer(Container cont)
+	{
+		interactable = cont;
+	}
+
+	public void Interact()
+	{
+		if (interactable != null)
+		{
+			interactable.Interact();
+		}
 	}
 }

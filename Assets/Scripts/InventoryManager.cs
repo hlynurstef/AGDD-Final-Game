@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class InventoryManager : MonoBehaviour
 	public Dictionary<ItemType, int> inventory;							// The actual status of the players inventory, how much of what he has
 	[SerializeField]
 
-	public List<SpriteRenderer> inventoryIcons;
+	public List<Image> inventoryIcons;
 
 	public List<InventoryItem> availableItems;
 
@@ -27,12 +29,6 @@ public class InventoryManager : MonoBehaviour
 		}
 
 		Instance = this;
-		
-		// TODO: Include this if the game will be built in multiple scenes
-		//DontDestroyOnLoad(gameObject);
-
-		// TODO: The inventory UI has to get it's information from this script. It should read the dictionary and fill in the 
-		// inventory slots with the right type/amount for each of the items.
 	}
 
 	void Start()
@@ -60,21 +56,26 @@ public class InventoryManager : MonoBehaviour
 			inventory.Add(type, count);
 			AddUIElement(type, count);
 		}
-		// TODO: Remove print statement when we are sure everything works as intended
-
-		
 
 		print ("I have " + inventory[type] + " " + type);
 	}
 
 	public void UpdateUIElement(ItemType type, int count)
 	{
-
+		// TODO: This function gets called when the player picks up an item that he already has in his inventory, or when 
+		// he gives some of his items away (like giving the lumberjack an axe)
+		// so all that happens is that the counter for that item now increases/decreases.
+		// For this to work, we need to set this whole thing up different in some ways 
+		// to accomodate for updating(we dont know which item is in which inventory slot, so its hard to update it?!)
 	}
 
 	public void AddUIElement(ItemType type, int count)
 	{
-
+		if (count <= 0)
+		{	
+			// Dont add a new UI element if the amount we have is zero or less
+			return;
+		}
 		Sprite newSprite = null;
 		for (int i = 0; i < availableItems.Count; i++)
 		{
@@ -87,9 +88,15 @@ public class InventoryManager : MonoBehaviour
 
 		for (int i = 0; i < inventoryIcons.Count; i++)
 		{
-			if (inventoryIcons[i].sprite == null && newSprite != null)
-			{
+			if (inventoryIcons[i].sprite == null && newSprite != null && inventoryIcons[i].enabled == false)
+			{	
+				inventoryIcons[i].enabled = true;
+				// Display the sprite in the UI
 				inventoryIcons[i].sprite = newSprite;
+
+				// Display the text indicator for the amount you own
+				TextMeshProUGUI uiText = inventoryIcons[i].GetComponentInChildren<TextMeshProUGUI>();
+				uiText.SetText("x" + count.ToString());
 				return;
 			}
 		}

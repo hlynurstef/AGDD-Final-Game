@@ -6,4 +6,6 @@ using UnityEngine;
 public class InventoryItem : ScriptableObject {
 
 	public Sprite item;
+	public ItemType type;
+	public string itemName;
 }

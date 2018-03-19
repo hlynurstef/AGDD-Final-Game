@@ -1,0 +1,36 @@
+title: Start
+tags: 
+colorID: 0
+position: 592,181
+---
+A: Hello there, my name is A!
+B: Hello A! My name is B!
+-> How do I into dialogue?
+    A: What a dialogue!
+    B: Yeah it's pretty neat!
+-> Here's an extra option
+	A: That's neat
+-> Sure...
+A: We are so happy!
+B: What would you prefer to do next?
+[[Leave|Leave]]
+[[Learn more|LearnMore]]
+[[Talk again|Start]]
+===
+
+title: Leave
+tags: 
+colorID: 0
+position: 387,487
+---
+A: Oh, goodbye!
+B: You'll be back soon!
+===
+
+title: LearnMore
+tags: 
+colorID: 0
+position: 763,472
+---
+A: HAHAHA
+===

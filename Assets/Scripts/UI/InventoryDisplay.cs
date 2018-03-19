@@ -7,10 +7,16 @@ public class InventoryDisplay : MonoBehaviour {
 
 	public InventoryItem inventoryItem;
 
-	public SpriteRenderer item;
+	public Dictionary<ItemType, SpriteRenderer> inventoryIcons;
+	public Dictionary<ItemType, int> itemQuantities;
 
 	// Use this for initialization
 	void Start () {
-		item.sprite = inventoryItem.item;
+		inventoryIcons = new Dictionary<ItemType, SpriteRenderer>();
+	}
+
+	public void AddItemToUI(ItemType type, int count)
+	{
+
 	}
 }

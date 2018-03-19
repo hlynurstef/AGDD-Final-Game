@@ -11,12 +11,19 @@ public class PlayerController2D : PhysicsObject {
 
 	//private SpriteRenderer spriteRenderer;
 	private Animator animator;
+	[SerializeField]
+	private IInteractable interactable;
 
 	// Use this for initialization
 	void Awake () 
 	{
 		//spriteRenderer = GetComponent<SpriteRenderer> (); 
 		animator = GetComponent<Animator> ();
+	}
+
+	void Start()
+	{
+		interactable = null;
 	}
 
 	protected override void ComputeVelocity()
@@ -40,6 +47,11 @@ public class PlayerController2D : PhysicsObject {
 			}
 		}
 
+		if (Input.GetButtonDown("Interact") == true)
+		{
+			Interact();
+		}
+
 		//bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
 		if (move.x > 0.0f && !right) {
 			//spriteRenderer.flipX = !spriteRenderer.flipX;
@@ -56,5 +68,23 @@ public class PlayerController2D : PhysicsObject {
 
 
 		targetVelocity = move * maxSpeed;
+	}
+
+	public void SetInteractable(IInteractable newInteractable)
+	{
+		interactable = newInteractable;
+	}
+
+	/// <summary>
+	/// This function is called when the player presses the interact button
+	/// If the player is standing close to an interactable objet, he will
+	/// call the interact function of that object
+	/// </summary>
+	public void Interact()
+	{
+		if (interactable != null)
+		{
+			interactable.Interact();
+		}
 	}
 }

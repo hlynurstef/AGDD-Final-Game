@@ -69,6 +69,26 @@ public class InventoryManager : MonoBehaviour
 		// to accomodate for updating(we dont know which item is in which inventory slot, so its hard to update it?!)
 	}
 
+	public bool RemoveItem(ItemType type, int count)
+	{
+		if (inventory.ContainsKey(type) == true)
+		{
+			if (inventory[type] >= count)
+			{
+				inventory[type] -= count;
+				if (inventory[type] <= 0)
+				{
+					// TODO: Remove the icon from the inventory slot!
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
 	public void AddUIElement(ItemType type, int count)
 	{
 		if (count <= 0)

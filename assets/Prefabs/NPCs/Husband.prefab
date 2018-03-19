@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 1492656806921086}
+  talkToNode: 
 --- !u!114 &114962516378668888
 MonoBehaviour:
   m_ObjectHideFlags: 1

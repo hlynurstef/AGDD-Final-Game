@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4335523895565136}
   - component: {fileID: 8195094281218469834}
   - component: {fileID: 3664157344407911058}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4023715781490230}
   - component: {fileID: 8195094280836082498}
   - component: {fileID: 3664157345710446140}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4595529930525978}
   - component: {fileID: 8195094281896473936}
   - component: {fileID: 3664157344339954952}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4185976066082192}
   - component: {fileID: 8195094280048917756}
   - component: {fileID: 3664157345202308950}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

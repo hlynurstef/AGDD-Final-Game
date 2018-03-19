@@ -71,7 +71,11 @@ public class InventoryManager : MonoBehaviour
 
 	public void AddUIElement(ItemType type, int count)
 	{
-
+		if (count <= 0)
+		{	
+			// Dont add a new UI element if the amount we have is zero or less
+			return;
+		}
 		Sprite newSprite = null;
 		for (int i = 0; i < availableItems.Count; i++)
 		{

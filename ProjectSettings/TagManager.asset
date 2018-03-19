@@ -14,8 +14,8 @@ TagManager:
   - 
   - 
   - Container
-  - 
-  - 
+  - Player
+  - Background
   - 
   - 
   - 
@@ -40,4 +40,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 790932325
+    locked: 0
+  - name: Forest
+    uniqueID: 3463846521
+    locked: 0
+  - name: Ground
+    uniqueID: 2069082531
+    locked: 0
+  - name: Characters
+    uniqueID: 1421256787
+    locked: 0
+  - name: Player
+    uniqueID: 2395237181
+    locked: 0
+  - name: UI
+    uniqueID: 3814168329
     locked: 0

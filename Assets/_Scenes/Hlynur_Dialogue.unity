@@ -503,7 +503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045999319}
   - component: {fileID: 1045999318}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1513987732}
   - component: {fileID: 1513987731}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1550013669}
   - component: {fileID: 1550013670}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1879323550}
   - component: {fileID: 1879323549}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Background (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2073340388}
   - component: {fileID: 2073340387}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

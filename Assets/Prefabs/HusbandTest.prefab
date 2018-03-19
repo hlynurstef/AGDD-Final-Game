@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114107313798501114}
   - component: {fileID: 212941543441000102}
   - component: {fileID: 61057749980809266}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: HusbandTest
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837975558713928}
   - component: {fileID: 212103401078007236}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

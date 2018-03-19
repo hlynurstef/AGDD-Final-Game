@@ -21,6 +21,11 @@ public class PlayerController2D : PhysicsObject {
 		animator = GetComponent<Animator> ();
 	}
 
+	void Start()
+	{
+		interactable = null;
+	}
+
 	protected override void ComputeVelocity()
 	{
 		Vector2 move = Vector2.zero;

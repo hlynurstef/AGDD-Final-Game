@@ -8,7 +8,14 @@ public class InventoryManager : MonoBehaviour
 
 	public static InventoryManager Instance = null;
 
-	public Dictionary<ItemType, int> inventory;
+	[SerializeField]
+	public Dictionary<ItemType, int> inventory;							// The actual status of the players inventory, how much of what he has
+	[SerializeField]
+
+	public List<SpriteRenderer> inventoryIcons;
+
+	public List<InventoryItem> availableItems;
+
 
 	void Awake()
 	{
@@ -46,13 +53,45 @@ public class InventoryManager : MonoBehaviour
 		if (inventory.ContainsKey(type) == true)
 		{
 			inventory[type] += count;
+			UpdateUIElement(type, count);
 		}
 		else 
 		{
 			inventory.Add(type, count);
+			AddUIElement(type, count);
 		}
 		// TODO: Remove print statement when we are sure everything works as intended
+
+		
+
 		print ("I have " + inventory[type] + " " + type);
 	}
-	
+
+	public void UpdateUIElement(ItemType type, int count)
+	{
+
+	}
+
+	public void AddUIElement(ItemType type, int count)
+	{
+
+		Sprite newSprite = null;
+		for (int i = 0; i < availableItems.Count; i++)
+		{
+			if (type == availableItems[i].type)
+			{
+				newSprite = availableItems[i].item;
+				break;
+			}
+		}
+
+		for (int i = 0; i < inventoryIcons.Count; i++)
+		{
+			if (inventoryIcons[i].sprite == null && newSprite != null)
+			{
+				inventoryIcons[i].sprite = newSprite;
+				return;
+			}
+		}
+	}
 }

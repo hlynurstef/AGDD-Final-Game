@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         rewiredPlayer = ReInput.players.GetPlayer(rewiredPlayerId);
         controller = GetComponent<CharacterController2D>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         GetInput();
         Move();
         FlipSprite();
+        Animate();
     }
 
     private void GetInput()
@@ -86,6 +87,11 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
+    }
+
+    private void Animate()
+    {
+        animator.SetBool("isWalking", velocity.x != 0.0f);
     }
 
     public void SetInteractable(IInteractable newInteractable)

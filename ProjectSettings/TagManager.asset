@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - NPC
+  - Stairs 1
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Forest
     uniqueID: 3463846521
+    locked: 0
+  - name: ForestStairs
+    uniqueID: 1484293291
     locked: 0
   - name: Ground
     uniqueID: 2069082531

@@ -31,6 +31,8 @@ using System.Text;
 using System.Collections.Generic;
 using Yarn.Unity;
 using TMPro;
+using UnityEngine.EventSystems;
+using Rewired;
 
 /// Displays dialogue lines to the player, and sends
 /// user choices back to the dialogue system.
@@ -77,6 +79,8 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
 
+    private Player rewiredPlayer;
+
     void Awake()
     {
         // Start by hiding the container, line and option buttons
@@ -93,6 +97,15 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
         // Hide the continue prompt if it exists
         if (continuePrompt != null)
             continuePrompt.SetActive(false);
+    }
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        rewiredPlayer = ReInput.players.GetPlayer(0);
     }
 
     /// Show a line of dialogue, gradually
@@ -145,12 +158,10 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
         if (continuePrompt != null)
             continuePrompt.SetActive(true);
 
-        // TODO: replace with Rewired input management
-        // Wait for any user input
-
-        // Wiat a little bit so that input is not detected at the same time as the interrupt
+        // Wait for user input
+        // Wait a little bit so that input is not detected at the same time as the interrupt
         yield return new WaitForSeconds(0.02f);
-        while (Input.anyKeyDown == false)
+        while (rewiredPlayer.GetButtonDown("Interact") == false)
         {
             yield return null;
         }
@@ -167,7 +178,7 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
         // Wait a little bit so that input is not detected at the same time as the continue
         yield return new WaitForSeconds(0.02f);
-        while (Input.anyKeyDown == false)
+        while (rewiredPlayer.GetButtonDown("Interact") == false)
         {
             yield return null;
         }
@@ -193,6 +204,12 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
             optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = optionString;
             i++;
         }
+
+        // THIS IS A HACK TO MAKE THE FIRST SELECTED BUTTON ACTUALLY APPEAR SELECTED
+        // Deselect and reselect first button to correctly display highlight after enabling parent GO
+        EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        es.SetSelectedGameObject(null);
+        es.SetSelectedGameObject(es.firstSelectedGameObject);
 
         // Record that we're using it
         SetSelectedOption = optionChooser;

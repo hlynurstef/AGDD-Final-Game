@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 114025272208992600}
   - component: {fileID: 114940525010384874}
   - component: {fileID: 114563898170286718}
+  - component: {fileID: 114820459884664772}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -185,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.2109375
+  orthographic size: 3.6640625
   m_Depth: -6
   m_CullingMask:
     serializedVersion: 2
@@ -221,7 +222,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.2109375
+  orthographic size: 3.6640625
   m_Depth: -3
   m_CullingMask:
     serializedVersion: 2
@@ -257,7 +258,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.2109375
+  orthographic size: 3.6640625
   m_Depth: -4
   m_CullingMask:
     serializedVersion: 2
@@ -293,7 +294,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.2109375
+  orthographic size: 3.6640625
   m_Depth: -5
   m_CullingMask:
     serializedVersion: 2
@@ -329,7 +330,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.2109375
+  orthographic size: 3.6640625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -367,7 +368,7 @@ MonoBehaviour:
   - TargetTransform: {fileID: 0}
     TargetInfluenceH: 1
     TargetInfluenceV: 1
-    TargetOffset: {x: 0, y: 0}
+    TargetOffset: {x: 0, y: 1.2}
   CenterTargetOnStart: 0
   Axis: 0
   UpdateType: 0
@@ -424,6 +425,23 @@ MonoBehaviour:
   RootPosition: {x: 0, y: 0, z: 0}
   FrontDepthStart: 1
   BackDepthStart: -2
+--- !u!114 &114820459884664772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906546295357718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac0ec3d6ad5f4a3d9d184bc3773a3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pc2D: {fileID: 114025272208992600}
+  ShakePresets:
+  - {fileID: 11400000, guid: 07255ebbeeaf09143b22c5bcb267445b, type: 2}
+  ConstantShakePresets: []
+  StartConstantShakePreset: {fileID: 0}
+  CurrentConstantShakePreset: {fileID: 0}
 --- !u!114 &114940525010384874
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -71,8 +71,6 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
 
-    private bool wasInterrupted = false;
-
     void Awake()
     {
         // Start by hiding the container, line and option buttons
@@ -96,7 +94,7 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
         // Show the text
         lineText.gameObject.SetActive(true);
-        // TODO: Allow the player to interrupt the playing of the text
+
         if (textSpeed > 0.0f)
         {
             // print("At the top of the if");

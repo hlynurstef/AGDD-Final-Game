@@ -34,37 +34,38 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-	[YarnCommand("take")]
-	public void TakePlayerItems(string type, string count)
-	{
-		ItemType concreteType;
-		int concreteCount = int.Parse(count);
-		foreach(ItemType itemType in ItemType.GetValues(typeof(ItemType)))
-		{
-			if (type == itemType.ToString())
-			{
-				concreteType = itemType;
-				InventoryManager.Instance.RemoveItem(concreteType, concreteCount);
-				return;
-			}
-		}
-	}
+    [YarnCommand("take")]
+    public void TakePlayerItems(string type, string count)
+    {
+        print("taking all yo wood bitches");
+        ItemType concreteType;
+        int concreteCount = int.Parse(count);
+        foreach (ItemType itemType in ItemType.GetValues(typeof(ItemType)))
+        {
+            if (type.ToLower() == itemType.ToString().ToLower())
+            {
+                concreteType = itemType;
+                InventoryManager.Instance.RemoveItem(concreteType, concreteCount);
+                return;
+            }
+        }
+    }
 
-	[YarnCommand("give")]
-	public void GivePlayerItems(string type, string count)
-	{
-		ItemType concreteType;
-		int concreteCount = int.Parse(count);
-		foreach(ItemType itemType in ItemType.GetValues(typeof(ItemType)))
-		{
-			if (type == itemType.ToString())
-			{
-				concreteType = itemType;
-				InventoryManager.Instance.AddItem(concreteType, concreteCount);
-				return;
-			}
-		}
-	}
+    [YarnCommand("give")]
+    public void GivePlayerItems(string type, string count)
+    {
+        ItemType concreteType;
+        int concreteCount = int.Parse(count);
+        foreach (ItemType itemType in ItemType.GetValues(typeof(ItemType)))
+        {
+            if (type.ToLower() == itemType.ToString().ToLower())
+            {
+                concreteType = itemType;
+                InventoryManager.Instance.AddItem(concreteType, concreteCount);
+                return;
+            }
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

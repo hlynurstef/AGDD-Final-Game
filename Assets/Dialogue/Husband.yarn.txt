@@ -20,6 +20,12 @@ position: 536,61
     Don't fear, I have never left your side and I won't start now. But I need materials if we aim to get higher.
     Do you see that box of wood behind you? You left it here the last time you tried to escape, before it took you back.
     It's just enough to build the staircase to the next floor. Bring it to me, please.
+<<elseif $wood_amount >= 5>>
+	Great! You've got just the right amount of wood for me!
+	<<take Husband wood 5>>
+	I'll just take that from you and build a super nice staircase!
+	<<build_stairs GameManager>>
+	I'll build now!
 <<else>>
     Please bring me wood from the box behind you.
 <<endif>>

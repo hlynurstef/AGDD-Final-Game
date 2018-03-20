@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private IInteractable interactable;
     private Vector3 velocity = Vector3.zero;
+    private DialogueRunner dialogueRunner;
 
     void Awake()
     {
@@ -35,11 +36,20 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         // Remove all player control when we're in dialogue
-        if (FindObjectOfType<DialogueRunner>().isDialogueRunning == true)
+        if (dialogueRunner.isDialogueRunning == true)
         {
             return;
         }
@@ -67,6 +77,8 @@ public class PlayerController : MonoBehaviour
         {
             Interact();
         }
+
+
     }
 
     private void Move()
@@ -80,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void FlipSprite()
     {
-        // This assumes that flipX is true when character is moving left
+        // This assumes that flipX is true when character is facing left
         // Sprite is flipped if flipX is true (sprite is facing left) and the character is moving right
         // or the other way around.
         if ((spriteRenderer.flipX && velocity.x > 0) || (!spriteRenderer.flipX && velocity.x < 0))

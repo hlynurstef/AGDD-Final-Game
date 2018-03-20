@@ -5,6 +5,14 @@ position: 536,61
 ---
 <<if visited("Husband") is false>>
     Good morning. Or evening? I'm not sure. It's nice to see you though. How long has it been? I can't remember.
+    -> Where am I?
+    	You're with me now
+    -> Who are you?
+    	You don't remember me?
+    -> Look behind you! A three headed monkey!
+    	I won't fall for that!
+    -> This is an extra answer
+    	What an answer
     I was worried the darkness had swallowed you up whole but here you are, beautiful as ever.
     You look confused? What's wrong? You don't...remember me? This is worse than i thought.
     The darkness is growing stronger inside you, but I see a strong burning fire. Your will hasn't been broken.

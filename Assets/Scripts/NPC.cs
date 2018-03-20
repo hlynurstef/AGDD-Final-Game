@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour, IInteractable
     private string talkToNode = "";
     [SerializeField, Tooltip("The avatar image to render in the dialogue box")]
     private Sprite avatarImage;
+    [SerializeField, Tooltip("The name to be displayed in the dialogue box")]
+    private string displayName;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -39,7 +41,6 @@ public class NPC : MonoBehaviour, IInteractable
     [YarnCommand("take")]
     public void TakePlayerItems(string type, string count)
     {
-        print("taking all yo wood bitches");
         ItemType concreteType;
         int concreteCount = int.Parse(count);
         foreach (ItemType itemType in ItemType.GetValues(typeof(ItemType)))
@@ -56,7 +57,9 @@ public class NPC : MonoBehaviour, IInteractable
     [YarnCommand("set_avatar")]
     public void SetAvatarInDialog()
     {
-        FindObjectOfType<DialogueUI>().SetAvatar(avatarImage);
+        DialogueUI dui = FindObjectOfType<DialogueUI>();
+        dui.SetAvatar(avatarImage);
+        dui.SetName(displayName);
     }
 
     [YarnCommand("give")]

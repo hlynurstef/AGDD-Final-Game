@@ -58,6 +58,9 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     // A UI element that displays an avatar image
     public Image avatarImage;
 
+    // The UI element that displays the name
+    public TextMeshProUGUI displayName;
+
     /// A delegate (ie a function-stored-in-a-variable) that
     /// we call to tell the dialogue system about what option
     /// the user selected
@@ -222,6 +225,11 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     public void SetAvatar(Sprite avatar)
     {
         avatarImage.sprite = avatar;
+    }
+
+    public void SetName(string name)
+    {
+        displayName.text = name;
     }
 
     /// Run an internal command.

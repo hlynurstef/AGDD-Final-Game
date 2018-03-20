@@ -9,6 +9,8 @@ public class NPC : MonoBehaviour, IInteractable
     public GameObject interactIcon;
     [SerializeField, Tooltip("The Yarn node to play when talking to this NPC")]
     private string talkToNode = "";
+    [SerializeField, Tooltip("The avatar image to render in the dialogue box")]
+    private Sprite avatarImage;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -49,6 +51,12 @@ public class NPC : MonoBehaviour, IInteractable
                 return;
             }
         }
+    }
+
+    [YarnCommand("set_avatar")]
+    public void SetAvatarInDialog()
+    {
+        FindObjectOfType<DialogueUI>().SetAvatar(avatarImage);
     }
 
     [YarnCommand("give")]

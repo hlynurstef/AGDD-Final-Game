@@ -55,6 +55,9 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     /// A UI element that appears after lines have finished appearing
     public GameObject continuePrompt;
 
+    // A UI element that displays an avatar image
+    public Image avatarImage;
+
     /// A delegate (ie a function-stored-in-a-variable) that
     /// we call to tell the dialogue system about what option
     /// the user selected
@@ -214,6 +217,11 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
 
         // Now remove the delegate so that the loop in RunOptions will exit
         SetSelectedOption = null;
+    }
+
+    public void SetAvatar(Sprite avatar)
+    {
+        avatarImage.sprite = avatar;
     }
 
     /// Run an internal command.

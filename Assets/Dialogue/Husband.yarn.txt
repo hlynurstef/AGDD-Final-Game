@@ -4,14 +4,20 @@ colorID: 0
 position: 536,61
 ---
 <<if visited("Husband") is false>>
+	<<set_avatar Husband>>
     Good morning. Or evening? I'm not sure. It's nice to see you though. How long has it been? I can't remember.
+    <<set_avatar Player>>
     -> Where am I?
+    	<<set_avatar Husband>>
     	You're with me now
     -> Who are you?
+    	<<set_avatar Husband>>
     	You don't remember me?
     -> Look behind you! A three headed monkey!
+    	<<set_avatar Husband>>
     	I won't fall for that!
     -> This is an extra answer
+    	<<set_avatar Husband>>
     	What an answer
     I was worried the darkness had swallowed you up whole but here you are, beautiful as ever.
     You look confused? What's wrong? You don't...remember me? This is worse than i thought.

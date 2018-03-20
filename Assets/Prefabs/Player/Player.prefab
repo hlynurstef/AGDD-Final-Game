@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 61873042151844182}
   - component: {fileID: 114608702857714784}
   - component: {fileID: 114220195842719002}
-  - component: {fileID: 114673989706917450}
   - component: {fileID: 114538265683677584}
   m_Layer: 0
   m_Name: Player
@@ -189,21 +188,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   totalHorizontalRays: 8
   totalVerticalRays: 4
---- !u!114 &114673989706917450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1163514643815792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e2c362b08b7d143a464a8be1752d5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactIcon: {fileID: 0}
-  talkToNode: 
-  avatarImage: {fileID: 21300000, guid: 5b32c2d36abe44540bed74c1f787033b, type: 3}
-  displayName: 
 --- !u!212 &212479387730372390
 SpriteRenderer:
   m_ObjectHideFlags: 1

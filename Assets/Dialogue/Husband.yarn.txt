@@ -1,38 +1,58 @@
 title: Husband
 tags: 
 colorID: 0
-position: 536,61
+position: 503,-77
 ---
+<<set_avatar Husband>>
 <<if visited("Husband") is false>>
-	<<set_avatar Husband>>
     Good morning. Or evening? I'm not sure. It's nice to see you though. How long has it been? I can't remember.
     <<set_avatar Player>>
     -> Where am I?
     	<<set_avatar Husband>>
-    	You're with me now
+    	You're with me now... I was worried the darkness had swallowed you up whole but here you are, beautiful as ever.
     -> Who are you?
     	<<set_avatar Husband>>
-    	You don't remember me?
-    -> Look behind you! A three headed monkey!
-    	<<set_avatar Husband>>
-    	I won't fall for that!
-    -> This is an extra answer
-    	<<set_avatar Husband>>
-    	What an answer
-    I was worried the darkness had swallowed you up whole but here you are, beautiful as ever.
-    You look confused? What's wrong? You don't...remember me? This is worse than i thought.
+    	You look confused? What's wrong? You don't... remember me? This is worse than i thought.
     The darkness is growing stronger inside you, but I see a strong burning fire. Your will hasn't been broken.
     To escape the darkness you have to escape this tower. The darkness thrives in these walls.
-    Don't fear, I have never left your side and I won't start now. But I need materials if we aim to get higher.
+    <<set_avatar Player>>
+    -> How do I escape?
+    	<<set_avatar Husband>>
+    	Don't fear, I have never left your side and I won't start now. But I need materials if we aim to get higher.
+    -> This doesn't look like a tower
+    	<<set_avatar Husband>>
+    	Things are not as they seem, I will help you through this. All we need are materials to help us get higher.
     Do you see that box of wood behind you? You left it here the last time you tried to escape, before it took you back.
-    It's just enough to build the staircase to the next floor. Bring it to me, please.
-<<elseif $wood_amount >= 5>>
-	Great! You've got just the right amount of wood for me!
-	<<take Husband wood 5>>
-	I'll just take that from you and build a super nice staircase!
-	<<build_stairs GameManager>>
-	I'll build now!
+    It contains just enough materials to build the staircase to the next floor. Bring them to me, please.
+<<elseif $husband_done is true>>
+	I've done all I can to help you for now. All you need to do is proceed to the next floor.
+	<<set_avatar Player>>
+	-> It doesn't look like you used any wood to build that staircase...
+		<<set_avatar Husband>>
+		Looks can be deceiving
+	-> Look behind you! A three headed monkey!
+		<<set_avatar Husband>>
+		Hahaha... I'm not falling for that one again!
+	-> Goodbye
+		<<set_avatar Husband>>
+		Good luck
 <<else>>
-    Please bring me wood from the box behind you.
+    Did you grab the wood from the box?
+    <<set_avatar Player>>
+    -> Yes
+    	<<if $wood_amount >= 5>>
+			<<set_avatar Husband>>
+			That's great! I'll take the wood and build the staircase to the next floor.
+			<<take Husband wood 5>>
+			<<build_stairs GameManager>>
+			Step back and watch out!
+			<<set $husband_done to true>>
+		<<else>>
+			<<set_avatar Husband>>
+			Please, I'm not stupid...
+		<<endif>>
+    -> No
+    	<<set_avatar Husband>>
+    	Please bring me the wood from the box
 <<endif>>
 ===

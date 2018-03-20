@@ -71,6 +71,8 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
 
+    private bool wasInterrupted = false;
+
     void Awake()
     {
         // Start by hiding the container, line and option buttons
@@ -94,19 +96,39 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
         // Show the text
         lineText.gameObject.SetActive(true);
-
         // TODO: Allow the player to interrupt the playing of the text
-
         if (textSpeed > 0.0f)
         {
+            // print("At the top of the if");
             // Display the line one character at a time
             var stringBuilder = new StringBuilder();
 
+            // Start coroutine that checks for input while the text is printing
+            bool shouldInterrupt = false;
+            Coroutine waitForInterrupt = StartCoroutine(WaitForInput((isDone) =>
+            {
+                shouldInterrupt = isDone;
+                return;
+            }));
+
             foreach (char c in line.text)
             {
+                // If we should interrupt then display entire text and break out of loop
+                if (shouldInterrupt)
+                {
+                    lineText.text = line.text;
+                    break;
+                }
                 stringBuilder.Append(c);
                 lineText.text = stringBuilder.ToString();
                 yield return new WaitForSeconds(textSpeed);
+            }
+
+            // Make sure to stop the coroutine if it's still running
+            if (waitForInterrupt != null)
+            {
+                StopCoroutine(waitForInterrupt);
+                waitForInterrupt = null;
             }
         }
         else
@@ -121,6 +143,9 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
 
         // TODO: replace with Rewired input management
         // Wait for any user input
+
+        // Wiat a little bit so that input is not detected at the same time as the interrupt
+        yield return new WaitForSeconds(0.02f);
         while (Input.anyKeyDown == false)
         {
             yield return null;
@@ -132,6 +157,17 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
         if (continuePrompt != null)
             continuePrompt.SetActive(false);
 
+    }
+
+    private IEnumerator WaitForInput(System.Action<bool> doneCallback)
+    {
+        // Wait a little bit so that input is not detected at the same time as the continue
+        yield return new WaitForSeconds(0.02f);
+        while (Input.anyKeyDown == false)
+        {
+            yield return null;
+        }
+        doneCallback(true);
     }
 
     /// Show a list of options, and wait for the player to make a selection.

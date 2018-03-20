@@ -12,11 +12,14 @@ public class InventoryManager : MonoBehaviour
 
 	[SerializeField]
 	public Dictionary<ItemType, int> inventory;							// The actual status of the players inventory, how much of what he has
-	[SerializeField]
 
+	[SerializeField]
 	public List<Image> inventoryIcons;
 
 	public List<InventoryItem> availableItems;
+
+	// TODO: Do something different
+	public Dictionary<ItemType, int> uiIndices;
 
 
 	void Awake()
@@ -34,6 +37,7 @@ public class InventoryManager : MonoBehaviour
 	void Start()
 	{
 		inventory = new Dictionary<ItemType, int>();
+		uiIndices = new Dictionary<ItemType, int>();
 	}
 
 
@@ -60,15 +64,13 @@ public class InventoryManager : MonoBehaviour
 		print ("I have " + inventory[type] + " " + type);
 	}
 
-	public void UpdateUIElement(ItemType type, int count)
-	{
-		// TODO: This function gets called when the player picks up an item that he already has in his inventory, or when 
-		// he gives some of his items away (like giving the lumberjack an axe)
-		// so all that happens is that the counter for that item now increases/decreases.
-		// For this to work, we need to set this whole thing up different in some ways 
-		// to accomodate for updating(we dont know which item is in which inventory slot, so its hard to update it?!)
-	}
 
+	/// <summary>
+	/// This function removes count many items of type "type"
+	/// </summary>
+	/// <param name="type">The type of item to be removed</param>
+	/// <param name="count">The amount of the item to remove</param>
+	/// <returns></returns>
 	public bool RemoveItem(ItemType type, int count)
 	{
 		if (inventory.ContainsKey(type) == true)
@@ -89,6 +91,23 @@ public class InventoryManager : MonoBehaviour
 		return false;
 	}
 
+	public void UpdateUIElement(ItemType type, int count)
+	{
+		// TODO: This function gets called when the player picks up an item that he already has in his inventory, or when 
+		// he gives some of his items away (like giving the lumberjack an axe)
+		// so all that happens is that the counter for that item now increases/decreases.
+		// For this to work, we need to set this whole thing up different in some ways 
+		// to accomodate for updating(we dont know which item is in which inventory slot, so its hard to update it?!)
+		int index;
+		if (uiIndices.ContainsKey(type) == true)
+		{
+			index = uiIndices[type];
+			TextMeshProUGUI uiText = inventoryIcons[index].GetComponentInChildren<TextMeshProUGUI>();
+			int total = inventory[type];
+			uiText.SetText("x" + total.ToString());
+		}
+	}
+
 	public void AddUIElement(ItemType type, int count)
 	{
 		if (count <= 0)
@@ -106,19 +125,25 @@ public class InventoryManager : MonoBehaviour
 			}
 		}
 
-		for (int i = 0; i < inventoryIcons.Count; i++)
+		int index;
+		for (index = 0; index < inventoryIcons.Count; index++)
 		{
-			if (inventoryIcons[i].sprite == null && newSprite != null && inventoryIcons[i].enabled == false)
+			if (inventoryIcons[index].sprite == null && newSprite != null && inventoryIcons[index].enabled == false)
 			{	
-				inventoryIcons[i].enabled = true;
+				inventoryIcons[index].enabled = true;
 				// Display the sprite in the UI
-				inventoryIcons[i].sprite = newSprite;
+				inventoryIcons[index].sprite = newSprite;
 
 				// Display the text indicator for the amount you own
-				TextMeshProUGUI uiText = inventoryIcons[i].GetComponentInChildren<TextMeshProUGUI>();
+				TextMeshProUGUI uiText = inventoryIcons[index].GetComponentInChildren<TextMeshProUGUI>();
 				uiText.SetText("x" + count.ToString());
-				return;
+				break;
 			}
+		}
+
+		if (uiIndices.ContainsKey(type) == false)
+		{
+			uiIndices.Add(type, index);
 		}
 	}
 }

@@ -384,6 +384,7 @@ MonoBehaviour:
   dialogueContainer: {fileID: 1772431229336616}
   lineText: {fileID: 114436543216008170}
   continuePrompt: {fileID: 1523627264661604}
+  avatarImage: {fileID: 114549727876619172}
   textSpeed: 0.025
   optionButtons:
   - {fileID: 114701523235546744}

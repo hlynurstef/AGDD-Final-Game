@@ -53,16 +53,19 @@ public class InventoryManager : MonoBehaviour
 		if (inventory.ContainsKey(type) == true)
 		{
 			inventory[type] += count;
-			UpdateUIElement(type, count);
+			UpdateUIElement(type);
 		}
 		else 
 		{
 			inventory.Add(type, count);
 			AddUIElement(type, count);
 		}
-
-		print ("I have " + inventory[type] + " " + type);
+		if (inventory.ContainsKey(type) == true)
+		{
+			print ("I have " + inventory[type] + " " + type);
+		}
 	}
+
 
 
 	/// <summary>
@@ -78,10 +81,7 @@ public class InventoryManager : MonoBehaviour
 			if (inventory[type] >= count)
 			{
 				inventory[type] -= count;
-				if (inventory[type] <= 0)
-				{
-					// TODO: Remove the icon from the inventory slot!
-				}
+				UpdateUIElement(type);
 			}
 			else
 			{
@@ -91,7 +91,7 @@ public class InventoryManager : MonoBehaviour
 		return false;
 	}
 
-	public void UpdateUIElement(ItemType type, int count)
+	public void UpdateUIElement(ItemType type)
 	{
 		// TODO: This function gets called when the player picks up an item that he already has in his inventory, or when 
 		// he gives some of his items away (like giving the lumberjack an axe)
@@ -105,6 +105,22 @@ public class InventoryManager : MonoBehaviour
 			TextMeshProUGUI uiText = inventoryIcons[index].GetComponentInChildren<TextMeshProUGUI>();
 			int total = inventory[type];
 			uiText.SetText("x" + total.ToString());
+
+			if (inventory[type] <= 0)
+			{
+				// Remove the icon from the inventory slot!
+				inventoryIcons[index].sprite = null;
+				inventoryIcons[index].enabled = false;
+				
+				// Disable the text in this slot!
+				uiText = inventoryIcons[index].GetComponentInChildren<TextMeshProUGUI>();
+				uiText.enabled = false;
+				uiText.SetText("x0");
+
+				// Remove the entry from dictionaries!
+				inventory.Remove(type);
+				uiIndices.Remove(type);
+			}
 		}
 	}
 
@@ -136,6 +152,7 @@ public class InventoryManager : MonoBehaviour
 
 				// Display the text indicator for the amount you own
 				TextMeshProUGUI uiText = inventoryIcons[index].GetComponentInChildren<TextMeshProUGUI>();
+				uiText.enabled = true;
 				uiText.SetText("x" + count.ToString());
 				break;
 			}

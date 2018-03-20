@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4898686879114132}
   - component: {fileID: 20706912132440196}
   m_Layer: 0
-  m_Name: ParallaxCamera (0.2)
+  m_Name: ParallaxCamera (0.1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.734375
+  orthographic size: 2.2109375
   m_Depth: -6
   m_CullingMask:
     serializedVersion: 2
@@ -221,7 +221,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.734375
+  orthographic size: 2.2109375
   m_Depth: -3
   m_CullingMask:
     serializedVersion: 2
@@ -257,7 +257,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.734375
+  orthographic size: 2.2109375
   m_Depth: -4
   m_CullingMask:
     serializedVersion: 2
@@ -293,7 +293,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.734375
+  orthographic size: 2.2109375
   m_Depth: -5
   m_CullingMask:
     serializedVersion: 2
@@ -329,7 +329,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.734375
+  orthographic size: 2.2109375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -404,7 +404,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 2048
   - ParallaxCamera: {fileID: 20706912132440196}
-    Speed: 0.2
+    Speed: 0.1
     LayerMask:
       serializedVersion: 2
       m_Bits: 4096

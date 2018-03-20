@@ -87,9 +87,9 @@ GameObject:
   - component: {fileID: 124222164319786762}
   - component: {fileID: 81988365275451166}
   - component: {fileID: 114025272208992600}
-  - component: {fileID: 114940525010384874}
   - component: {fileID: 114563898170286718}
   - component: {fileID: 114820459884664772}
+  - component: {fileID: 114364328526025356}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -186,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.6640625
+  orthographic size: 3.25
   m_Depth: -6
   m_CullingMask:
     serializedVersion: 2
@@ -222,7 +222,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.3515625
+  orthographic size: 3.25
   m_Depth: -3
   m_CullingMask:
     serializedVersion: 2
@@ -258,7 +258,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.1367188
+  orthographic size: 3.25
   m_Depth: -4
   m_CullingMask:
     serializedVersion: 2
@@ -294,7 +294,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.75
+  orthographic size: 3.25
   m_Depth: -5
   m_CullingMask:
     serializedVersion: 2
@@ -330,7 +330,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.5234375
+  orthographic size: 3.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -386,6 +386,27 @@ MonoBehaviour:
   IsCameraPositionTopBounded: 0
   IsCameraPositionBottomBounded: 0
   GameCamera: {fileID: 20873402111017532}
+--- !u!114 &114364328526025356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906546295357718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17577239430844efcbdda516df8c1f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pc2D: {fileID: 114025272208992600}
+  PixelsPerUnit: 64
+  ViewportAutoScale: 3
+  TargetViewportSizeInPixels: {x: 960, y: 540}
+  Zoom: 1
+  SnapMovementToGrid: 0
+  SnapCameraToGrid: 1
+  DrawGrid: 0
+  GridColor: {r: 1, g: 0, b: 0, a: 0.1}
+  GridDensity: 0
 --- !u!114 &114563898170286718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,27 +463,6 @@ MonoBehaviour:
   ConstantShakePresets: []
   StartConstantShakePreset: {fileID: 0}
   CurrentConstantShakePreset: {fileID: 0}
---- !u!114 &114940525010384874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1906546295357718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17577239430844efcbdda516df8c1f8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pc2D: {fileID: 114025272208992600}
-  PixelsPerUnit: 64
-  ViewportAutoScale: 3
-  TargetViewportSizeInPixels: {x: 960, y: 540}
-  Zoom: 1
-  SnapMovementToGrid: 0
-  SnapCameraToGrid: 1
-  DrawGrid: 0
-  GridColor: {r: 1, g: 0, b: 0, a: 0.1}
-  GridDensity: 0
 --- !u!124 &124222164319786762
 Behaviour:
   m_ObjectHideFlags: 1

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114608702857714784}
   - component: {fileID: 114220195842719002}
   - component: {fileID: 114673989706917450}
+  - component: {fileID: 114538265683677584}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -123,6 +124,20 @@ MonoBehaviour:
   gravity: -15
   runSpeed: 2.5
   jumpHeight: 2
+--- !u!114 &114538265683677584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163514643815792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e2c362b08b7d143a464a8be1752d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactIcon: {fileID: 0}
+  talkToNode: 
+  avatarImage: {fileID: 21300000, guid: 20eba43a1cd3fa14d9b34e99a04bba5c, type: 3}
 --- !u!114 &114608702857714784
 MonoBehaviour:
   m_ObjectHideFlags: 1

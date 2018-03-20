@@ -188,6 +188,7 @@ MonoBehaviour:
   interactIcon: {fileID: 1057438691925012}
   talkToNode: FinalHusband
   avatarImage: {fileID: 21300000, guid: 24959d3bb750d3d49a9808f3138465d6, type: 3}
+  displayName: Stranger
 --- !u!212 &212012912015498466
 SpriteRenderer:
   m_ObjectHideFlags: 1

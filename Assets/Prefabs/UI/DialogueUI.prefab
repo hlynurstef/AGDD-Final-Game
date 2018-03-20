@@ -386,7 +386,7 @@ MonoBehaviour:
   continuePrompt: {fileID: 1523627264661604}
   avatarImage: {fileID: 114549727876619172}
   displayName: {fileID: 114884765357703396}
-  textSpeed: 0.025
+  textSpeed: 0.015
   optionButtons:
   - {fileID: 114701523235546744}
   - {fileID: 114190638549704954}

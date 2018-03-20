@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Yarn.Unity;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -10,10 +11,9 @@ public class InventoryManager : MonoBehaviour
 
 	public static InventoryManager Instance = null;
 
-	[SerializeField]
+
 	public Dictionary<ItemType, int> inventory;							// The actual status of the players inventory, how much of what he has
 
-	[SerializeField]
 	public List<Image> inventoryIcons;
 
 	public List<InventoryItem> availableItems;
@@ -90,6 +90,7 @@ public class InventoryManager : MonoBehaviour
 		}
 		return false;
 	}
+
 
 	public void UpdateUIElement(ItemType type)
 	{

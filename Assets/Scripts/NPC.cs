@@ -34,6 +34,38 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
+	[YarnCommand("take")]
+	public void TakePlayerItems(string type, string count)
+	{
+		ItemType concreteType;
+		int concreteCount = int.Parse(count);
+		foreach(ItemType itemType in ItemType.GetValues(typeof(ItemType)))
+		{
+			if (type == itemType.ToString())
+			{
+				concreteType = itemType;
+				InventoryManager.Instance.RemoveItem(concreteType, concreteCount);
+				return;
+			}
+		}
+	}
+
+	[YarnCommand("give")]
+	public void GivePlayerItems(string type, string count)
+	{
+		ItemType concreteType;
+		int concreteCount = int.Parse(count);
+		foreach(ItemType itemType in ItemType.GetValues(typeof(ItemType)))
+		{
+			if (type == itemType.ToString())
+			{
+				concreteType = itemType;
+				InventoryManager.Instance.AddItem(concreteType, concreteCount);
+				return;
+			}
+		}
+	}
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player") == true)

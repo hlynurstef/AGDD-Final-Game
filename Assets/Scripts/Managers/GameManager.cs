@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance = null;
     private Transform forestStairs;
+    public bool playerFrozen = false;
 
     void Awake()
     {
@@ -32,9 +33,11 @@ public class GameManager : MonoBehaviour
     [YarnCommand("build_stairs")]
     public void AnimateStairs()
     {
+        playerFrozen = true;
         ProCamera2DShake.Instance.Shake(0);
         Sequence mySeq = DOTween.Sequence();
         mySeq.Append(forestStairs.DOMoveY(0, 5, false));
         mySeq.Insert(0, forestStairs.DOShakePosition(mySeq.Duration(), 0.1f, 100, 90, false, true));
+        mySeq.OnComplete(() => { this.playerFrozen = false; });
     }
 }

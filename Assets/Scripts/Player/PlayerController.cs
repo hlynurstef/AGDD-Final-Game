@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Remove all player control when we're in dialogue
-        if (dialogueRunner.isDialogueRunning == true)
+        if (dialogueRunner.isDialogueRunning == true || GameManager.Instance.playerFrozen == true)
         {
             return;
         }

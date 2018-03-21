@@ -186,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.25
+  orthographic size: 3.9125
   m_Depth: -6
   m_CullingMask:
     serializedVersion: 2
@@ -222,7 +222,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.2125
+  orthographic size: 3.9125
   m_Depth: -3
   m_CullingMask:
     serializedVersion: 2
@@ -258,7 +258,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.2242188
+  orthographic size: 3.9125
   m_Depth: -4
   m_CullingMask:
     serializedVersion: 2
@@ -294,7 +294,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.2453125
+  orthographic size: 3.9125
   m_Depth: -5
   m_CullingMask:
     serializedVersion: 2
@@ -330,7 +330,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.203125
+  orthographic size: 3.9125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pc2D: {fileID: 114025272208992600}
-  PixelsPerUnit: 64
+  PixelsPerUnit: 80
   ViewportAutoScale: 3
   TargetViewportSizeInPixels: {x: 960, y: 540}
   Zoom: 1

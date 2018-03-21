@@ -1,0 +1,16 @@
+title: Container
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+<<if $wood_amount < 5>>
+    This container appears to have some wood inside
+    -> Take it
+        <<take Container all>>
+        I took the wood from the container
+    -> Leave
+<<else>>
+    The container is empty
+<<endif>>
+===

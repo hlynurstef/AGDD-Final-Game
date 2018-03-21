@@ -159,6 +159,7 @@ MonoBehaviour:
   count: 5
   type: 0
   selectE: {fileID: 1848394588883080}
+  interactNode: Container
 --- !u!212 &212320974038362186
 SpriteRenderer:
   m_ObjectHideFlags: 1

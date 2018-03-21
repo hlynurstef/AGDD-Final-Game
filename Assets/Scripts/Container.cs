@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 /// <summary>
 /// This class represents the containers in the world
@@ -13,6 +14,7 @@ public class Container : MonoBehaviour, IInteractable
     public ItemType type;                   // The type of resources stored in this container. There can only be one type per container. 
     private int capacity = 15;                  // The maximum amount of resources this container can carry, possibly upgradable by talking to people
     public GameObject selectE;
+    public string interactNode;
 
 
     void Update()
@@ -42,12 +44,25 @@ public class Container : MonoBehaviour, IInteractable
     /// </summary>
     public void Interact()
     {
-        // TODO: Remove print statement when we are sure everything works as intended
-        print("This container has: " + count + " " + type);
-        // TODO: Talk to the inventory manager, let him know you now have a bunch of new stuff like wood and sjitz
-        // The function call could like something like this:
-        InventoryManager.Instance.AddItem(type, count);
-        count = 0;
+        // Start dialog if talkToNode is not null or empty
+        if (string.IsNullOrEmpty(interactNode) == false)
+        {
+            FindObjectOfType<DialogueRunner>().StartDialogue(interactNode);
+        }
+    }
+
+    [YarnCommand("take")]
+    public void Take(string amount)
+    {
+        if (amount.ToLower().Equals("all"))
+        {
+            // TODO: Remove print statement when we are sure everything works as intended
+            print("This container has: " + count + " " + type);
+            // TODO: Talk to the inventory manager, let him know you now have a bunch of new stuff like wood and sjitz
+            // The function call could like something like this:
+            InventoryManager.Instance.AddItem(type, count);
+            count = 0;
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {

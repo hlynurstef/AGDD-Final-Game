@@ -12,7 +12,7 @@ public class Container : MonoBehaviour, IInteractable
     public int count;                           // The amount of resources inside the container at any given time
     public ItemType type;                   // The type of resources stored in this container. There can only be one type per container. 
     private int capacity = 15;                  // The maximum amount of resources this container can carry, possibly upgradable by talking to people
-
+    public GameObject selectE;
 
 
     void Update()
@@ -55,6 +55,7 @@ public class Container : MonoBehaviour, IInteractable
         {
             // TODO: Show interact button icon here or do it from the player script ? 
             other.gameObject.GetComponent<PlayerController>().SetInteractable(this);
+            selectE.SetActive(true);
         }
     }
 
@@ -64,6 +65,7 @@ public class Container : MonoBehaviour, IInteractable
         {
             // TODO: Hide interact button icon here
             other.gameObject.GetComponent<PlayerController>().SetInteractable(null);
+            selectE.SetActive(false);
         }
     }
 }

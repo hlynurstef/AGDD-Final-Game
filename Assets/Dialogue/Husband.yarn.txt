@@ -22,7 +22,7 @@ position: 503,-77
     -> This doesn't look like a tower
     	<<set_avatar Husband>>
     	Things are not as they seem, I will help you through this. All we need are materials to help us get higher.
-    Do you see that box of wood behind you? You left it here the last time you tried to escape, before it took you back.
+    Do you see that box of wood behind me? You left it here the last time you tried to escape, before it took you back.
     It contains just enough materials to build the staircase to the next floor. Bring them to me, please.
 <<elseif $husband_done is true>>
 	I've done all I can to help you for now. All you need to do is proceed to the next floor.

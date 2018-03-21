@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private float runSpeed = 8.0f;
     [SerializeField]
     private float jumpHeight = 3.0f;
+    [SerializeField]
+    private float fallMultiplier = 2.5f;
+    [SerializeField]
+    private float lowJumpMultiplier = 2.0f;
 
     private Player rewiredPlayer;
     private CharacterController2D controller;
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
         velocity.x = rewiredPlayer.GetAxis("MoveHorizontal") * runSpeed;
         // TODO: implement better jumping ( https://www.youtube.com/watch?v=hG9SzQxaCm8 )
         velocity.y = rewiredPlayer.GetButtonDown("Jump") && controller.isGrounded ? Mathf.Sqrt(2.0f * jumpHeight * -gravity) : velocity.y;
+        // velocity.y = rewiredPlayer.GetButtonDown("Jump") && controller.isGrounded ? jumpHeight : velocity.y;
 
         if (rewiredPlayer.GetButtonDown("Interact"))
         {
@@ -84,6 +89,15 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         velocity.y += gravity * Time.deltaTime;
+
+        if (velocity.y < 0)
+        {
+            velocity.y += gravity * fallMultiplier * Time.deltaTime;
+        }
+        else if (velocity.y > 0 && !rewiredPlayer.GetButton("Jump"))
+        {
+            velocity.y += gravity * lowJumpMultiplier * Time.deltaTime;
+        }
 
         velocity *= Time.deltaTime;
 

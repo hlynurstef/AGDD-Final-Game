@@ -122,7 +122,9 @@ MonoBehaviour:
   rewiredPlayerId: 0
   gravity: -15
   runSpeed: 2.5
-  jumpHeight: 2
+  jumpHeight: 1.5
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!114 &114538265683677584
 MonoBehaviour:
   m_ObjectHideFlags: 1

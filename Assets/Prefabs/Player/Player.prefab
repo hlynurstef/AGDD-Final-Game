@@ -122,6 +122,7 @@ MonoBehaviour:
   rewiredPlayerId: 0
   gravity: -15
   runSpeed: 2.5
+  sprintSpeed: 4.5
   jumpHeight: 1.5
   fallMultiplier: 2.5
   lowJumpMultiplier: 2

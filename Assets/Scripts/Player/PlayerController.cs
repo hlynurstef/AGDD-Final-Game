@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void Interact()
     {
-        if (interactable != null)
+        if (interactable != null && controller.isGrounded == true)
         {
             interactable.Interact();
             velocity.x = 0;

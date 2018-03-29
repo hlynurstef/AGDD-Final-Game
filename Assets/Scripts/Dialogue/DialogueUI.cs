@@ -161,7 +161,7 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
         // Wait for user input
         // Wait a little bit so that input is not detected at the same time as the interrupt
         yield return new WaitForSeconds(0.02f);
-        while (rewiredPlayer.GetButtonDown("Interact") == false)
+        while (rewiredPlayer.GetButtonDown("UISubmit") == false)
         {
             yield return null;
         }
@@ -178,7 +178,7 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
         // Wait a little bit so that input is not detected at the same time as the continue
         yield return new WaitForSeconds(0.02f);
-        while (rewiredPlayer.GetButtonDown("Interact") == false)
+        while (rewiredPlayer.GetButtonDown("UISubmit") == false)
         {
             yield return null;
         }

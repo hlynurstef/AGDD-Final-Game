@@ -2,24 +2,26 @@
 
 namespace Com.LuisPedroFonseca.ProCamera2D
 {
-    #if UNITY_5_3_OR_NEWER
+#if UNITY_5_3_OR_NEWER
     [HelpURLAttribute("http://www.procamera2d.com/user-guide/extension-pixel-perfect/")]
-    #endif
+#endif
     [ExecuteInEditMode]
     public class ProCamera2DPixelPerfectSprite : BasePC2D, IPostMover
     {
         public bool IsAMovingObject;
         public bool IsAChildSprite;
         public Vector2 LocalPosition;
+        [SerializeField]
+        public int pixelsPerUnit;
 
         [Range(-8, 32)]
         public int SpriteScale = 0;
 
-        Sprite _sprite;
+        // Sprite _sprite;
 
-        #if PC2D_TK2D_SUPPORT
+#if PC2D_TK2D_SUPPORT
         tk2dSprite _spriteTk2d;
-        #endif
+#endif
 
         ProCamera2DPixelPerfect _pixelPerfectPlugin;
 
@@ -53,7 +55,7 @@ namespace Com.LuisPedroFonseca.ProCamera2D
 
         public void PostMove(float deltaTime)
         {
-            if(enabled)
+            if (enabled)
                 Step();
         }
 
@@ -63,17 +65,17 @@ namespace Com.LuisPedroFonseca.ProCamera2D
 
         #endregion
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         void LateUpdate()
         {
-            if(enabled && !Application.isPlaying && !IsAMovingObject)
+            if (enabled && !Application.isPlaying && !IsAMovingObject)
                 SetAsPixelPerfect();
-                
-            if(!Application.isPlaying)
+
+            if (!Application.isPlaying)
                 Step();
         }
-        #endif
-        
+#endif
+
         void Step()
         {
             if (_pixelPerfectPlugin == null || !_pixelPerfectPlugin.enabled)
@@ -88,51 +90,51 @@ namespace Com.LuisPedroFonseca.ProCamera2D
         void GetPixelPerfectPlugin()
         {
             _pixelPerfectPlugin = ProCamera2D.GetComponent<ProCamera2DPixelPerfect>();
-            
-            #if UNITY_EDITOR
-            if(_pixelPerfectPlugin == null)
+
+#if UNITY_EDITOR
+            if (_pixelPerfectPlugin == null)
                 Debug.LogWarning("PixelPerfect extension not present. Please add it to the ProCamera2D core.");
-            #endif
+#endif
         }
 
         void GetSprite()
         {
-            var spriteRenderer = GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
-                _sprite = spriteRenderer.sprite;
+            // var spriteRenderer = GetComponent<SpriteRenderer>();
+            // if (spriteRenderer != null)
+            //     _sprite = spriteRenderer.sprite;
 
-            #if PC2D_TK2D_SUPPORT
+#if PC2D_TK2D_SUPPORT
             if (_sprite == null)
                 _spriteTk2d = GetComponent<tk2dSprite>();
-            #endif
+#endif
         }
 
         public void SetAsPixelPerfect()
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             if (Vector3H == null)
                 base.Awake();
 
-            if (_sprite == null)
-                GetSprite();
+            // if (_sprite == null)
+            //     GetSprite();
 
             if (_pixelPerfectPlugin == null)
                 GetPixelPerfectPlugin();
 
-            if (Vector3H == null || _sprite == null || _pixelPerfectPlugin == null)
+            if (Vector3H == null || /*_sprite == null || */_pixelPerfectPlugin == null)
                 return;
-            #endif
+#endif
 
             // Reset position
             if (IsAChildSprite)
                 _transform.localPosition = VectorHVD(
-                    Utils.AlignToGrid(LocalPosition.x, _pixelPerfectPlugin.PixelStep), 
-                    Utils.AlignToGrid(LocalPosition.y, _pixelPerfectPlugin.PixelStep), 
+                    Utils.AlignToGrid(LocalPosition.x, _pixelPerfectPlugin.PixelStep),
+                    Utils.AlignToGrid(LocalPosition.y, _pixelPerfectPlugin.PixelStep),
                     Vector3D(_transform.localPosition));
 
             // Position
             _transform.position = VectorHVD(
-                Utils.AlignToGrid(Vector3H(_transform.position), _pixelPerfectPlugin.PixelStep), 
+                Utils.AlignToGrid(Vector3H(_transform.position), _pixelPerfectPlugin.PixelStep),
                 Utils.AlignToGrid(Vector3V(_transform.position), _pixelPerfectPlugin.PixelStep),
                 Vector3D(_transform.position));
 
@@ -151,24 +153,24 @@ namespace Com.LuisPedroFonseca.ProCamera2D
                 var adjustedSpriteScale = SpriteScale < 0 ? 1f / (float)SpriteScale * -1f : SpriteScale;
                 var scale = 1f;
 
-                #if PC2D_TK2D_SUPPORT
+#if PC2D_TK2D_SUPPORT
                 if (_spriteTk2d != null)
                 {
                     scale = _pixelPerfectPlugin.Tk2DPixelsPerMeter * adjustedSpriteScale * (1 / _pixelPerfectPlugin.PixelsPerUnit);
                 }
                 else
                 {
-                #endif
+#endif
 
-                    scale = _sprite.pixelsPerUnit * adjustedSpriteScale * (1 / _pixelPerfectPlugin.PixelsPerUnit);
+                scale = pixelsPerUnit * adjustedSpriteScale * (1 / _pixelPerfectPlugin.PixelsPerUnit);
 
-                    #if PC2D_TK2D_SUPPORT
+#if PC2D_TK2D_SUPPORT
                 }
-                    #endif
+#endif
 
                 _transform.localScale = new Vector3(
-                    Mathf.Sign(_transform.localScale.x) * scale, 
-                    Mathf.Sign(_transform.localScale.y) * scale, 
+                    Mathf.Sign(_transform.localScale.x) * scale,
+                    Mathf.Sign(_transform.localScale.y) * scale,
                     _transform.localScale.z);
             }
         }
@@ -177,7 +179,7 @@ namespace Com.LuisPedroFonseca.ProCamera2D
         {
             base.OnDestroy();
 
-            if(ProCamera2D != null)
+            if (ProCamera2D != null)
                 ProCamera2D.RemovePostMover(this);
         }
     }

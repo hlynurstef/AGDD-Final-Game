@@ -13,7 +13,7 @@ namespace Com.LuisPedroFonseca.ProCamera2D
         void OnEnable()
         {
             var proCamera2DPixelPerfectSprite = (ProCamera2DPixelPerfectSprite)target;
-            
+
             _script = MonoScript.FromMonoBehaviour(proCamera2DPixelPerfectSprite);
         }
 
@@ -29,22 +29,22 @@ namespace Com.LuisPedroFonseca.ProCamera2D
 
             // No sprite found
             var hasSprite = false;
-            #if PC2D_TK2D_SUPPORT
+#if PC2D_TK2D_SUPPORT
             if (proCamera2DPixelPerfectSprite.GetComponent<tk2dBaseSprite>() != null)
             {
                 hasSprite = true;
             }
             else
             {
-                #endif
-                if (proCamera2DPixelPerfectSprite.GetComponent<SpriteRenderer>() != null)
-                    hasSprite = true;
-                #if PC2D_TK2D_SUPPORT
+#endif
+            if (proCamera2DPixelPerfectSprite.GetComponent<SpriteRenderer>() != null)
+                hasSprite = true;
+#if PC2D_TK2D_SUPPORT
             }
-            #endif
-            
-            if (!hasSprite)
-                EditorGUILayout.HelpBox("This component needs a Sprite renderer on the same GameObject!", MessageType.Error, true);
+#endif
+
+            // if (!hasSprite)
+            //     EditorGUILayout.HelpBox("This component needs a Sprite renderer on the same GameObject!", MessageType.Error, true);
 
 
             // Rigidbody, collider, character controller warning
@@ -95,6 +95,10 @@ namespace Com.LuisPedroFonseca.ProCamera2D
 
                 EditorGUILayout.EndHorizontal();
             }
+
+            // Pixels Per Unit
+            _tooltip = new GUIContent("Pixels Per Unit", "Pixels Per Unit");
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("pixelsPerUnit"), _tooltip);
 
             // Pixel Scale
             _tooltip = new GUIContent("Sprite Scale", "The scale of this sprite");

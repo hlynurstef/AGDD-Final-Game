@@ -137,7 +137,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (type == availableItems[i].type)
             {
-                newSprite = availableItems[i].item;
+                newSprite = availableItems[i].itemSprite;
                 break;
             }
         }

@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private IInteractable interactable;
     private Vector3 velocity = Vector3.zero;
     private DialogueRunner dialogueRunner;
+    public Stairs stairs;
 
     void Awake()
     {
@@ -86,7 +87,14 @@ public class PlayerController : MonoBehaviour
             Interact();
         }
 
-
+        if (stairs != null)
+        {
+            if (rewiredPlayer.GetAxis("MoveVertical") != 0.0f)
+            {
+                velocity.y = rewiredPlayer.GetAxis("MoveVertical");
+                velocity.y *= (rewiredPlayer.GetButton("Sprint") == true) ? sprintSpeed : runSpeed;
+            }
+        }
     }
 
     private void Move()
@@ -126,6 +134,11 @@ public class PlayerController : MonoBehaviour
     public void SetInteractable(IInteractable newInteractable)
     {
         interactable = newInteractable;
+    }
+
+    public void SetStairs(Stairs stairs)
+    {
+        this.stairs = stairs;
     }
 
     /// <summary>

@@ -49,19 +49,17 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        //dialogueRunner = FindObjectOfType<DialogueRunner>();
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Remove all player control when we're in dialogue
-        /*
         if (dialogueRunner.isDialogueRunning == true || GameManager.Instance.playerFrozen == true)
         {
             return;
         }
-        */
 
         // grab our current velocity to use as a base for all calculations
         velocity = controller.velocity;

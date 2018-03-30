@@ -18,7 +18,7 @@ TagManager:
   - Container
   - Player
   - Background
-  - Sky
+  - Walls
   - ForestBack
   - ForestMiddle
   - ForestFront
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: ForestStairs
     uniqueID: 1484293291
+    locked: 0
+  - name: Wall
+    uniqueID: 167461195
     locked: 0
   - name: Ground
     uniqueID: 2069082531

@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 50390121887758978}
   - component: {fileID: 66887472645578402}
   - component: {fileID: 114279154734024836}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,19 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 2113883506118312150}
     m_ColliderPaths:
-    - - X: -190000000
+    - - X: -210000000
+        Y: 20000000
+      - X: -210000000
+        Y: -20000000
+      - X: -170000000
+        Y: -20000000
+      - X: -170000000
+        Y: -1875000
+      - X: -180000000
+        Y: -1875000
+      - X: -180000000
+        Y: 8125000
+      - X: -190000000
         Y: 8125000
       - X: -190000000
         Y: 18125000
@@ -904,18 +916,6 @@ CompositeCollider2D:
         Y: 18125000
       - X: -200000000
         Y: 20000000
-      - X: -210000000
-        Y: 20000000
-      - X: -210000000
-        Y: -20000000
-      - X: -170000000
-        Y: -20000000
-      - X: -170000000
-        Y: -1875000
-      - X: -180000000
-        Y: -1875000
-      - X: -180000000
-        Y: 8125000
   m_CompositePaths:
     m_Paths:
     - - {x: -17, y: -0.1875}

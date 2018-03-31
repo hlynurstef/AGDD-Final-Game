@@ -52,3 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerFrozen: 0
+  DarkMap: {fileID: 0}
+  BlurredMap: {fileID: 0}
+  BackgroundMap: {fileID: 0}
+  DarkTile: {fileID: 11400000, guid: 8ec1c000526f608439418c8fcef9e6ac, type: 2}
+  BlurredTile: {fileID: 11400000, guid: 81f1364398998684d9a3bd26aae262a9, type: 2}

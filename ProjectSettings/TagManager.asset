@@ -46,14 +46,17 @@ TagManager:
   - name: Forest
     uniqueID: 3463846521
     locked: 0
-  - name: ForestStairs
-    uniqueID: 1484293291
-    locked: 0
   - name: Wall
     uniqueID: 167461195
     locked: 0
+  - name: ForestStairs
+    uniqueID: 1484293291
+    locked: 0
   - name: Ground
     uniqueID: 2069082531
+    locked: 0
+  - name: Stairs
+    uniqueID: 576172763
     locked: 0
   - name: Characters
     uniqueID: 1421256787

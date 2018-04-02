@@ -7,7 +7,6 @@ using Yarn.Unity;
 
 public class PlayerController : MonoBehaviour
 {
-
     [Header("Rewired settings")]
     [SerializeField]
     private int rewiredPlayerId;
@@ -30,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController2D controller;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private IInteractable interactable;
+    private InteractableBase interactable;
     private Vector3 velocity = Vector3.zero;
     private DialogueRunner dialogueRunner;
     public Stairs stairs;
@@ -43,16 +42,11 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
     void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Remove all player control when we're in dialogue
@@ -131,7 +125,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isWalking", velocity.x != 0.0f);
     }
 
-    public void SetInteractable(IInteractable newInteractable)
+    public void SetInteractable(InteractableBase newInteractable)
     {
         interactable = newInteractable;
     }

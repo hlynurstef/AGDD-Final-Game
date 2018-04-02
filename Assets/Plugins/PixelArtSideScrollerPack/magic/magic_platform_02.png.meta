@@ -90,7 +90,11 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-    physicsShape: []
+    physicsShape:
+    - - {x: -32, y: 8}
+      - {x: -32, y: 7}
+      - {x: 32, y: 7}
+      - {x: 32, y: 8}
   spritePackingTag: 
   userData: 
   assetBundleName: 

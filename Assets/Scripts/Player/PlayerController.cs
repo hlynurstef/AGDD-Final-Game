@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private InteractableBase interactable;
     private Vector3 velocity = Vector3.zero;
     private DialogueRunner dialogueRunner;
-    public Stairs stairs;
+    public Stairs stairs;   // FIXME: shouldn't this be private?
 
     void Awake()
     {
@@ -75,6 +75,14 @@ public class PlayerController : MonoBehaviour
         // TODO: implement better jumping ( https://www.youtube.com/watch?v=hG9SzQxaCm8 )
         velocity.y = rewiredPlayer.GetButtonDown("Jump") && controller.isGrounded ? Mathf.Sqrt(2.0f * jumpHeight * -gravity) : velocity.y;
         // velocity.y = rewiredPlayer.GetButtonDown("Jump") && controller.isGrounded ? jumpHeight : velocity.y;
+
+        // if holding down we turn off one way platform detection for a frame and set velocity.y to a negative number
+        // this lets us jump down through one way platforms
+        if (rewiredPlayer.GetButton("Jump") && controller.isGrounded && rewiredPlayer.GetAxisRaw("MoveVertical") == -1)
+        {
+            velocity.y = -0.1f;
+            controller.ignoreOneWayPlatformsThisFrame = true;
+        }
 
         if (rewiredPlayer.GetButtonDown("Interact"))
         {

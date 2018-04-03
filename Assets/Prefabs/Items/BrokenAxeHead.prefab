@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114699804586692768}
   - component: {fileID: 61890292030797390}
   m_Layer: 20
-  m_Name: Broken Axe Head
+  m_Name: BrokenAxeHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

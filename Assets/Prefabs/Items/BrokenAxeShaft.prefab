@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 114991927387559804}
   - component: {fileID: 61871331440587608}
   m_Layer: 20
-  m_Name: Broken Axe Shaft
+  m_Name: BrokenAxeShaft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

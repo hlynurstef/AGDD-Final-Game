@@ -9671,16 +9671,6 @@ Prefab:
       propertyPath: _pc2D
       value: 
       objectReference: {fileID: 1160873667}
-    - target: {fileID: 82650348778887136, guid: 6ac81151e78aef74ea48e36fb2983825,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114062414380577540, guid: 6ac81151e78aef74ea48e36fb2983825,
-        type: 2}
-      propertyPath: triggerMask.m_Bits
-      value: 852224
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac81151e78aef74ea48e36fb2983825, type: 2}
   m_IsPrefabParent: 0

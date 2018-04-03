@@ -62,7 +62,9 @@ position: 503,-77
 ---
 <<if visited("ForestHusband") is false>>
   <<set_avatar ForestHusband>>
-  I'm afraid I used up all of the wood building that staircase and we're not nearly at the top. Take a look around and see if you find anything.
+  I'm afraid I used up all of the wood building that staircase and we're not nearly at the top.
+  I will need 10 more wood to build an elevator for you.
+  Take a look around and see if you find anything.
 <<elseif $wood_amount >= 10>>
   <<set_avatar ForestHusband>>
   You got more wood, fantastic. We should keep going then.

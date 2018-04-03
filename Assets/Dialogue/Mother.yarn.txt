@@ -9,6 +9,8 @@ position: 536,61
   <<set_avatar Player>>
   ->Something interesting
   ->Something interesting
+  <<set_avatar Blacksmith>>
+  Great
   <<if $broken_axe >= 1>>
     <<set_avatar Blacksmith>>
     Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
@@ -24,16 +26,25 @@ position: 536,61
     ->I guess so
     ->All right sonny! Let's git at it eyh!
     <<set_avatar Blacksmith>>
-    What do they call a quarter pounder with cheese in france?
-    <<set_avatar Player>>
-    ->Quart de livre du fromage
-    ->Le Quart Pound
-    ->Royale with cheese
-      <<set_avatar Blacksmith>>
-      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed.
-      After all idle hands are the devils plaything, am I right?
-    ->Mac Fromage De Pund
+    Yayaya [[All right sonny! Let's git at it eyh!|Blacksmith.PulpFictionRiddle]]
+  <<endif>>
 <<else>>
-    Lovely to see you again deary.
+  Lovely to see you again deary.
+  <<if visited("ToyMaster") is true>>
+    <<set_avatar Player>>
+    ->I need to get some crystals but I cant mine them myself, can you help?
+    ->Can I lend your tools to mine some crystal?
+    <<set_avatar Blacksmith>>
+    I suppose I can lend ya some tools but as you know I like me puzzles.
+    <<set_avatar Player>>
+    Alright, what do you want to do now?
+  <<endif>>
 <<endif>>
+===
+
+
+title: Blacksmith.PulpFictionRiddle
+---
+<<set_avatar Player>>
+YOURE HERE MAN
 ===

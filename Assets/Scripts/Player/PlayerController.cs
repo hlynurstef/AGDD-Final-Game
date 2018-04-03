@@ -226,6 +226,10 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
+        if (animator.GetBool("isWalking") && !animator.GetBool("onLadder") && !AudioManager.instance.IsPlaying("PlayerWalk")) {
+            AudioManager.instance.Play("PlayerWalk");
+        }
+
         animator.SetBool("isWalking", velocity.x != 0.0f);
         animator.SetBool("onLadder", isClimbingLadder);
 

@@ -4,15 +4,24 @@ using UnityEngine;
 using DG.Tweening;
 public class Boat : MonoBehaviour 
 {
-	public Transform leftSide;
-	public Transform rightSide;
-
-	public Transform currentSide;
-	public Transform boatTransform;
+	[SerializeField]
+	private Transform leftSide;
+	[SerializeField]
+	private Transform rightSide;
+	[SerializeField]
+	private Transform currentSide;
+	[SerializeField]
+	private Transform boatTransform;
+	[SerializeField]
+	private Collider2D leftCollider;
+	[SerializeField]
+	private Collider2D rightCollider;
 
 	private void Start()
 	{
 		currentSide = leftSide;
+		leftCollider.enabled = (currentSide == leftSide) ? false : true;
+		rightCollider.enabled = (currentSide == rightSide) ? false : true;
 	}
 	private void OnTriggerEnter2D(Collider2D other) 
 	{
@@ -24,8 +33,12 @@ public class Boat : MonoBehaviour
 			Transform targetSide = (currentSide == rightSide) ? leftSide : rightSide;
 			mySeq.Append(boatTransform.DOMove(targetSide.position, 10, false));
 			mySeq.PrependInterval(1.0f);
-			mySeq.OnComplete(() => { currentSide = targetSide; });
-		}	
+			mySeq.OnComplete(() => { 
+				currentSide = targetSide; 
+				leftCollider.enabled = (currentSide == leftSide) ? false : true;
+				rightCollider.enabled = (currentSide == rightSide) ? false : true;
+			});
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other) 

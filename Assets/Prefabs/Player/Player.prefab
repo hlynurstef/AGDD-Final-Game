@@ -202,13 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541f99dbde0944d4b8cc3b5de36b7f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewiredPlayerId: 0
-  gravity: -15
-  runSpeed: 2.5
-  sprintSpeed: 4.5
-  jumpHeight: 1.5
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  gravity: -17.5
+  walkSpeed: 2
+  sprintSpeed: 3.25
+  ladderClimbSpeed: 1.5
+  jumpHeight: 1.25
 --- !u!114 &114062414380577540
 MonoBehaviour:
   m_ObjectHideFlags: 1

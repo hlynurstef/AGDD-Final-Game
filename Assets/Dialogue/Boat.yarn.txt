@@ -1,0 +1,11 @@
+title: Boat
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+It's a boat!
+-> Sail away
+    <<sail Boat all>>
+-> Abandon ship.
+===

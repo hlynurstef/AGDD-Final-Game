@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public Tile DarkTile;
     public Tile BlurredTile;
 
+    public GameObject Player;
+
     void Awake()
     {
         // Singleton pattern
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         // If it looks stupid but it works, it ain't stupid!
         forestStairs = GameObject.FindWithTag("Stairs 1").transform;
 

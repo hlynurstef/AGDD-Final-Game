@@ -1,0 +1,34 @@
+title: ToyMaster
+tags:
+colorID: 0
+position: 536,61
+---
+<<if visited("ToyMaster") is false>>
+	<<set_avatar ToyMaster>>
+  CRYSTAAAAALS! Look at all my CRYSTALS!
+  <<set_avatar Player>>
+  Hello?
+  <<set_avatar ToyMaster>>
+  Oh, hey who are you?
+  <<set_avatar Player>>
+  ->Who are YOU?
+    <<set_avatar ToyMaster>>
+    I'm the ghost of christmas past! I ASKED YOU FIRST!
+    <<set_avatar Player>>
+    I'm just trying to get out of here and the lever is broken.
+  ->I'm sorry to disturb you but I need to get out of here and the lever is broken
+    <<set_avatar ToyMaster>>
+    Welly nelly! Big gal looking to little gal for help. Maybe I can help, maybe I can't.
+    <<set_avatar Player>>
+    Yes I'm asking for help, are you willing or do I need to go somewhere else?
+  ->What crystals were you talking about?
+    <<set_avatar ToyMaster>>
+    Do you want them? YOU CANT HAVE THEM! I COLLECT THEM MYSELF! Buuuuuuut, and this is a big butt like yours hahaha, maybe you can get some for me?
+    <<set_avatar Player>>
+    ...if I find more crystals will you help me then?
+  <<set_avatar ToyMaster>>
+  I can help...I can...Can I? I'm a tinker and fixer so maybe I can fix you're broken lever. Get me some crystals and I'll try my best mmmmkay! CRYSTAL TIME!
+<<else>>
+WHERE ARE MY CRYSTALS???
+<<endif>>
+===

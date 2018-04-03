@@ -60,7 +60,7 @@ tags:
 colorID: 0
 position: 503,-77
 ---
-<<if visited("EntranceHusband") is false>>
+<<if visited("ForestHusband") is false>>
   <<set_avatar Husband>>
   I'm afraid I used up all of the wood building that staircase and we're not nearly at the top. Take a look around and see if you find anything.
 <<elseif $wood_amount >= 10>>

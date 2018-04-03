@@ -49,7 +49,6 @@ public class InventoryManager : MonoBehaviour
     /// <param name="count">The amount of item to be added; e.g. 5 wood</param>
     public void AddItem(ItemType type, int count)
     {
-        print(type + " " + count);
         if (inventory.ContainsKey(type) == true)
         {
             inventory[type] += count;
@@ -158,10 +157,8 @@ public class InventoryManager : MonoBehaviour
                 break;
             }
         }
-        print("should be adding wood");
         if (uiIndices.ContainsKey(type) == false)
         {
-            print("Adding wood");
             uiIndices.Add(type, index);
         }
     }

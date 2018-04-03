@@ -1,0 +1,11 @@
+title: Broken Axe Shaft
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+It's the Shaft of Betty!
+-> Pick up the shaft.
+    <<pickup BrokenAxeShaft BrokenShaft>>
+-> Leave it on the ground.
+===

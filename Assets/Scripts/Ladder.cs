@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stairs : MonoBehaviour {
+public class Ladder : MonoBehaviour
+{
 
-	// Use this for initialization
-	void OnTriggerEnter2D(Collider2D other)
+    // Use this for initialization
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player") == true)
         {
-            other.gameObject.GetComponent<PlayerController>().SetStairs(this);
+            other.gameObject.GetComponent<PlayerController>().SetLadder(this);
         }
     }
 
@@ -17,7 +18,7 @@ public class Stairs : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player") == true)
         {
-            other.gameObject.GetComponent<PlayerController>().SetStairs(null);
+            other.gameObject.GetComponent<PlayerController>().SetLadder(null);
         }
     }
 }

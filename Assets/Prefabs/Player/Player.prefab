@@ -127,7 +127,6 @@ MonoBehaviour:
   jumpHeight: 1.5
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
-  stairs: {fileID: 0}
 --- !u!114 &114062414380577540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +145,7 @@ MonoBehaviour:
     m_Bits: 32768
   triggerMask:
     serializedVersion: 2
-    m_Bits: 65792
+    m_Bits: 327936
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 131072

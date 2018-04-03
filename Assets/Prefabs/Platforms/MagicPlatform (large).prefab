@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212129355182612196}
   - component: {fileID: 68797625246211942}
   m_Layer: 17
-  m_Name: MagicPlatform (big)
+  m_Name: MagicPlatform (large)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

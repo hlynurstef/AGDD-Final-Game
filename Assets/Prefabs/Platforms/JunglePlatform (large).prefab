@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212622706142371724}
   - component: {fileID: 68838063215227324}
   m_Layer: 17
-  m_Name: JunglePlatform (big)
+  m_Name: JunglePlatform (large)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

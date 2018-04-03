@@ -25,7 +25,7 @@ TagManager:
   - Ground
   - NPC
   - OneWayPlatform
-  - 
+  - Ladder
   - 
   - 
   - 
@@ -57,6 +57,9 @@ TagManager:
     locked: 0
   - name: Stairs
     uniqueID: 576172763
+    locked: 0
+  - name: Platforms
+    uniqueID: 2073246589
     locked: 0
   - name: Characters
     uniqueID: 1421256787

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212865837188692054}
   - component: {fileID: 68455521645383292}
   m_Layer: 17
-  m_Name: BluePlatform (big)
+  m_Name: BluePlatform (large)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

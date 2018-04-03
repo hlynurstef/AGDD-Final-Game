@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212708789361089292}
   - component: {fileID: 68862435331318750}
   m_Layer: 17
-  m_Name: MinePlatform (small)
+  m_Name: MinePlatform (medium)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

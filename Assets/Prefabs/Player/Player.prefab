@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1171769339175968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5833335, y: -0.5104167, z: 0}
+  m_LocalPosition: {x: -2.5, y: -0.65625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -17.5
-  walkSpeed: 2
-  sprintSpeed: 3.25
-  ladderClimbSpeed: 1.5
+  walkSpeed: 1.5
+  sprintSpeed: 2.75
+  ladderClimbSpeed: 1.25
   jumpHeight: 1.25
 --- !u!114 &114062414380577540
 MonoBehaviour:

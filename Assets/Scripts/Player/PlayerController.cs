@@ -233,6 +233,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("isWalking", velocity.x != 0.0f);
         animator.SetBool("onLadder", isClimbingLadder);
+        animator.SetBool("isSprinting", movementState.isSprinting);
 
         if (isClimbingLadder)
         {

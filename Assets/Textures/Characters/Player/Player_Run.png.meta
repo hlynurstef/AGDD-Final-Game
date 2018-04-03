@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: eca60c1df1904094289c6b5fca355350
-timeCreated: 1522436476
+guid: 0bbe4a9427969374fa5f7880bcaf5e0c
+timeCreated: 1522772464
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Stairs_0
-    21300002: Stairs_1
-    21300004: Stairs_2
-    21300006: Stairs_3
-    21300008: Stairs_4
+    21300000: Player_Run_0
+    21300002: Player_Run_1
+    21300004: Player_Run_2
+    21300006: Player_Run_3
+    21300008: Player_Run_4
+    21300010: Player_Run_5
+    21300012: Player_Run_6
+    21300014: Player_Run_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -115,100 +118,116 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stairs_0
+      name: Player_Run_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 3}
-        - {x: -16, y: 3}
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Stairs_1
+      name: Player_Run_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -16, y: -3}
-        - {x: 16, y: -3}
-        - {x: 16, y: 3}
-        - {x: -16, y: 3}
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Stairs_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Stairs_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: 12}
-        - {x: 0, y: 12}
-        - {x: 0, y: 16}
-      - - {x: 0, y: -4}
-        - {x: 0, y: 0}
-        - {x: 16, y: 0}
-        - {x: 16, y: -4}
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Stairs_4
+      name: Player_Run_2
       rect:
         serializedVersion: 2
         x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_Run_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_Run_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_Run_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_Run_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -16, y: -15}
-        - {x: -15, y: -16}
-        - {x: -8, y: -16}
-        - {x: -8, y: -15}
-        - {x: -14, y: -9}
-        - {x: -16, y: -9}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_Run_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
     outline: []
     physicsShape: []

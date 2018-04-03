@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61180365271614838}
   - component: {fileID: 95655936189312306}
   - component: {fileID: 114546753482426956}
+  - component: {fileID: 114967820100702798}
   - component: {fileID: 114384168089923012}
   m_Layer: 16
   m_Name: Husband
@@ -113,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047058696549868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.375, y: -0.65625, z: 0}
+  m_LocalPosition: {x: -12.458334, y: -0.65625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4467890107828192}
@@ -204,10 +205,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e2c362b08b7d143a464a8be1752d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactIcon: {fileID: 1840516529181836}
-  talkToNode: Husband
-  avatarImage: {fileID: 21300000, guid: 24959d3bb750d3d49a9808f3138465d6, type: 3}
-  displayName: Stranger
+  _interactIcon: {fileID: 1840516529181836}
+  _interactNode: Husband
+--- !u!114 &114967820100702798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047058696549868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55bcc8dd64e71a9458a9419a52aa26cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _avatarImage: {fileID: 21300000, guid: 24959d3bb750d3d49a9808f3138465d6, type: 3}
+  _displayName: Stranger
 --- !u!212 &212308538036096124
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -240,7 +252,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1421256787
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ca91c5d056cc3b74e864be357b21b8ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -284,7 +296,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1421256787
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: ca91c5d056cc3b74e864be357b21b8ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -328,7 +340,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1421256787
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cbbc6c5f38cfa2f4ba490c918b4d5387, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

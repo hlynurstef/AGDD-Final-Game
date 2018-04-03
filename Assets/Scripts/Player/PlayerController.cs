@@ -32,19 +32,20 @@ public class PlayerController : MonoBehaviour
         public float moveHorizontal;
         public float moveVertical;
         public bool isJumping;
+        public bool jumpReleased;
         public bool isSprinting;
         public bool isInteracting;
 
         public void Reset()
         {
             moveHorizontal = moveVertical = 0.0f;
-            isJumping = isSprinting = isInteracting = false;
+            isJumping = isSprinting = isInteracting = jumpReleased = false;
         }
 
         public override string ToString()
         {
-            return string.Format("[MovementState] moveHorizontal: {0}, moveVertical: {1}, isJumping: {2}, isSprinting: {3}, isInteracting: {4}",
-                                 moveHorizontal, moveVertical, isJumping, isSprinting, isInteracting);
+            return string.Format("[MovementState] moveHorizontal: {0}, moveVertical: {1}, isJumping: {2}, jumpReleased: {3}, isSprinting: {4}, isInteracting: {5}",
+                                 moveHorizontal, moveVertical, isJumping, jumpReleased, isSprinting, isInteracting);
         }
     }
 
@@ -115,6 +116,7 @@ public class PlayerController : MonoBehaviour
         movementState.moveHorizontal = rewiredPlayer.GetAxis("MoveHorizontal");
         movementState.moveVertical = rewiredPlayer.GetAxis("MoveVertical");
         movementState.isJumping = rewiredPlayer.GetButtonDown("Jump");
+        movementState.jumpReleased = rewiredPlayer.GetButtonUp("Jump");
         movementState.isSprinting = rewiredPlayer.GetButton("Sprint");
         movementState.isInteracting = rewiredPlayer.GetButtonDown("Interact");
     }
@@ -131,6 +133,10 @@ public class PlayerController : MonoBehaviour
         if (movementState.isJumping && controller.isGrounded)
         {
             Jump();
+        }
+        else if (movementState.jumpReleased && !controller.isGrounded && velocity.y > 0.0f)
+        {
+            velocity.y *= 0.5f;
         }
 
         //// Interacting
@@ -160,7 +166,6 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(2.0f * jumpHeight * -gravity);
         }
-
     }
 
     private void ClimbLadder()
@@ -177,6 +182,7 @@ public class PlayerController : MonoBehaviour
         // Only execute this code if player is currently climbing ladder
         if (isClimbingLadder)
         {
+            // Move player up/down
             if (movementState.moveVertical != 0.0f)
             {
                 velocity.y = movementState.moveVertical;
@@ -200,11 +206,10 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyGravity()
     {
-        // Only apply gravity if not on ladder
-        if (!isClimbingLadder)
-        {
-            velocity.y += (gravity * Time.deltaTime);
-        }
+        // Early out if climbing ladder
+        if (isClimbingLadder) return;
+
+        velocity.y += (gravity * Time.deltaTime);
     }
 
     private void Move()

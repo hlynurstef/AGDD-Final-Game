@@ -72,7 +72,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void Start()
-    {
+	{
+		animator = GetComponent<Animator>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
 

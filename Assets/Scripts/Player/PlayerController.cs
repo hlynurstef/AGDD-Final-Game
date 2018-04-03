@@ -233,6 +233,12 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("movingHorizontal", velocity.x != 0.0f);
         animator.SetBool("isGrounded", controller.isGrounded);
+
+        if (animator.GetBool("movingHorizontal") && !animator.GetBool("onLadder") && !AudioManager.instance.IsPlaying("PlayerWalk"))
+        {
+            AudioManager.instance.Play("PlayerWalk");
+        }
+
         animator.SetBool("onLadder", isClimbingLadder);
         animator.SetBool("isSprinting", movementState.isSprinting);
         animator.SetFloat("yVelocity", velocity.y);

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212129355182612196}
   - component: {fileID: 68797625246211942}
   m_Layer: 17
-  m_Name: MagicPlatform (big)
+  m_Name: MagicPlatform (large)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2073246589
-  m_SortingLayer: -4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: df5e7aca4c974f142a15134b7ff8d62a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

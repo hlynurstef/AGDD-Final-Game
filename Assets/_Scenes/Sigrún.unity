@@ -799,22 +799,22 @@ Prefab:
     - target: {fileID: 224410063694171990, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 336.0309
+      value: 336.0345
       objectReference: {fileID: 0}
     - target: {fileID: 224410063694171990, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -95.979385
+      value: -95.96983
       objectReference: {fileID: 0}
     - target: {fileID: 224536621240152242, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 95.97937
+      value: 95.96985
       objectReference: {fileID: 0}
     - target: {fileID: 224536621240152242, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -95.979385
+      value: -95.96983
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49b0d7ce361cff54db4e6e9ba52110f6, type: 2}
@@ -1114,7 +1114,7 @@ Prefab:
     - target: {fileID: 20578242601999528, guid: 1f701fbe0f466184d8224e29db736e41,
         type: 2}
       propertyPath: orthographic size
-      value: 1.703125
+      value: 2.546875
       objectReference: {fileID: 0}
     - target: {fileID: 4308143911659228, guid: 1f701fbe0f466184d8224e29db736e41, type: 2}
       propertyPath: m_LocalScale.y
@@ -2124,6 +2124,11 @@ Prefab:
       propertyPath: _pc2D
       value: 
       objectReference: {fileID: 1160873667}
+    - target: {fileID: 82650348778887136, guid: 6ac81151e78aef74ea48e36fb2983825,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac81151e78aef74ea48e36fb2983825, type: 2}
   m_IsPrefabParent: 0

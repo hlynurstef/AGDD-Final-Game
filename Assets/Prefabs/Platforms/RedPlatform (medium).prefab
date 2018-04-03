@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212068818087561456}
   - component: {fileID: 68884359878944490}
   m_Layer: 17
-  m_Name: RedPlatform (small)
+  m_Name: RedPlatform (medium)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2073246589
-  m_SortingLayer: -4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cb0a5eb0114a8ef49b64ed3d99e32b50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

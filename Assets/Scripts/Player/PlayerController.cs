@@ -231,9 +231,11 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
-        animator.SetBool("isWalking", velocity.x != 0.0f);
+        animator.SetBool("movingHorizontal", velocity.x != 0.0f);
+        animator.SetBool("isGrounded", controller.isGrounded);
         animator.SetBool("onLadder", isClimbingLadder);
         animator.SetBool("isSprinting", movementState.isSprinting);
+        animator.SetFloat("yVelocity", velocity.y);
 
         if (isClimbingLadder)
         {

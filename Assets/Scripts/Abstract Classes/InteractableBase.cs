@@ -7,7 +7,7 @@ public class InteractableBase : MonoBehaviour
 {
     [Header("Interactable Settings")]
     [SerializeField, Tooltip("The GameObject to enable when player can interact with this container")]
-    private GameObject _interactIcon;
+    protected GameObject _interactIcon;
     [SerializeField, Tooltip("The Yarn node to play when interacting with this container")]
     private string _interactNode;
 

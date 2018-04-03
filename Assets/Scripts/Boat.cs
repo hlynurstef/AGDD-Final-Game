@@ -33,24 +33,23 @@ public class Boat : InteractableBase
 		// Enable colliders on both sides of boat to prevent player from walking into the water
 		leftCollider.enabled = true;
 		rightCollider.enabled = true;
-
-		// Set the boat as parent to the player so player moves with the boat
-		player.transform.parent = boatTransform;
-		player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
-
+		// Freeze player movement
+		GameManager.Instance.playerFrozen = true;
 		// Tween boat from one side to the other
+		_interactIcon.SetActive(false);
+
 		Sequence mySeq = DOTween.Sequence();
 		Transform targetSide = (currentSide == rightSide) ? leftSide : rightSide;
 		mySeq.Append(boatTransform.DOMove(targetSide.position, 10, false));
+		mySeq.Insert(0, player.transform.DOMove(targetSide.position, 10, false));
 		mySeq.PrependInterval(1.0f);
 		mySeq.OnComplete(() => { 
 			currentSide = targetSide;
 			// Disable the collider facing the dock so the player can leave the boat 
 			leftCollider.enabled = (currentSide == leftSide) ? false : true;
 			rightCollider.enabled = (currentSide == rightSide) ? false : true;
-			player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-			player.transform.parent = null;
+			GameManager.Instance.playerFrozen = false;
+			_interactIcon.SetActive(true);
 		});
     }
-
 }

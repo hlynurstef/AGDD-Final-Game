@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -17.5
-  walkSpeed: 2
-  sprintSpeed: 3.25
-  ladderClimbSpeed: 1.5
+  walkSpeed: 1.5
+  sprintSpeed: 2.75
+  ladderClimbSpeed: 1.25
   jumpHeight: 1.25
 --- !u!114 &114062414380577540
 MonoBehaviour:

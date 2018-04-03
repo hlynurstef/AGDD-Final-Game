@@ -3,54 +3,54 @@ tags:
 colorID: 0
 position: 503,-77
 ---
-<<set_avatar Husband>>
+<<set_avatar EntranceHusband>>
 <<if visited("EntranceHusband") is false>>
     Holy Cow!! I wasn't expecting.... where did you come from?!
     I don't mean to be rude I'm just surprised. You usually don't come back this fast.
     <<set_avatar Player>>
     What are you talking about?
-    <<set_avatar Husband>>
+    <<set_avatar EntranceHusband>>
     What am I talking about? You don't remember me? Oh boy this isn't good. The darkness is growing stronger inside you.
     <<set_avatar Player>>
     -> HOLD UP! Darkness? Inside me?
     -> ...
-    <<set_avatar Husband>>
+    <<set_avatar EntranceHusband>>
     The more time you spend here the more the darkness grows.
     <<set_avatar Player>>
     -> So I'm becoming weaker? I'm not dying here!
     -> So i'm being consumed by darkness...and you're smiling.
-      <<set_avatar Husband>>
+      <<set_avatar EntranceHusband>>
       If you lose hope you lose the battle, you taught me that.
       <<set_avatar Player>>
       -> So I'm becoming weaker? I'm not dying here!
-    <<set_avatar Husband>>
+    <<set_avatar EntranceHusband>>
     Do you see that box of wood behind me?  It's just enough to build the staircase to the next floor. Bring it to me, please.
 <<elseif $husband_done is true>>
 	I've done all I can to help you for now. All you need to do is proceed to the next floor.
 	<<set_avatar Player>>
 	->It doesn't look like you used any wood to build that staircase...
-		<<set_avatar Husband>>
+		<<set_avatar EntranceHusband>>
 		Looks can be deceiving
 	->Goodbye
-		<<set_avatar Husband>>
+		<<set_avatar EntranceHusband>>
 		Good luck
 <<else>>
     Did you grab the wood from the box?
     <<set_avatar Player>>
     -> Yes
     	<<if $wood_amount >= 5>>
-			<<set_avatar Husband>>
+			<<set_avatar EntranceHusband>>
 			That's great! I'll take the wood and build the staircase to the next floor.
-			<<take Husband wood 5>>
+			<<take EntranceHusband wood 5>>
 			<<build_stairs GameManager>>
 			Step back and watch out!
 			<<set $husband_done to true>>
 		<<else>>
-			<<set_avatar Husband>>
+			<<set_avatar EntranceHusband>>
 			Please, I'm not stupid...
 		<<endif>>
     -> No
-    	<<set_avatar Husband>>
+    	<<set_avatar EntranceHusband>>
     	Please bring me the wood from the box
 <<endif>>
 ===
@@ -61,34 +61,34 @@ colorID: 0
 position: 503,-77
 ---
 <<if visited("ForestHusband") is false>>
-  <<set_avatar Husband>>
+  <<set_avatar ForestHusband>>
   I'm afraid I used up all of the wood building that staircase and we're not nearly at the top. Take a look around and see if you find anything.
 <<elseif $wood_amount >= 10>>
-  <<set_avatar Husband>>
+  <<set_avatar ForestHusband>>
   You got more wood, fantastic. We should keep going then.
   <<set_avatar Player>>
   ->Let's keep going, I feel like I'm getting weaker.
   ->Wait I have some questions for you, do you mind?
-    <<set_avatar Husband>>
+    <<set_avatar ForestHusband>>
     We don't have much time but alright go ahead.
     <<set_avatar Player>>
     ->Who are you and why are you helping?
-      <<set_avatar Husband>>
+      <<set_avatar ForestHusband>>
       I just feel this purpose of helping you, I can't really explain it but you know when you've found your purpose? That's how I feel.
     ->Do you know the woodsman?
-      <<set_avatar Husband>>
+      <<set_avatar ForestHusband>>
       Yeah he's been around for as long as I can remember, old Jack.
     ->Do you know the blacksmith?
-      <<set_avatar Husband>>
+      <<set_avatar ForestHusband>>
       Blacksmith? She really likes puzzles. She and the woodsman really like each other.
     ->How long have we been doing this? From the beginning I mean.
-      <<set_avatar Husband>>
+      <<set_avatar ForestHusband>>
       I'm not sure. Time moves strangely in here.
-    <<set_avatar Husband>>
+    <<set_avatar ForestHusband>>
     Wait a minute, the elevator is not working and I swear their was a lever here somewhere but I haven't been able to find it.
     You need to look around for it.
 <<else>>
-  <<set_avatar Husband>>
+  <<set_avatar ForestHusband>>
   Let's keep going.
 <<endif>>
 ===
@@ -99,10 +99,10 @@ colorID: 0
 position: 503,-77
 ---
 <<if visited("LeverHusband") is false>>
-  <<set_avatar Husband>>
+  <<set_avatar LeverHusband>>
   This place doesn't want us to leave as you can see this lever is broken. You need to find someone to fix it, I'm afraid.
 <<else>>
-  <<set_avatar Husband>>
+  <<set_avatar LeverHusband>>
   We need to hurry up, darling.
 <<endif>>
 ===

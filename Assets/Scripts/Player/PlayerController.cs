@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     private InteractableBase interactable;
     private Vector3 velocity = Vector3.zero;
     private DialogueRunner dialogueRunner;
-    public Stairs stairs;   // FIXME: shouldn't this be private?
+    private Ladder ladder;
+    private bool isClimbingLadder = false;
 
     void Awake()
     {
@@ -89,28 +90,51 @@ public class PlayerController : MonoBehaviour
             Interact();
         }
 
-        if (stairs != null)
+        if (rewiredPlayer.GetAxisRaw("MoveVertical") == 1.0f ||
+            rewiredPlayer.GetAxisRaw("MoveVertical") == -1.0f)
+        {
+            // Grab the ladder if able
+            if (!isClimbingLadder && ladder != null)
+            {
+                isClimbingLadder = true;
+            }
+        }
+
+        // Only execute this code if player is currently climbing ladder
+        if (isClimbingLadder)
         {
             if (rewiredPlayer.GetAxis("MoveVertical") != 0.0f)
             {
                 velocity.y = rewiredPlayer.GetAxis("MoveVertical");
                 velocity.y *= (rewiredPlayer.GetButton("Sprint") == true) ? sprintSpeed : runSpeed;
             }
+
+            // Let go of ladder
+            if (rewiredPlayer.GetButtonDown("Interact") ||
+                rewiredPlayer.GetButtonDown("Jump") ||
+                controller.isGrounded)
+            {
+                isClimbingLadder = false;
+            }
         }
     }
 
     private void Move()
     {
-        velocity.y += gravity * Time.deltaTime;
+        // Only apply gravity if not on ladder
+        if (!isClimbingLadder)
+        {
+            velocity.y += gravity * Time.deltaTime;
+            if (velocity.y < 0)
+            {
+                velocity.y += gravity * fallMultiplier * Time.deltaTime;
+            }
+            else if (velocity.y > 0 && !rewiredPlayer.GetButton("Jump"))
+            {
+                velocity.y += gravity * lowJumpMultiplier * Time.deltaTime;
+            }
+        }
 
-        if (velocity.y < 0)
-        {
-            velocity.y += gravity * fallMultiplier * Time.deltaTime;
-        }
-        else if (velocity.y > 0 && !rewiredPlayer.GetButton("Jump"))
-        {
-            velocity.y += gravity * lowJumpMultiplier * Time.deltaTime;
-        }
 
         velocity *= Time.deltaTime;
 
@@ -131,6 +155,19 @@ public class PlayerController : MonoBehaviour
     private void Animate()
     {
         animator.SetBool("isWalking", velocity.x != 0.0f);
+        animator.SetBool("onLadder", isClimbingLadder);
+
+        if (isClimbingLadder)
+        {
+            // FIXME: This is a really hacky way to tweak the animation speed when climbing ladder
+            animator.speed = Mathf.Abs(velocity.y / (runSpeed * Time.deltaTime));
+
+        }
+        else
+        {
+            animator.speed = 1;
+        }
+
     }
 
     public void SetInteractable(InteractableBase newInteractable)
@@ -138,9 +175,14 @@ public class PlayerController : MonoBehaviour
         interactable = newInteractable;
     }
 
-    public void SetStairs(Stairs stairs)
+    public void SetLadder(Ladder stairs)
     {
-        this.stairs = stairs;
+        this.ladder = stairs;
+
+        if (stairs == null)
+        {
+            isClimbingLadder = false;
+        }
     }
 
     /// <summary>

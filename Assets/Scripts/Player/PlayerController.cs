@@ -117,7 +117,6 @@ public class PlayerController : MonoBehaviour
         movementState.isJumping = rewiredPlayer.GetButtonDown("Jump");
         movementState.isSprinting = rewiredPlayer.GetButton("Sprint");
         movementState.isInteracting = rewiredPlayer.GetButtonDown("Interact");
-        print(movementState.ToString());
     }
 
     private void ProcessInput()

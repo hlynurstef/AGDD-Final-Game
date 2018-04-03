@@ -1,0 +1,35 @@
+title: Woodsman
+tags:
+colorID: 0
+position: 503,-77
+---
+<<if visited("Woodsman") is false>>
+  <<set_avatar Woodsman>>
+  Hello! What brings you here?
+  <<set_avatar Player>>
+  ->You look like the type of man to get me some wood
+    <<set_avatar Woodsman>>
+    I do look like the type don't I, but not anymore. My lovely axe, Betty, is done for. She broke.
+    This tree gives me all the wood I need but I need my Betty.
+    But it's over. Betty is gone and you should be on your way.
+  ->I'm trying to get some wood so I don't get eaten alive by a shadow that's apparently consuming my soul from the inside.
+    <<set_avatar Woodsman>>
+    Straight to the point. I would love to help you out little lady but my axe, Betty, is broken. This place isn't what it used to be, just look at my Betty. There is no help for you here, go on leave me be.
+  <<set_avatar Player>>
+  Can I at least ask you what happened?
+  <<set_avatar Woodsman>>
+  I came home the other day and there she was on the floor, broken. I don't understand how it could have happened, there was NOTHING I could do.
+  I'm not chopping anymore. So if you need wood you have to get it yourself, you can take Betty if you want but it wont do you any good.
+<<elseif $fixed_axe >= 1>>
+  <<set_avatar Woodsman>>
+  What in the world,Betty! You fixed her for me? I can't believe you did this.
+  I know that I said earlier that you would have to cut the wood yourself, but now that you fixed Betty for me don't stress it. I'll take care of the cuttin' and choppin' for us all.
+  I collect all that I chop in this chest, you're free to take what you need.
+<<elseif $broken_axe >= 1>>
+  <<set_avatar Woodsman>>
+  I can't do anything for you young lady.
+<<else>>
+  <<set_avatar Woodsman>>
+  Chopping chopping ...
+<<endif>>
+===

@@ -1,39 +1,37 @@
-title: Husband
-tags: 
+﻿title: EntranceHusband
+tags:
 colorID: 0
 position: 503,-77
 ---
 <<set_avatar Husband>>
-<<if visited("Husband") is false>>
-    Good morning. Or evening? I'm not sure. It's nice to see you though. How long has it been? I can't remember.
+<<if visited("EntranceHusband") is false>>
+    Holy Cow!! I wasn't expecting.... where did you come from?!
+    I don't mean to be rude I'm just surprised. You usually don't come back this fast.
     <<set_avatar Player>>
-    -> Where am I?
-    	<<set_avatar Husband>>
-    	You're with me now... I was worried the darkness had swallowed you up whole but here you are, beautiful as ever.
-    -> Who are you?
-    	<<set_avatar Husband>>
-    	You look confused? What's wrong? You don't... remember me? This is worse than i thought.
-    The darkness is growing stronger inside you, but I see a strong burning fire. Your will hasn't been broken.
-    To escape the darkness you have to escape this tower. The darkness thrives in these walls.
+    What are you talking about?
+    <<set_avatar Husband>>
+    What am I talking about? You don't remember me? Oh boy this isn't good. The darkness is growing stronger inside you.
     <<set_avatar Player>>
-    -> How do I escape?
-    	<<set_avatar Husband>>
-    	Don't fear, I have never left your side and I won't start now. But I need materials if we aim to get higher.
-    -> This doesn't look like a tower
-    	<<set_avatar Husband>>
-    	Things are not as they seem, I will help you through this. All we need are materials to help us get higher.
-    Do you see that box of wood behind me? You left it here the last time you tried to escape, before it took you back.
-    It contains just enough materials to build the staircase to the next floor. Bring them to me, please.
+    -> HOLD UP! Darkness? Inside me?
+    -> ...
+    <<set_avatar Husband>>
+    The more time you spend here the more the darkness grows.
+    <<set_avatar Player>>
+    -> So I'm becoming weaker? I'm not dying here!
+    -> So i'm being consumed by darkness...and you're smiling.
+      <<set_avatar Husband>>
+      If you lose hope you lose the battle, you taught me that.
+      <<set_avatar Player>>
+      -> So I'm becoming weaker? I'm not dying here!
+    <<set_avatar Husband>>
+    Do you see that box of wood behind me?  It's just enough to build the staircase to the next floor. Bring it to me, please.
 <<elseif $husband_done is true>>
 	I've done all I can to help you for now. All you need to do is proceed to the next floor.
 	<<set_avatar Player>>
-	-> It doesn't look like you used any wood to build that staircase...
+	->It doesn't look like you used any wood to build that staircase...
 		<<set_avatar Husband>>
 		Looks can be deceiving
-	-> Look behind you! A three headed monkey!
-		<<set_avatar Husband>>
-		Hahaha... I'm not falling for that one again!
-	-> Goodbye
+	->Goodbye
 		<<set_avatar Husband>>
 		Good luck
 <<else>>
@@ -54,5 +52,57 @@ position: 503,-77
     -> No
     	<<set_avatar Husband>>
     	Please bring me the wood from the box
+<<endif>>
+===
+
+title: ForestHusband
+tags:
+colorID: 0
+position: 503,-77
+---
+<<if visited("EntranceHusband") is false>>
+  <<set_avatar Husband>>
+  I'm afraid I used up all of the wood building that staircase and we're not nearly at the top. Take a look around and see if you find anything.
+<<elseif $wood_amount >= 10>>
+  <<set_avatar Husband>>
+  You got more wood, fantastic. We should keep going then.
+  <<set_avatar Player>>
+  ->Let's keep going, I feel like I'm getting weaker.
+  ->Wait I have some questions for you, do you mind?
+    <<set_avatar Husband>>
+    We don't have much time but alright go ahead.
+    <<set_avatar Player>>
+    ->Who are you and why are you helping?
+      <<set_avatar Husband>>
+      I just feel this purpose of helping you, I can't really explain it but you know when you've found your purpose? That's how I feel.
+    ->Do you know the woodsman?
+      <<set_avatar Husband>>
+      Yeah he's been around for as long as I can remember, old Jack.
+    ->Do you know the blacksmith?
+      <<set_avatar Husband>>
+      Blacksmith? She really likes puzzles. She and the woodsman really like each other.
+    ->How long have we been doing this? From the beginning I mean.
+      <<set_avatar Husband>>
+      I'm not sure. Time moves strangely in here.
+    <<set_avatar Husband>>
+    Wait a minute, the elevator is not working and I swear their was a lever here somewhere but I haven't been able to find it.
+    You need to look around for it.
+<<else>>
+  <<set_avatar Husband>>
+  Let's keep going.
+<<endif>>
+===
+
+title: LeverHusband
+tags:
+colorID: 0
+position: 503,-77
+---
+<<if visited("LeverHusband") is false>>
+  <<set_avatar Husband>>
+  This place doesn't want us to leave as you can see this lever is broken. You need to find someone to fix it, I'm afraid.
+<<else>>
+  <<set_avatar Husband>>
+  We need to hurry up, darling.
 <<endif>>
 ===

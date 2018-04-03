@@ -1,0 +1,39 @@
+title: Blacksmith
+tags:
+colorID: 0
+position: 536,61
+---
+<<if visited("Blacksmith") is false>>
+	<<set_avatar Blacksmith>>
+  Hello honey bunny what can I do fer ya. I've been a blacksmith around these parts for almost 30 years now.
+  <<set_avatar Player>>
+  ->Something interesting
+  ->Something interesting
+  <<if $broken_axe >= 1>>
+    <<set_avatar Blacksmith>>
+    Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
+    Well I'll be damned, thats Betty.
+    <<set_avatar Player>>
+    Yes it's the woodsman's axe.
+    <<set_avatar Blacksmith>>
+    That old bugger must have been too sorry for himself to have brought it over. I'll tell ya what, lets make a deal.
+    Don't ya worry I ain't some demon.
+    When I traveled the lands in me youth I used to ask people some questions from my favorite movie, to get the feel for them you know? If they knew them answers I knew they were alright.
+    So if yo answer all me question correctly I'll fix the axe. Deal?
+    <<set_avatar Player>>
+    ->I guess so
+    ->All right sonny! Let's git at it eyh!
+    <<set_avatar Blacksmith>>
+    What do they call a quarter pounder with cheese in france?
+    <<set_avatar Player>>
+    ->Quart de livre du fromage
+    ->Le Quart Pound
+    ->Royale with cheese
+      <<set_avatar Blacksmith>>
+      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed.
+      After all idle hands are the devils plaything, am I right?
+    ->Mac Fromage De Pund
+<<else>>
+    Lovely to see you again deary.
+<<endif>>
+===

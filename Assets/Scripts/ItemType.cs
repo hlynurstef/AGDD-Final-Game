@@ -9,5 +9,5 @@ using UnityEngine;
 public enum ItemType 
 {
 	// TODO: Add the rest of the items available to this enum
-	Wood, Ore 
+	Wood, Ore, BrokenAxe, FixedAxe 
 }

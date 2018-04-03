@@ -7,26 +7,51 @@ using Yarn.Unity;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Rewired settings")]
-    [SerializeField]
-    private int rewiredPlayerId;
-
+    #region inspector variables
     [Header("Movement Settings")]
+    [SerializeField, Tooltip("The amount of gravity to be applied")]
+    private float gravity = -20.0f;
     [SerializeField]
-    private float gravity = -15.0f;
+    private float walkSpeed = 2.5f;
     [SerializeField]
-    private float runSpeed = 8.0f;
+    private float sprintSpeed = 4.5f;
     [SerializeField]
-    private float sprintSpeed = 8.010f;
-    [SerializeField]
-    private float jumpHeight = 3.0f;
-    [SerializeField]
-    private float fallMultiplier = 2.5f;
-    [SerializeField]
-    private float lowJumpMultiplier = 2.0f;
+    private float ladderClimbSpeed = 1.5f;
+    [SerializeField, Tooltip("This is the height of the player jump in unity units")]
+    private float jumpHeight = 1.0f;
 
+    #endregion
+
+    #region private variables
+
+    /// <summary>
+    /// This class holds all information about how our player is moving in a single frame
+    /// </summary>
+    private class PlayerMovementState
+    {
+        public float moveHorizontal;
+        public float moveVertical;
+        public bool isJumping;
+        public bool isSprinting;
+        public bool isInteracting;
+
+        public void Reset()
+        {
+            moveHorizontal = moveVertical = 0.0f;
+            isJumping = isSprinting = isInteracting = false;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("[MovementState] moveHorizontal: {0}, moveVertical: {1}, isJumping: {2}, isSprinting: {3}, isInteracting: {4}",
+                                 moveHorizontal, moveVertical, isJumping, isSprinting, isInteracting);
+        }
+    }
+
+    private int rewiredPlayerId = 0;
     private Player rewiredPlayer;
     private CharacterController2D controller;
+    private PlayerMovementState movementState = new PlayerMovementState();
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private InteractableBase interactable;
@@ -34,6 +59,8 @@ public class PlayerController : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private Ladder ladder;
     private bool isClimbingLadder = false;
+
+    #endregion
 
     void Awake()
     {
@@ -57,88 +84,134 @@ public class PlayerController : MonoBehaviour
         }
 
         // grab our current velocity to use as a base for all calculations
+        SetInitialVelocity();
+
+        // Get input and process it
+        GetInput();
+        ProcessInput();
+
+        // Apply gravity to player and then actually move the player along it's velocity vector
+        ApplyGravity();
+        Move();
+
+        // Flip the sprite in the right direction and set the animation state
+        FlipSprite();
+        Animate();
+    }
+
+    private void SetInitialVelocity()
+    {
         velocity = controller.velocity;
         if (controller.isGrounded)
         {
             velocity.y = 0;
         }
-
-        GetInput();
-        Move();
-        FlipSprite();
-        Animate();
     }
 
     private void GetInput()
     {
-        velocity.x = rewiredPlayer.GetAxis("MoveHorizontal");
-        velocity.x *= (rewiredPlayer.GetButton("Sprint") == true) ? sprintSpeed : runSpeed;
-        // TODO: implement better jumping ( https://www.youtube.com/watch?v=hG9SzQxaCm8 )
-        velocity.y = rewiredPlayer.GetButtonDown("Jump") && controller.isGrounded ? Mathf.Sqrt(2.0f * jumpHeight * -gravity) : velocity.y;
-        // velocity.y = rewiredPlayer.GetButtonDown("Jump") && controller.isGrounded ? jumpHeight : velocity.y;
+        movementState.Reset();
 
-        // if holding down we turn off one way platform detection for a frame and set velocity.y to a negative number
-        // this lets us jump down through one way platforms
-        if (rewiredPlayer.GetButton("Jump") && controller.isGrounded && rewiredPlayer.GetAxisRaw("MoveVertical") == -1)
+        movementState.moveHorizontal = rewiredPlayer.GetAxis("MoveHorizontal");
+        movementState.moveVertical = rewiredPlayer.GetAxis("MoveVertical");
+        movementState.isJumping = rewiredPlayer.GetButtonDown("Jump");
+        movementState.isSprinting = rewiredPlayer.GetButton("Sprint");
+        movementState.isInteracting = rewiredPlayer.GetButtonDown("Interact");
+        print(movementState.ToString());
+    }
+
+    private void ProcessInput()
+    {
+        //// Walk or sprint
+        MoveHorizontal();
+
+        //// Climb Ladder
+        ClimbLadder();
+
+        //// Jumping
+        if (movementState.isJumping && controller.isGrounded)
         {
-            velocity.y = -0.1f;
-            controller.ignoreOneWayPlatformsThisFrame = true;
+            Jump();
         }
 
-        if (rewiredPlayer.GetButtonDown("Interact"))
+        //// Interacting
+        if (movementState.isInteracting)
         {
             Interact();
         }
+    }
 
-        if (rewiredPlayer.GetAxisRaw("MoveVertical") == 1.0f ||
-            rewiredPlayer.GetAxisRaw("MoveVertical") == -1.0f)
+    private void MoveHorizontal()
+    {
+        velocity.x = movementState.moveHorizontal;
+        velocity.x *= (movementState.isSprinting == true) ? sprintSpeed : walkSpeed;
+    }
+
+    private void Jump()
+    {
+        //// Jumping down through platforms
+        // If pressing down turn off one way platform detection for a frame and set velocity.y to a negative number so we can jump down through one way platforms
+        if (movementState.moveVertical == -1.0f)
         {
-            // Grab the ladder if able
-            if (!isClimbingLadder && ladder != null)
-            {
-                isClimbingLadder = true;
-            }
+            velocity.y = gravity * Time.deltaTime;
+            controller.ignoreOneWayPlatformsThisFrame = true;
+        }
+        //// Jump normally
+        else
+        {
+            velocity.y = Mathf.Sqrt(2.0f * jumpHeight * -gravity);
+        }
+
+    }
+
+    private void ClimbLadder()
+    {
+        // Early out if we are not near a ladder
+        if (ladder == null) return;
+
+        // Grab the ladder
+        if (Mathf.Abs(movementState.moveVertical) != 0.0f && !isClimbingLadder)
+        {
+            isClimbingLadder = true;
         }
 
         // Only execute this code if player is currently climbing ladder
         if (isClimbingLadder)
         {
-            if (rewiredPlayer.GetAxis("MoveVertical") != 0.0f)
+            if (movementState.moveVertical != 0.0f)
             {
-                velocity.y = rewiredPlayer.GetAxis("MoveVertical");
-                velocity.y *= (rewiredPlayer.GetButton("Sprint") == true) ? sprintSpeed : runSpeed;
+                velocity.y = movementState.moveVertical;
+                velocity.y *= (movementState.isSprinting == true) ? walkSpeed : ladderClimbSpeed;
             }
 
             // Let go of ladder
-            if (rewiredPlayer.GetButtonDown("Interact") ||
-                rewiredPlayer.GetButtonDown("Jump") ||
-                controller.isGrounded)
+            if (movementState.isInteracting || controller.isGrounded)
             {
                 isClimbingLadder = false;
             }
+
+            // Jump off of ladder
+            if (movementState.isJumping)
+            {
+                isClimbingLadder = false;
+                Jump();
+            }
+        }
+    }
+
+    private void ApplyGravity()
+    {
+        // Only apply gravity if not on ladder
+        if (!isClimbingLadder)
+        {
+            velocity.y += (gravity * Time.deltaTime);
         }
     }
 
     private void Move()
     {
-        // Only apply gravity if not on ladder
-        if (!isClimbingLadder)
-        {
-            velocity.y += gravity * Time.deltaTime;
-            if (velocity.y < 0)
-            {
-                velocity.y += gravity * fallMultiplier * Time.deltaTime;
-            }
-            else if (velocity.y > 0 && !rewiredPlayer.GetButton("Jump"))
-            {
-                velocity.y += gravity * lowJumpMultiplier * Time.deltaTime;
-            }
-        }
-
-
-        velocity *= Time.deltaTime;
-
-        controller.move(velocity);
+        // Move the player along it's velocity vector
+        controller.move(velocity * Time.deltaTime);
     }
 
     private void FlipSprite()
@@ -160,7 +233,13 @@ public class PlayerController : MonoBehaviour
         if (isClimbingLadder)
         {
             // FIXME: This is a really hacky way to tweak the animation speed when climbing ladder
-            animator.speed = Mathf.Abs(velocity.y / (runSpeed * Time.deltaTime));
+
+            float animSpeed = new Vector2(movementState.moveHorizontal, movementState.moveVertical).normalized.magnitude;
+            if (movementState.isSprinting)
+            {
+                animSpeed *= 1.2f;
+            }
+            animator.speed = Mathf.Abs(animSpeed);
 
         }
         else
@@ -187,7 +266,7 @@ public class PlayerController : MonoBehaviour
 
     /// <summary>
     /// This function is called when the player presses the interact button
-    /// If the player is standing close to an interactable objet, he will
+    /// If the player is standing close to an interactable object, he will
     /// call the interact function of that object
     /// </summary>
     public void Interact()

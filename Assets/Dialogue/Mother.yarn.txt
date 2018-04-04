@@ -28,6 +28,29 @@ position: 536,61
     <<set_avatar Blacksmith>>
     Well if you need anythin' just let me know
   <<endif>>
+<<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount == 0>>
+  <<set_avatar Blacksmith>>
+  I see you have an axe shaft there. If you bring me an axe head as well, i might be able to put something together for you.
+<<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount == 0 and $brokenaxehead_amount >= 1>>
+  <<set_avatar Blacksmith>>
+  I see you have an axe head there. If you bring me an axe shaft as well, i might be able to put something together for you.
+<<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
+  <<set_avatar Blacksmith>>
+    Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
+    Well I'll be damned, thats Betty.
+    <<set_avatar Player>>
+    Yes it's the woodsman's axe.
+    <<set_avatar Blacksmith>>
+    That old bugger must have been too sorry for himself to have brought it over. I'll tell ya what, lets make a deal.
+    Don't ya worry I ain't some demon.
+    When I traveled the lands in me youth I used to ask people some questions from my favorite movie, to get the feel for them you know? If they knew them answers I knew they were alright.
+    So if yo answer all me question correctly I'll fix the axe. Deal?
+    <<set_avatar Player>>
+    ->I guess so
+    ->All right sonny! Let's git at it eyh!
+    <<set_avatar Blacksmith>>
+    Yayaya [[lalala|Blacksmith.PulpFictionRiddle]]
+
 <<else>>
   <<set_avatar Blacksmith>>
   Lovely to see you again deary.

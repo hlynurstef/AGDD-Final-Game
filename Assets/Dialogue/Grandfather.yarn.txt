@@ -3,20 +3,68 @@ tags:
 colorID: 0
 position: 536,61
 ---
-<<if visited("FinalHusband") is false>>
-	<<set_avatar FinalHusband>>
-    Yay, you made it! Well done. Thank you for helping us with this Alpha Playtest.
-    <<set_avatar Player>>
-    ->Well this was easy.
-    	<<set_avatar Husband>>
-    	It was easy because you are so smart.
-    ->I don't know you that well, but I love you!
-    	<<set_avatar Husband>>
-    	Woww.. Calm down heh..
-    ->You are lame..
-    	<<set_avatar Husband>>
-    	That was uncalled for, I was just helping you.
-<<else>>
-    What do you want from me, a medal or something?
+<<if visited("Boatman") is false>>
+	<<set_avatar Boatman>>
+  My child! Oh my how you have grown.
+  <<set_avatar Player>>
+	Do I know you?
+	<<set_avatar Boatman>>
+	I don't expect you to remember me but I know that face anywhere. You look just like your mother.
+	<<set_avatar Player>>
+  ->Wait, who are you?
+  	<<set_avatar Boatman>>
+  	Me? I'm the elder. I have been guarding this sea ever since you were born, waiting, should you ever need me.
+  ->How do you know me?
+  	<<set_avatar Boatman>>
+  	I know you better than you think. I've been waiting here should you ever need me. Old man guarding the sea.
+  <<set_avatar Player>>
+	Why are you guarding this sea? It looks pretty safe.
+	<<set_avatar Boatman>>
+	From here yes but take a closer look and you will see the monsters that swim in it. To pass you need a boat.
+	<<set_avatar Player>>
+	->I didn't come all this way to get eaten. Can we use the boat?
+		<<set_avatar Boatman>>
+		Yes but the monsters have been chewing on it. If you can get me 10 pieces of wood and a crystal I can repair it for you.
+	->Monsters? Those exist? Can we use this boat to pass?
+		<<set_avatar Boatman>>
+		The monsters are very real and they have been chewing at the boat. If you can get 10 pieces of wood and a crystal I can repair it.
+<<elseif $wood_amount >= 10 and $diamound_amount >= 1>>
+	<<if visited("EndDialogue") is false>>
+		[[EndDialogue]]
+	<<else>>
+		<<set_avatar Boatman>>
+		Step on the boat my angel.
+<<else if $wood_amount < 10 and $diamound_amount < 1>>
+    Please hurry up darling. I need 10 pieces of wood and a crystal to fix the boat.
 <<endif>>
+===
+
+title: EndDialogue
+---
+<<set_avatar Boatman>>
+You brought wood and crystal. Fanstastic.
+<<set_avatar Player>>
+Yes and you know I'm starting to feel much better. In fact I now feel like I know you.
+When I saw you last I was so young but I remember now. I remember how you used to play with me and hold me. It is you isn't it grandpa.
+<<set_avatar Boatman>>
+My little angel.
+<<set_avatar Player>>
+But how can this be, you died.
+<<set_avatar Boatman>>
+I have always been with you my angel as long as your memory of me lives I keep living.
+I'm so proud of the woman that you have become.
+<<set_avatar Player>>
+But what does this mean? If I leave on this boat, will I ever see you again?
+<<set_avatar Boatman>>
+I'm afraid not. This is the end of the road.
+<<set_avatar Player>>
+I don't want to leave you grandpa. I miss you so much. Can't you just come with me onward? We can leave this place together. There is no stopping that.
+<<set_avatar Boatman>>
+No my dear. Someone has to push this boat onwards and you must keep going.
+<<set_avatar Player>>
+I feel so sad grandpa, why would I go on? I want to stay with you.
+<<set_avatar Boatman>>
+Life is for the living sweetheart. Just remember that I will always be with you, every step of the way. Don't you forget it.
+<<set_avatar Player>>
+I won't forget you grandpa.
 ===

@@ -4,11 +4,15 @@ colorID: 0
 position: 503,-77
 ---
 <<set_avatar Player>>
-It's a lever!
-->Flip the lever
-    <<flip Lever>>
-    <<set $lever_pulled to true>>
-->Leave the lever as is.
+<<if $husband_done is false>>
+    It's a lever!
+    ->Flip the lever
+        <<flip Lever>>
+        <<set $lever_pulled to true>>
+    ->Leave the lever as is.
+<<else>>
+    This lever doesn't seem to do anything.. hmm..
+<<endif>>
 ===
 
 title: Lever2

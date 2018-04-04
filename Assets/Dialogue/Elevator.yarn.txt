@@ -25,17 +25,17 @@ colorID: 0
 position: 503,-77
 ---
 <<set_avatar Player>>
-<<if $elevator_downstairs is false>>
+<<if $elevator2_downstairs is true>>
     Do you want to travel upstairs?
     -> Yes
-        <<move Elevator up>>
-        <<set $elevator_downstairs to true>>
+        <<move Elevator2 up>>
+        <<set $elevator2_downstairs to false>>
     -> Maybe later..
 <<else>>
     Do you want to travel downstairs?
     -> Yes
-        <<move MovingPlatform up>>
-        <<set $elevator_downstairs to false>>
+        <<move Elevator2 down>>
+        <<set $elevator2_downstairs to true>>
     -> Maybe later..
 <<endif>>
 ===

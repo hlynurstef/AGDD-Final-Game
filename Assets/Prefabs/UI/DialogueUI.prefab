@@ -712,6 +712,9 @@ MonoBehaviour:
   - name: lever_pulled
     value: false
     type: 2
+  - name: elevator2_downstairs
+    value: true
+    type: 2
   debugTextView: {fileID: 114956991634369050}
 --- !u!114 &114236579159371164
 MonoBehaviour:
@@ -2245,7 +2248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.9978, y: -95.99782}
+  m_AnchoredPosition: {x: 95.994446, y: -95.99448}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224297101876375780
@@ -2474,7 +2477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 336.04715, y: -95.99782}
+  m_AnchoredPosition: {x: 336.0382, y: -95.99448}
   m_SizeDelta: {x: 224, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224912116600235008

@@ -21,7 +21,23 @@ position: 536,61
     ->I guess so
     ->All right sonny! Let's git at it eyh!
     <<set_avatar Blacksmith>>
-    Yayaya [[lalala|Blacksmith.PulpFictionRiddle]]
+    What do they call a quarter pounder with cheese in france?
+    <<set_avatar Player>>
+    -> Quart de livre du fromage
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Le Quart Pound
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Royale with cheese
+      <<set_avatar Blacksmith>>
+      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed. After all idle hands are the devils plaything, am I right?
+      <<take Blacksmith BrokenAxeShaft 1>>
+      <<take Blacksmith BrokenAxeHead 1>>
+      <<give Blacksmith WholeAxe 1>>
+    ->Mac Fromage De Pund
+      <<set_avatar Blacksmith>>
+      Not exactly
   <<else>>
     <<set_avatar Player>>
     Hi, I don't really need anything right now I'm just kind of lost.
@@ -49,7 +65,25 @@ position: 536,61
     ->I guess so
     ->All right sonny! Let's git at it eyh!
     <<set_avatar Blacksmith>>
-    Yayaya [[lalala|Blacksmith.PulpFictionRiddle]]
+    What do they call a quarter pounder with cheese in france?
+    <<set_avatar Player>>
+    -> Quart de livre du fromage
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Le Quart Pound
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Royale with cheese
+      <<set_avatar Blacksmith>>
+      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed. PAUSE. After all idle hands are the devils plaything, am I right?
+      <<take Blacksmith BrokenAxeShaft 1>>
+      <<take Blacksmith BrokenAxeHead 1>>
+      <<give Blacksmith WholeAxe 1>>
+    ->Mac Fromage De Pund
+      <<set_avatar Blacksmith>>
+      Not exactly
+
+
 
 <<else>>
   <<set_avatar Blacksmith>>
@@ -64,11 +98,4 @@ position: 536,61
     Alright, what do you want to do now?
   <<endif>>
 <<endif>>
-===
-
-
-title: Blacksmith.PulpFictionRiddle
----
-<<set_avatar Player>>
-YOURE HERE MAN
 ===

@@ -16,7 +16,6 @@ public class Item : InteractableBase
     [YarnCommand("pickup")]
     public void pickup(string item)
     {
-        print("picking up item" + item);
         // The function call could like something like this:
         InventoryManager.Instance.AddItem(type, 1);
         Destroy(gameObject);

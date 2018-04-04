@@ -4,10 +4,10 @@ colorID: 0
 position: 503,-77
 ---
 <<set_avatar Player>>
-<<if $wood_amount < 5>>
+<<if $woodcontainer_amount > 0>>
     This container appears to have some wood inside
     -> Take it
-        <<take Container all>>
+        <<take WoodsmanContainer all>>
         I took the wood from the container
     -> Leave
 <<else>>

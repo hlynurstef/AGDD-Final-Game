@@ -3205,6 +3205,26 @@ Prefab:
       propertyPath: _pc2D
       value: 
       objectReference: {fileID: 1160873667}
+    - target: {fileID: 66572801748953516, guid: 5a6324535219a2e42922ec7d8f9411c5,
+        type: 2}
+      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[0].Y
+      value: -80000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 66572801748953516, guid: 5a6324535219a2e42922ec7d8f9411c5,
+        type: 2}
+      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[1].X
+      value: -191875008
+      objectReference: {fileID: 0}
+    - target: {fileID: 66572801748953516, guid: 5a6324535219a2e42922ec7d8f9411c5,
+        type: 2}
+      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[2].Y
+      value: -35000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 66572801748953516, guid: 5a6324535219a2e42922ec7d8f9411c5,
+        type: 2}
+      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[3].X
+      value: -198124992
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a6324535219a2e42922ec7d8f9411c5, type: 2}
   m_IsPrefabParent: 0

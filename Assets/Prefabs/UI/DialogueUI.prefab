@@ -680,7 +680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultVariables:
   - name: wood_amount
-    value: 0
+    value: 10
     type: 0
   - name: husband_done
     value: false
@@ -1758,6 +1758,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: b24845ec29b5b5c41bcda9eb3f00f588, type: 3}
   - {fileID: 4900000, guid: ac32ace32f9cbd7419a13aa37805ae07, type: 3}
   - {fileID: 4900000, guid: bdb8e5748e2928849ab3c2071bef5230, type: 3}
+  - {fileID: 4900000, guid: 30c40b1a8135b9445b16974c7f81bc10, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
@@ -2248,7 +2249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.994446, y: -95.99448}
+  m_AnchoredPosition: {x: 95.990326, y: -95.99031}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224297101876375780
@@ -2477,7 +2478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 336.0382, y: -95.99448}
+  m_AnchoredPosition: {x: 336.03867, y: -95.99031}
   m_SizeDelta: {x: 224, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224912116600235008

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae23e90cad6b184da0f8d8c9d33e194, type: 3}
+  m_Name: Pickaxe
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 21300000, guid: 61621328d5b896141bb17c96dc7841ed, type: 3}
+  UISprite: {fileID: 21300000, guid: 61621328d5b896141bb17c96dc7841ed, type: 3}
+  type: 5
+  itemName: Pickaxe

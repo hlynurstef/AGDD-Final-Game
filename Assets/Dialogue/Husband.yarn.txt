@@ -5,8 +5,7 @@ position: 503,-77
 ---
 <<set_avatar EntranceHusband>>
 <<if visited("EntranceHusband") is false>>
-    Holy Cow!! I wasn't expecting.... where did you come from?!
-    I don't mean to be rude I'm just surprised. You usually don't come back this fast.
+    Finally, your back! I thought the worst had happened.
     <<set_avatar Player>>
     What are you talking about?
     <<set_avatar EntranceHusband>>

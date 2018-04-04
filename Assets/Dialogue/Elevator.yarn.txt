@@ -4,18 +4,22 @@ colorID: 0
 position: 503,-77
 ---
 <<set_avatar Player>>
-<<if $elevator_downstairs is true>>
-    Do you want to travel upstairs?
-    -> Yes
-        <<move MovingPlatform up>>
-        <<set $elevator_downstairs to false>>
-    -> Maybe later..
+<<if $lever_pulled is true>>
+    <<if $elevator_downstairs is true>>
+        Should I travel upstairs?
+        -> Yes
+            <<move Elevator1 up>>
+            <<set $elevator_downstairs to false>>
+        -> Maybe later..
+    <<else>>
+        Should I travel downstairs?
+        -> Yes
+            <<move Elevator1 down>>
+            <<set $elevator_downstairs to true>>
+        -> Maybe later..
+    <<endif>>
 <<else>>
-    Do you want to travel downstairs?
-    -> Yes
-        <<move MovingPlatform down>>
-        <<set $elevator_downstairs to true>>
-    -> Maybe later..
+    I have to pull the lever to use the elevator
 <<endif>>
 ===
 
@@ -25,17 +29,21 @@ colorID: 0
 position: 503,-77
 ---
 <<set_avatar Player>>
-<<if $elevator_downstairs is false>>
-    Do you want to travel upstairs?
-    -> Yes
-        <<move Elevator up>>
-        <<set $elevator_downstairs to true>>
-    -> Maybe later..
+<<if $sister_done is true>>
+    <<if $elevator2_downstairs is true>>
+        The elevator seems to work now
+        -> Go up
+            <<move Elevator2 up>>
+            <<set $elevator2_downstairs to false>>
+        -> Maybe later...
+    <<else>>
+        The elevator can take me back down
+        -> Go down
+            <<move Elevator2 down>>
+            <<set $elevator2_downstairs to true>>
+        -> Maybe later...
+    <<endif>>
 <<else>>
-    Do you want to travel downstairs?
-    -> Yes
-        <<move MovingPlatform up>>
-        <<set $elevator_downstairs to false>>
-    -> Maybe later..
+    I have to help the Diamond Master first before I can use the elevator
 <<endif>>
 ===

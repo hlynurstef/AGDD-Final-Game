@@ -70,4 +70,10 @@ MonoBehaviour:
     pitch: 1.63
     loop: 0
     source: {fileID: 0}
+  - name: PlayerLadder
+    clip: {fileID: 8300000, guid: 4901040e735fd2547870b06a27124c49, type: 3}
+    volume: 1
+    pitch: 2.63
+    loop: 0
+    source: {fileID: 0}
   audioMixer: {fileID: 24300002, guid: 0d1409a746cf05045bceed391837e494, type: 2}

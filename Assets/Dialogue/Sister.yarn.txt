@@ -46,7 +46,7 @@ position: 536,61
 		Thank you...Queen lady.
 		<<set_avatar DiamondMaster>>
 		You're very welcome, I bid the good luck on your travels.
-	->First of all I'm not your slave and second of all a deal is a deal, I have your crystals and now you have to fix the handle.
+	->I'm not your slave and a deal is a deal, I have your crystals and now you have to fix the handle.
 		<<set_avatar DiamondMaster>>
 		YOU'RE NO FUN! "Bluhh bluh bluh I'm ugly and just want to repair my levery lever thingy magingy" - Thats you, you sound like that.
 		<<set_avatar Player>>
@@ -54,6 +54,9 @@ position: 536,61
 		<<set_avatar DiamondMaster>>
 		FINE! YOU ARE SO ANNOYING! You must have been raised by...MONKEYS! I fixed your lever thing but just so I don't have to SEE YOUR UGLY FACE!
 	<<set $sister_done to true>>
+	<<set_avatar DiamondMaster>>
+	GIMME THOSE CRYSTAAAAAALS
+	<<take DiamondMaster Diamond 1>>
 <<else>>
 	WHERE ARE MY CRYSTALS???
 <<endif>>

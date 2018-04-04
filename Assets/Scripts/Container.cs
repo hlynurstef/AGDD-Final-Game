@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using Yarn.Unity;
 
 /// <summary>
@@ -16,10 +17,7 @@ public class Container : InteractableBase
     [SerializeField, Tooltip("The type of resources stored in this container. There can only be one type per container..")]
     private ItemType type;
 
-
     private int capacity = 15;  // The maximum amount of resources this container can carry, possibly upgradable by talking to people
-
-    // TODO: Check if count is > 0. If so, display particle effect to indicate that the player can interact with box? 
 
     /// <summary>
     /// Should get called when, for example, the lumberjack is adding wood to the container
@@ -45,6 +43,14 @@ public class Container : InteractableBase
             // The function call could like something like this:
             InventoryManager.Instance.AddItem(type, count);
             count = 0;
+
+            string variableName = "$" + type.ToString().ToLower() + "container" + "_amount";
+            FindObjectOfType<VariableStorage>().SetValue(variableName, new Yarn.Value(0));
         }
+    }
+
+    public int GetCount()
+    {
+        return count;
     }
 }

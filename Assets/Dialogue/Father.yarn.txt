@@ -22,14 +22,16 @@ position: 503,-77
   Next thing I know the pieces start floating and fly in separate directions.
   I don't understand how it could have happened, there was NOTHING I could do.
   I'm not chopping anymore. So if you need wood you have to get it yourself, you can try finding the pieces if you want but it wont do you any good.
-<<elseif $fixed_axe >= 1>>
+<<elseif $wholeaxe_amount >= 1>>
   <<set_avatar Woodsman>>
+  <<chop Woodsman>>
+  <<take Woodsman wholeaxe 1>>
   What in the world, Betty! You fixed her for me? I can't believe you did this.
   I know that I said earlier that you would have to cut the wood yourself, but now that you fixed Betty for me don't stress it. I'll take care of the cuttin' and choppin' for us all.
   I collect all that I chop in this chest, you're free to take what you need.
 <<elseif $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
   <<set_avatar Woodsman>>
-  You found the pieces!! Well I can't do anything for you young lady.
+  You found the pieces!! Well I can't do anything for you young lady those pieces wont do you any good.
 <<else>>
   <<if visited("WoodsmanQuestions") is false>>
     ->Take me to questions node!

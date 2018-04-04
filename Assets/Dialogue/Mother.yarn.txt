@@ -19,25 +19,9 @@ position: 536,61
     So if yo answer all me question correctly I'll fix the axe. Deal?
     <<set_avatar Player>>
     ->I guess so
+			[[BlacksmithRiddle1]]
     ->All right sonny! Let's git at it eyh!
-    <<set_avatar Blacksmith>>
-    What do they call a quarter pounder with cheese in france?
-    <<set_avatar Player>>
-    -> Quart de livre du fromage
-      <<set_avatar Blacksmith>>
-      Not exactly
-    -> Le Quart Pound
-      <<set_avatar Blacksmith>>
-      Not exactly
-    -> Royale with cheese
-      <<set_avatar Blacksmith>>
-      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed. After all idle hands are the devils plaything, am I right?
-      <<take Blacksmith BrokenAxeShaft 1>>
-      <<take Blacksmith BrokenAxeHead 1>>
-      <<give Blacksmith WholeAxe 1>>
-    ->Mac Fromage De Pund
-      <<set_avatar Blacksmith>>
-      Not exactly
+			[[BlacksmithRiddle1]]
   <<else>>
     <<set_avatar Player>>
     Hi, I don't really need anything right now I'm just kind of lost.
@@ -46,10 +30,10 @@ position: 536,61
   <<endif>>
 <<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount == 0>>
   <<set_avatar Blacksmith>>
-  I see you have an axe shaft there. If you bring me an axe head as well, i might be able to put something together for you.
+  I see you have an axe shaft there. If you bring me an axe head as well, I might be able to put something together for you.
 <<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount == 0 and $brokenaxehead_amount >= 1>>
   <<set_avatar Blacksmith>>
-  I see you have an axe head there. If you bring me an axe shaft as well, i might be able to put something together for you.
+  I see you have an axe head there. If you bring me an axe shaft as well, I might be able to put something together for you.
 <<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
   <<set_avatar Blacksmith>>
     Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
@@ -62,29 +46,10 @@ position: 536,61
     When I traveled the lands in me youth I used to ask people some questions from my favorite movie, to get the feel for them you know? If they knew them answers I knew they were alright.
     So if yo answer all me question correctly I'll fix the axe. Deal?
     <<set_avatar Player>>
-    ->I guess so
-    ->All right sonny! Let's git at it eyh!
-    <<set_avatar Blacksmith>>
-    What do they call a quarter pounder with cheese in france?
-    <<set_avatar Player>>
-    -> Quart de livre du fromage
-      <<set_avatar Blacksmith>>
-      Not exactly
-    -> Le Quart Pound
-      <<set_avatar Blacksmith>>
-      Not exactly
-    -> Royale with cheese
-      <<set_avatar Blacksmith>>
-      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed. PAUSE. After all idle hands are the devils plaything, am I right?
-      <<take Blacksmith BrokenAxeShaft 1>>
-      <<take Blacksmith BrokenAxeHead 1>>
-      <<give Blacksmith WholeAxe 1>>
-    ->Mac Fromage De Pund
-      <<set_avatar Blacksmith>>
-      Not exactly
-
-
-
+		->I guess so
+			[[BlacksmithRiddle1]]
+		->All right sonny! Let's git at it eyh!
+			[[BlacksmithRiddle1]]
 <<else>>
   <<set_avatar Blacksmith>>
   Lovely to see you again deary.
@@ -98,4 +63,32 @@ position: 536,61
     Alright, what do you want to do now?
   <<endif>>
 <<endif>>
+===
+
+
+===
+title: BlacksmithRiddle1
+---
+<<set_avatar Blacksmith>>
+What do they call a quarter pounder with cheese in france?
+<<set_avatar Player>>
+-> Quart de livre du fromage
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle1]]
+-> Le Quart Pound
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle1]]
+-> Royale with cheese
+	<<set_avatar Blacksmith>>
+	That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed.
+	After all idle hands are the devils plaything, am I right?
+	<<take Blacksmith BrokenAxeShaft 1>>
+	<<take Blacksmith BrokenAxeHead 1>>
+	<<give Blacksmith WholeAxe 1>>
+->Mac Fromage De Pund
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle1]]
 ===

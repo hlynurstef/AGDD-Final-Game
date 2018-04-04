@@ -7,8 +7,6 @@ position: 503,-77
   <<set_avatar Woodsman>>
   Hello! What brings you here?
   <<set_avatar Player>>
-  ->Take me to questions node!
-    [[WoodsmanQuestions]]
   ->You look like the type of man to get me some wood
     <<set_avatar Woodsman>>
     I do look like the type don't I, but not anymore. My lovely axe, Betty, is done for. She broke.
@@ -24,21 +22,25 @@ position: 503,-77
   Next thing I know the pieces start floating and fly in separate directions.
   I don't understand how it could have happened, there was NOTHING I could do.
   I'm not chopping anymore. So if you need wood you have to get it yourself, you can try finding the pieces if you want but it wont do you any good.
-<<elseif $fixed_axe >= 1>>
+<<elseif $wholeaxe_amount >= 1>>
   <<set_avatar Woodsman>>
-  What in the world,Betty! You fixed her for me? I can't believe you did this.
+  <<chop Woodsman>>
+  <<take Woodsman wholeaxe 1>>
+  What in the world, Betty! You fixed her for me? I can't believe you did this.
   I know that I said earlier that you would have to cut the wood yourself, but now that you fixed Betty for me don't stress it. I'll take care of the cuttin' and choppin' for us all.
   I collect all that I chop in this chest, you're free to take what you need.
-<<elseif $broken_axe >= 1>>
+<<elseif $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
   <<set_avatar Woodsman>>
-  I can't do anything for you young lady.
+  You found the pieces!! Well I can't do anything for you young lady those pieces wont do you any good.
 <<else>>
-  <<if visited("Woodsman") is false>>
-    [[Is there something else I can help you with?|Woodsman]]
+  <<if visited("WoodsmanQuestions") is false>>
+    ->Take me to questions node!
+      [[WoodsmanQuestions]]
   <<endif>>
   <<set_avatar Woodsman>>
   Chopping chopping ...
 <<endif>>
+
 ===
 title: WoodsmanQuestions
 ---

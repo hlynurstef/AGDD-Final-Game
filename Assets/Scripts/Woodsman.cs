@@ -10,7 +10,7 @@ public class Woodsman : NPC
     private GameObject woodContainer;
 
     [SerializeField]
-    private const float addWoodInterval = 120.0f;
+    private const float addWoodInterval = 10.0f;
 
     [SerializeField]
     private Sprite happyAvatar;

@@ -697,7 +697,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 2199a0190828c934185b676e198a14fb, type: 3}
   - {fileID: 4900000, guid: 8cbb80214891503469ef69ca3511cb6b, type: 3}
   - {fileID: 4900000, guid: fd13496d079d8704eb40a0802cc18968, type: 3}
-  - {fileID: 4900000, guid: b24845ec29b5b5c41bcda9eb3f00f588, type: 3}
+  - {fileID: 0}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
@@ -2029,6 +2029,15 @@ MonoBehaviour:
   - name: elevator_downstairs
     value: true
     type: 2
+  - name: sister_done
+    value: false
+    type: 2
+  - name: diamond_amount
+    value: 0
+    type: 0
+  - name: pickaxe_amount
+    value: 0
+    type: 0
   debugTextView: {fileID: 114363654812582874}
 --- !u!114 &114968471500393946
 MonoBehaviour:
@@ -2228,7 +2237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 335.91867, y: -95.93373}
+  m_AnchoredPosition: {x: 336.02612, y: -95.96083}
   m_SizeDelta: {x: 224, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224484401906748246
@@ -2319,7 +2328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.933716, y: -95.93373}
+  m_AnchoredPosition: {x: 95.960846, y: -95.96083}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224573199152620052

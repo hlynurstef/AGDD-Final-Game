@@ -6,11 +6,6 @@ position: 536,61
 <<if visited("Blacksmith") is false>>
 	<<set_avatar Blacksmith>>
   Hello honey bunny what can I do fer ya. I've been a blacksmith around these parts for almost 30 years now.
-  <<set_avatar Player>>
-  ->Something interesting
-  ->Something interesting
-  <<set_avatar Blacksmith>>
-  Great
   <<if $broken_axe >= 1>>
     <<set_avatar Blacksmith>>
     Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
@@ -26,9 +21,15 @@ position: 536,61
     ->I guess so
     ->All right sonny! Let's git at it eyh!
     <<set_avatar Blacksmith>>
-    Yayaya [[All right sonny! Let's git at it eyh!|Blacksmith.PulpFictionRiddle]]
+    Yayaya [[lalala|Blacksmith.PulpFictionRiddle]]
+  <<else>>
+    <<set_avatar Player>>
+    Hi, I don't really need anything right now I'm just kind of lost.
+    <<set_avatar Blacksmith>>
+    Well if you need anythin' just let me know
   <<endif>>
 <<else>>
+  <<set_avatar Blacksmith>>
   Lovely to see you again deary.
   <<if visited("ToyMaster") is true>>
     <<set_avatar Player>>

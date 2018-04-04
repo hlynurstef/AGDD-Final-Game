@@ -18,8 +18,10 @@ position: 503,-77
   <<set_avatar Player>>
   Can I at least ask you what happened?
   <<set_avatar Woodsman>>
-  I came home the other day and there she was on the floor, broken. I don't understand how it could have happened, there was NOTHING I could do.
-  I'm not chopping anymore. So if you need wood you have to get it yourself, you can take Betty if you want but it wont do you any good.
+  I came home the other day and there she was on the floor, broken in two.
+  Next thing I know the pieces start floating and fly in separate directions.
+  I don't understand how it could have happened, there was NOTHING I could do.
+  I'm not chopping anymore. So if you need wood you have to get it yourself, you can try finding the pieces if you want but it wont do you any good.
 <<elseif $fixed_axe >= 1>>
   <<set_avatar Woodsman>>
   What in the world,Betty! You fixed her for me? I can't believe you did this.

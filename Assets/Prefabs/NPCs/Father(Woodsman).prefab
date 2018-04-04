@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55bcc8dd64e71a9458a9419a52aa26cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _avatarImage: {fileID: 21300000, guid: 24959d3bb750d3d49a9808f3138465d6, type: 3}
-  _displayName: Stranger
+  _avatarImage: {fileID: 21300000, guid: f967a6509fcab9347930692d0dd22682, type: 3}
+  _displayName: Woodsman
 --- !u!212 &212342385033049730
 SpriteRenderer:
   m_ObjectHideFlags: 1

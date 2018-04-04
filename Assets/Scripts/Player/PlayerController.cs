@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Start()
-    {
+	{
         dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
 
@@ -231,13 +231,17 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
-        if (animator.GetBool("isWalking") && !animator.GetBool("onLadder") && !AudioManager.instance.IsPlaying("PlayerWalk")) {
+        animator.SetBool("movingHorizontal", velocity.x != 0.0f);
+        animator.SetBool("isGrounded", controller.isGrounded);
+
+        if (animator.GetBool("movingHorizontal") && !animator.GetBool("onLadder") && !AudioManager.instance.IsPlaying("PlayerWalk"))
+        {
             AudioManager.instance.Play("PlayerWalk");
         }
 
-        animator.SetBool("isWalking", velocity.x != 0.0f);
         animator.SetBool("onLadder", isClimbingLadder);
         animator.SetBool("isSprinting", movementState.isSprinting);
+        animator.SetFloat("yVelocity", velocity.y);
 
         if (isClimbingLadder)
         {

@@ -1,0 +1,76 @@
+title: Woodsman
+tags:
+colorID: 0
+position: 503,-77
+---
+<<if visited("Woodsman") is false>>
+  <<set_avatar Woodsman>>
+  Hello! What brings you here?
+  <<set_avatar Player>>
+  ->You look like the type of man to get me some wood
+    <<set_avatar Woodsman>>
+    I do look like the type don't I, but not anymore. My lovely axe, Betty, is done for. She broke.
+    This tree gives me all the wood I need but I need my Betty.
+    But it's over. Betty is gone and you should be on your way.
+  ->I'm trying to get some wood so I don't get eaten alive by a shadow that's apparently consuming my soul from the inside.
+    <<set_avatar Woodsman>>
+    Straight to the point. I would love to help you out little lady but my axe, Betty, is broken. This place isn't what it used to be, just look at my Betty. There is no help for you here, go on leave me be.
+  <<set_avatar Player>>
+  Can I at least ask you what happened?
+  <<set_avatar Woodsman>>
+  I came home the other day and there she was on the floor, broken in two.
+  Next thing I know the pieces start floating and fly in separate directions.
+  I don't understand how it could have happened, there was NOTHING I could do.
+  I'm not chopping anymore. So if you need wood you have to get it yourself, you can try finding the pieces if you want but it wont do you any good.
+<<elseif $fixed_axe >= 1>>
+  <<set_avatar Woodsman>>
+  What in the world,Betty! You fixed her for me? I can't believe you did this.
+  I know that I said earlier that you would have to cut the wood yourself, but now that you fixed Betty for me don't stress it. I'll take care of the cuttin' and choppin' for us all.
+  I collect all that I chop in this chest, you're free to take what you need.
+<<elseif $broken_axe >= 1>>
+  <<set_avatar Woodsman>>
+  I can't do anything for you young lady.
+<<else>>
+  <<if visited("Woodsman") is false>>
+    [[Is there something else I can help you with?|Woodsman]]
+  <<endif>>
+  <<set_avatar Woodsman>>
+  Chopping chopping ...
+<<endif>>
+===
+
+title: WoodsmanQuestions
+---
+<<set_avatar Woodsman>>
+Is there something else I can help you with?
+<<set_avatar Player>>
+I have a few questions, do you mind?
+<<set_avatar Woodsman>>
+Not at all, go ahead.
+<<set_avatar Player>>
+How is this big tree growing inside this place?
+<<set_avatar Woodsman>>
+Inside this place? You mean the forest, tree's grow in the forest. This tree was planted by my father's father's father's mother.
+It has been with us ever since, it's really one of a kind compared to the others.
+<<set_avatar Player>>
+What are you talking about? There's no forest.
+<<set_avatar Woodsman>>
+Ha-ha very funny, I wouldn't be much of a woodsman if I just had one tree now would I?
+<<set_avatar Player>>
+You seem familiar, do we know each other?
+<<set_avatar Woodsman>>
+No I don't think we do. I'm very good with faces so I think I would remember.
+<<set_avatar Player>>
+How long have you been here?
+<<set_avatar Woodsman>>
+Well we come here when we have some time off. This cabin has been in my family for generations.
+It really reminds me of old times and my daughters love it. Have you been inside the cabin? It's beautiful.
+<<set_avatar Player>>
+Cabin? Forest? I'm pretty sure I know you, what's your name?
+<<set_avatar Woodsman>>
+My name? It's *!!*Z$X*
+<<set_avatar Woodsman>>
+What just happened?
+<<set_avatar Woodsman>>
+Sdkeoa Skoaj...Chop chop! Gotta keep chopping!
+===

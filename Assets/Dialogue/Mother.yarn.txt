@@ -1,0 +1,101 @@
+title: Blacksmith
+tags:
+colorID: 0
+position: 536,61
+---
+<<if visited("Blacksmith") is false>>
+	<<set_avatar Blacksmith>>
+  Hello honey bunny what can I do fer ya. I've been a blacksmith around these parts for almost 30 years now.
+  <<if $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
+    <<set_avatar Blacksmith>>
+    Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
+    Well I'll be damned, thats Betty.
+    <<set_avatar Player>>
+    Yes it's the woodsman's axe.
+    <<set_avatar Blacksmith>>
+    That old bugger must have been too sorry for himself to have brought it over. I'll tell ya what, lets make a deal.
+    Don't ya worry I ain't some demon.
+    When I traveled the lands in me youth I used to ask people some questions from my favorite movie, to get the feel for them you know? If they knew them answers I knew they were alright.
+    So if yo answer all me question correctly I'll fix the axe. Deal?
+    <<set_avatar Player>>
+    ->I guess so
+    ->All right sonny! Let's git at it eyh!
+    <<set_avatar Blacksmith>>
+    What do they call a quarter pounder with cheese in france?
+    <<set_avatar Player>>
+    -> Quart de livre du fromage
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Le Quart Pound
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Royale with cheese
+      <<set_avatar Blacksmith>>
+      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed. After all idle hands are the devils plaything, am I right?
+      <<take Blacksmith BrokenAxeShaft 1>>
+      <<take Blacksmith BrokenAxeHead 1>>
+      <<give Blacksmith WholeAxe 1>>
+    ->Mac Fromage De Pund
+      <<set_avatar Blacksmith>>
+      Not exactly
+  <<else>>
+    <<set_avatar Player>>
+    Hi, I don't really need anything right now I'm just kind of lost.
+    <<set_avatar Blacksmith>>
+    Well if you need anythin' just let me know
+  <<endif>>
+<<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount == 0>>
+  <<set_avatar Blacksmith>>
+  I see you have an axe shaft there. If you bring me an axe head as well, i might be able to put something together for you.
+<<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount == 0 and $brokenaxehead_amount >= 1>>
+  <<set_avatar Blacksmith>>
+  I see you have an axe head there. If you bring me an axe shaft as well, i might be able to put something together for you.
+<<elseif visited("Blacksmith") is true and $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
+  <<set_avatar Blacksmith>>
+    Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
+    Well I'll be damned, thats Betty.
+    <<set_avatar Player>>
+    Yes it's the woodsman's axe.
+    <<set_avatar Blacksmith>>
+    That old bugger must have been too sorry for himself to have brought it over. I'll tell ya what, lets make a deal.
+    Don't ya worry I ain't some demon.
+    When I traveled the lands in me youth I used to ask people some questions from my favorite movie, to get the feel for them you know? If they knew them answers I knew they were alright.
+    So if yo answer all me question correctly I'll fix the axe. Deal?
+    <<set_avatar Player>>
+    ->I guess so
+    ->All right sonny! Let's git at it eyh!
+    <<set_avatar Blacksmith>>
+    What do they call a quarter pounder with cheese in france?
+    <<set_avatar Player>>
+    -> Quart de livre du fromage
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Le Quart Pound
+      <<set_avatar Blacksmith>>
+      Not exactly
+    -> Royale with cheese
+      <<set_avatar Blacksmith>>
+      That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed. PAUSE. After all idle hands are the devils plaything, am I right?
+      <<take Blacksmith BrokenAxeShaft 1>>
+      <<take Blacksmith BrokenAxeHead 1>>
+      <<give Blacksmith WholeAxe 1>>
+    ->Mac Fromage De Pund
+      <<set_avatar Blacksmith>>
+      Not exactly
+
+
+
+<<else>>
+  <<set_avatar Blacksmith>>
+  Lovely to see you again deary.
+  <<if visited("ToyMaster") is true>>
+    <<set_avatar Player>>
+    ->I need to get some crystals but I cant mine them myself, can you help?
+    ->Can I lend your tools to mine some crystal?
+    <<set_avatar Blacksmith>>
+    I suppose I can lend ya some tools but as you know I like me puzzles.
+    <<set_avatar Player>>
+    Alright, what do you want to do now?
+  <<endif>>
+<<endif>>
+===

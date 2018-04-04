@@ -1,0 +1,22 @@
+title: Boatman
+tags:
+colorID: 0
+position: 536,61
+---
+<<if visited("FinalHusband") is false>>
+	<<set_avatar FinalHusband>>
+    Yay, you made it! Well done. Thank you for helping us with this Alpha Playtest.
+    <<set_avatar Player>>
+    -> Well this was easy.
+    	<<set_avatar Husband>>
+    	It was easy because you are so smart.
+    -> I don't know you that well, but I love you!
+    	<<set_avatar Husband>>
+    	Woww.. Calm down heh..
+    -> You are lame..
+    	<<set_avatar Husband>>
+    	That was uncalled for, I was just helping you.
+<<else>>
+    What do you want from me, a medal or something?
+<<endif>>
+===

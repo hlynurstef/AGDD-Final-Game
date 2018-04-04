@@ -1,0 +1,11 @@
+title: Broken Axe Head
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+It's the axe head of Betty!
+-> Pick up the axe head
+    <<pickup BrokenAxeHead BrokenHead>>
+-> Leave it on the ground.
+===

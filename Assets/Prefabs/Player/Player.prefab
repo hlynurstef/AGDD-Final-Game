@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1171769339175968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -0.65625, z: 0}
+  m_LocalPosition: {x: -17.3125, y: 1.125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
     m_Bits: 32768
   triggerMask:
     serializedVersion: 2
-    m_Bits: 852224
+    m_Bits: 1900800
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 131072

@@ -5,19 +5,19 @@ position: 536,61
 ---
 <<if visited("Boatman") is false>>
 	<<set_avatar Boatman>>
-  My child! Oh my how you have grown.
-  <<set_avatar Player>>
+ 	My child! Oh my how you have grown.
+ 	<<set_avatar Player>>
 	Do I know you?
 	<<set_avatar Boatman>>
 	I don't expect you to remember me but I know that face anywhere. You look just like your mother.
 	<<set_avatar Player>>
-  ->Wait, who are you?
+	->Wait, who are you?
   	<<set_avatar Boatman>>
   	Me? I'm the elder. I have been guarding this sea ever since you were born, waiting, should you ever need me.
-  ->How do you know me?
+ 	->How do you know me?
   	<<set_avatar Boatman>>
   	I know you better than you think. I've been waiting here should you ever need me. Old man guarding the sea.
-  <<set_avatar Player>>
+ 	<<set_avatar Player>>
 	Why are you guarding this sea? It looks pretty safe.
 	<<set_avatar Boatman>>
 	From here yes but take a closer look and you will see the monsters that swim in it. To pass you need a boat.
@@ -28,14 +28,12 @@ position: 536,61
 	->Monsters? Those exist? Can we use this boat to pass?
 		<<set_avatar Boatman>>
 		The monsters are very real and they have been chewing at the boat. If you can get 10 pieces of wood and a crystal I can repair it.
-<<elseif $wood_amount >= 10 and $diamound_amount >= 1>>
-	<<if visited("EndDialogue") is false>>
-		[[EndDialogue]]
-	<<else>>
-		<<set_avatar Boatman>>
-		Step on the boat my angel.
-<<else if $wood_amount < 10 and $diamound_amount < 1>>
-    Please hurry up darling. I need 10 pieces of wood and a crystal to fix the boat.
+<<elseif $wood_amount >= 10 and $diamond_amount >= 1 and visited("EndDialogue") is false>>
+	[[EndDialogue]]
+<<elseif $wood_amount <= 9 and $diamond_amount <= 0>>
+	Please hurry up darling. I need 10 pieces of wood and a crystal to fix the boat.
+<<else>>
+	Please hurry up my angel.
 <<endif>>
 ===
 

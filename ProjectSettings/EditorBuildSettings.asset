@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Menu.unity
     guid: 9b9a2b5e58440664085d5f36fdc54134
-  - enabled: 1
+  - enabled: 0
     path: "Assets/_Scenes/Sigr\xFAn.unity"
     guid: 2510a5eec764ae74686c70f151ddd20f
   - enabled: 0
-    path: Assets/_Scenes/MainScene.unity
+    path: Assets/__DELETED_GUID_Trash/f85241d5fb208ad429ed8d26c3b9b621
     guid: f85241d5fb208ad429ed8d26c3b9b621
   - enabled: 0
     path: Assets/_Scenes/PixelPerfectTest.unity
     guid: df79dadd7a3ecba4ea1d7cc980ca6983
+  - enabled: 1
+    path: Assets/_Scenes/Mainscene.unity
+    guid: e3911eb96100f3648b3db0df9cafa782

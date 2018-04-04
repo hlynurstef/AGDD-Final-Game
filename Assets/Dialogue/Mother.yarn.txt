@@ -115,7 +115,6 @@ What is the chemical symbol for iron?
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle2]]
-
 ->Fe
 	<<set_avatar Blacksmith>>
 	Correct!
@@ -139,5 +138,4 @@ A note was also found with the body: '26-3-58/28-27-57-16'. Who were the killers
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle2]]
-
 ===

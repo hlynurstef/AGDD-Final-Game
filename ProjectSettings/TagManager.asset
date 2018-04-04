@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Stairs 1
+  - End
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,5 @@
 title: Broken Axe Head
-tags: 
+tags:
 colorID: 0
 position: 503,-77
 ---
@@ -7,5 +7,6 @@ position: 503,-77
 It's the axe head of Betty!
 -> Pick up the axe head
     <<pickup BrokenAxeHead BrokenHead>>
+    I picked it up!
 -> Leave it on the ground.
 ===

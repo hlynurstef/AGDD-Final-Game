@@ -28,7 +28,7 @@ position: 536,61
     ...if I find more crystals will you help me then?
   <<set_avatar DiamondMaster>>
   I can help...I can...Can I? I'm a tinker and fixer so maybe I can fix you're broken lever. Get me some crystals and I'll try my best mmmmkay! CRYSTAL TIME!
-<<elseif $diamound_amount >= 1>>
+<<elseif $diamond_amount >= 1>>
 	<<set_avatar DiamondMaster>>
 	HELLO SLAVE! What has thy brought to thy master! Muhahahaha
 	<<set_avatar Player>>

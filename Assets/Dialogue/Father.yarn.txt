@@ -31,11 +31,10 @@ position: 503,-77
   <<chop Woodsman>>
 <<elseif $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
   <<set_avatar Woodsman>>
-  You found the pieces!! Well I can't do anything for you young lady those pieces wont do you any good.
+  You found the pieces? Well it doesn’t matter much... It’s still broken.
 <<else>>
   <<if visited("WoodsmanQuestions") is false>>
-    ->Take me to questions node!
-      [[WoodsmanQuestions]]
+    [[WoodsmanQuestions]]
   <<endif>>
   <<set_avatar Woodsman>>
   Chopping chopping ...
@@ -72,7 +71,7 @@ It really reminds me of old times and my daughters love it. Have you been inside
 Cabin? Forest? I'm pretty sure I know you, what's your name?
 <<set_avatar Woodsman>>
 My name? It's *!!*Z$X*
-<<set_avatar Woodsman>>
+<<set_avatar Player>>
 What just happened?
 <<set_avatar Woodsman>>
 Sdkeoa Skoaj...Chop chop! Gotta keep chopping!

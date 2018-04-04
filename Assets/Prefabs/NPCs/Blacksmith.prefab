@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114967820100702798}
   - component: {fileID: 114384168089923012}
   m_Layer: 16
-  m_Name: Husband
+  m_Name: Blacksmith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047058696549868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3958335, y: -0.75, z: 0}
+  m_LocalPosition: {x: -13.125, y: -0.65625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4467890107828192}

@@ -68,9 +68,9 @@ It really reminds me of old times and my daughters love it. Have you been inside
 <<set_avatar Player>>
 Cabin? Forest? I'm pretty sure I know you, what's your name?
 <<set_avatar Woodsman>>
-My name? It's !"%$#!!##$#"#$...
+My name? It's *!!*Z$X*
 <<set_avatar Woodsman>>
 What just happened?
 <<set_avatar Woodsman>>
-Sdkeoa###!"#(!" Skoaj...Chop chop! Gotta keep chopping!
+Sdkeoa Skoaj...Chop chop! Gotta keep chopping!
 ===

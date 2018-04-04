@@ -50,4 +50,9 @@ public class CanSpeak : MonoBehaviour
         dialogueUI.SetAvatar(_avatarImage);
         dialogueUI.SetName(_displayName);
     }
+
+    public void SetNewAvatar(Sprite newAvatarImage)
+    {
+        _avatarImage = newAvatarImage;
+    }
 }

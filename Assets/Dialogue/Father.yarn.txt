@@ -23,6 +23,7 @@ position: 503,-77
   I don't understand how it could have happened, there was NOTHING I could do.
   I'm not chopping anymore. So if you need wood you have to get it yourself, you can try finding the pieces if you want but it wont do you any good.
 <<elseif $wholeaxe_amount >= 1>>
+  <<set_happy Woodsman>>
   <<set_avatar Woodsman>>
   <<take Woodsman wholeaxe 1>>
   What in the world, Betty! You fixed her for me? I can't believe you did this.

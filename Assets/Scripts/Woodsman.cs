@@ -5,12 +5,15 @@ using Yarn.Unity;
 
 public class Woodsman : NPC
 {
-
+    [Header("Woodsman variables")]
     [SerializeField]
     private GameObject woodContainer;
 
     [SerializeField]
     private const float addWoodInterval = 120.0f;
+
+    [SerializeField]
+    private Sprite happyAvatar;
 
 
     private bool hasWholeAxe = false;
@@ -48,5 +51,18 @@ public class Woodsman : NPC
     {
         hasWholeAxe = true;
         animator.SetBool("isChopping", true);
+    }
+
+    [YarnCommand("set_happy")]
+    public void SetHappy()
+    {
+        if (happyAvatar == null)
+        {
+            Debug.LogError("Missing Happy Avatar image on " + gameObject.name + " - in the Woodsman script");
+        }
+        else
+        {
+            GetComponent<CanSpeak>().SetNewAvatar(happyAvatar);
+        }
     }
 }

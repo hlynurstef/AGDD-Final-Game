@@ -40,8 +40,8 @@ public class Boat : InteractableBase
 
 		Sequence mySeq = DOTween.Sequence();
 		Transform targetSide = (currentSide == rightSide) ? leftSide : rightSide;
-		mySeq.Append(boatTransform.DOMove(targetSide.position, 10, false));
-		mySeq.Insert(0, player.transform.DOMove(targetSide.position, 10, false));
+		mySeq.Append(boatTransform.DOMove(targetSide.position, 90, false));
+		mySeq.Insert(0, player.transform.DOMove(targetSide.position, 90, false));
 		mySeq.PrependInterval(1.0f);
 		mySeq.OnComplete(() => { 
 			currentSide = targetSide;

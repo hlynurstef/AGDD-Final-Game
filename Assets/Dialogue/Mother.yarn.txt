@@ -75,15 +75,15 @@ title: BlacksmithRiddle1
 <<set_avatar Blacksmith>>
 What do they call a quarter pounder with cheese in france?
 <<set_avatar Player>>
--> Quart de livre du fromage
+->Quart de livre du fromage
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle1]]
--> Le Quart Pound
+->Le Quart Pound
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle1]]
--> Royale with cheese
+->Royale with cheese
 	<<set_avatar Blacksmith>>
 	That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed.
 	After all idle hands are the devils plaything, am I right?

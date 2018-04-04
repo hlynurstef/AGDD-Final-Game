@@ -104,7 +104,18 @@ position: 503,-77
   <<set_avatar LeverHusband>>
   This place doesn't want us to leave as you can see this lever is broken. You need to find someone to fix it, I'm afraid.
 <<elseif $sister_done is true>>
-
+  <<set_avatar LeverHusband>>
+  I can't believe you've come this far. You're looking better and better, just like old times. You must reach the end and finish this everlasting nightmare. We've been alone for so long. This is...
+  <<set_avatar Player>>
+  ->Hey, you taught me to stay strong! Now you have to do the same, we're ending this!
+    <<set_avatar LeverHusband>>
+    You're right. Let's leave this place.
+  ->No whining allowed! I just left a little girl who thought she was a queen so don't you go all crazy on me as well.
+    <<set_avatar LeverHusband>>
+    You're right, stay strong. But she really is something that little girl, isn't she.
+  ->Sssh...there is no try, only do.
+    <<set_avatar LeverHusband>>
+    Did you just quote Yoda? Anyways, let's go.
 <<else>>
   <<set_avatar LeverHusband>>
   We need to hurry up, darling.

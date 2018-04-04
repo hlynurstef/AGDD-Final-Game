@@ -17,7 +17,6 @@ public class Diamonds : InteractableBase
     [YarnCommand("mine")]
     public void Mine()
     {
-        print("mining");
         // The function call could like something like this:
         InventoryManager.Instance.AddItem(type, count);
         count = 0;
@@ -27,19 +26,8 @@ public class Diamonds : InteractableBase
     }
 
     [YarnCommand("break")]
-    public void BreakPickaxe(string type, string count)
+    public void BreakPickaxe()
     {
-        print("breaking");
-        ItemType concreteType;
-        int concreteCount = int.Parse(count);
-        foreach (ItemType itemType in ItemType.GetValues(typeof(ItemType)))
-        {
-            if (type.ToLower() == itemType.ToString().ToLower())
-            {
-                concreteType = itemType;
-                InventoryManager.Instance.RemoveItem(concreteType, concreteCount);
-                return;
-            }
-        }
+        InventoryManager.Instance.RemoveItem(ItemType.Pickaxe, 1);
     }
 }

@@ -103,6 +103,8 @@ position: 503,-77
 <<if visited("LeverHusband") is false>>
   <<set_avatar LeverHusband>>
   This place doesn't want us to leave as you can see this lever is broken. You need to find someone to fix it, I'm afraid.
+<<elseif $sister_done is true>>
+
 <<else>>
   <<set_avatar LeverHusband>>
   We need to hurry up, darling.

@@ -53,7 +53,7 @@ position: 536,61
 <<else>>
   <<set_avatar Blacksmith>>
   Lovely to see you again deary.
-  <<if visited("DiamondMaster") is true>>
+  <<if visited("DiamondMaster") is true and $pickaxe_amount < 1>>
     <<set_avatar Player>>
     ->I need to get some crystals but I cant mine them myself, can you help?
     ->Can I lend your tools to mine some crystal?
@@ -134,10 +134,10 @@ A note was also found with the body: '26-3-58/28-27-57-16'. Who were the killers
 ->Maxwell and Felini
 	<<set_avatar Blacksmith>>
 	Correct, you're a smart one you know that. You're parents must be proud. Now here take me tools and get cracking!
+	<<give Blacksmith Pickaxe 1>>
 ->Fe
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle2]]
-
 
 ===

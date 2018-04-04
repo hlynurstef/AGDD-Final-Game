@@ -234,7 +234,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("movingHorizontal", velocity.x != 0.0f);
         animator.SetBool("isGrounded", controller.isGrounded);
 
-        if (animator.GetBool("movingHorizontal") && !animator.GetBool("onLadder") && !AudioManager.instance.IsPlaying("PlayerWalk"))
+        if (animator.GetBool("movingHorizontal") && !animator.GetBool("onLadder") && !AudioManager.instance.IsPlaying("PlayerWalk") && controller.isGrounded)
         {
             AudioManager.instance.Play("PlayerWalk");
         }

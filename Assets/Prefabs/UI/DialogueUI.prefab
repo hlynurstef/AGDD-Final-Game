@@ -1570,7 +1570,7 @@ MonoBehaviour:
   m_RepeatDelay: 0
   m_allowMouseInput: 0
   m_allowMouseInputIfTouchSupported: 0
-  m_ForceModuleActive: 1
+  m_ForceModuleActive: 0
 --- !u!114 &114610386045753792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2023,6 +2023,9 @@ MonoBehaviour:
   - name: brokenaxehead_amount
     value: 0
     type: 0
+  - name: wholeaxe_amount
+    value: 0
+    type: 0
   - name: elevator_downstairs
     value: true
     type: 2
@@ -2207,7 +2210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132.9, y: 199.4}
+  m_AnchoredPosition: {x: -132.9, y: 226.5}
   m_SizeDelta: {x: 132.36, y: 29.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224410063694171990
@@ -2225,7 +2228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 335.9252, y: -95.93996}
+  m_AnchoredPosition: {x: 335.91867, y: -95.93373}
   m_SizeDelta: {x: 224, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224484401906748246
@@ -2316,7 +2319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.93994, y: -95.93996}
+  m_AnchoredPosition: {x: 95.933716, y: -95.93373}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224573199152620052
@@ -2439,7 +2442,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 24.34999, y: -53}
-  m_SizeDelta: {x: -336.09985, y: 135.16}
+  m_SizeDelta: {x: -336.09985, y: 135.15}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224883915132932446
 RectTransform:

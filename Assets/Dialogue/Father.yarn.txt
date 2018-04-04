@@ -22,54 +22,68 @@ position: 503,-77
   Next thing I know the pieces start floating and fly in separate directions.
   I don't understand how it could have happened, there was NOTHING I could do.
   I'm not chopping anymore. So if you need wood you have to get it yourself, you can try finding the pieces if you want but it wont do you any good.
-<<elseif $fixed_axe >= 1>>
+<<elseif $wholeaxe_amount >= 1>>
   <<set_avatar Woodsman>>
-  What in the world,Betty! You fixed her for me? I can't believe you did this.
+  <<take Woodsman wholeaxe 1>>
+  What in the world, Betty! You fixed her for me? I can't believe you did this.
   I know that I said earlier that you would have to cut the wood yourself, but now that you fixed Betty for me don't stress it. I'll take care of the cuttin' and choppin' for us all.
   I collect all that I chop in this chest, you're free to take what you need.
-<<elseif $broken_axe >= 1>>
+  <<chop Woodsman>>
+<<elseif $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
   <<set_avatar Woodsman>>
-  I can't do anything for you young lady.
+  You found the pieces? Well it doesn’t matter much... It’s still broken.
 <<else>>
-  <<if visited("Woodsman") is false>>
-    [[Is there something else I can help you with?|Woodsman]]
+  <<if visited("WoodsmanQuestions") is false>>
+    <<set_avatar Woodsman>>
+    Is there something else I can help you with?
+    <<set_avatar Player>>
+    I have a few questions, do you mind?
+    <<set_avatar Woodsman>>
+    Not at all, go ahead.
+    [[WoodsmanQuestions]]
   <<endif>>
   <<set_avatar Woodsman>>
-  Chopping chopping ...
+  Chopping chopping...
 <<endif>>
-===
 
+===
 title: WoodsmanQuestions
 ---
-<<set_avatar Woodsman>>
-Is there something else I can help you with?
 <<set_avatar Player>>
-I have a few questions, do you mind?
-<<set_avatar Woodsman>>
-Not at all, go ahead.
-<<set_avatar Player>>
-How is this big tree growing inside this place?
-<<set_avatar Woodsman>>
-Inside this place? You mean the forest, tree's grow in the forest. This tree was planted by my father's father's father's mother.
-It has been with us ever since, it's really one of a kind compared to the others.
-<<set_avatar Player>>
-What are you talking about? There's no forest.
-<<set_avatar Woodsman>>
-Ha-ha very funny, I wouldn't be much of a woodsman if I just had one tree now would I?
-<<set_avatar Player>>
-You seem familiar, do we know each other?
-<<set_avatar Woodsman>>
-No I don't think we do. I'm very good with faces so I think I would remember.
-<<set_avatar Player>>
-How long have you been here?
-<<set_avatar Woodsman>>
-Well we come here when we have some time off. This cabin has been in my family for generations.
-It really reminds me of old times and my daughters love it. Have you been inside the cabin? It's beautiful.
+->How is this big tree growing inside this place?
+  <<set_avatar Woodsman>>
+  Inside this place? You mean the forest, tree's grow in the forest. This tree was planted by my father's father's father's mother.
+  It has been with us ever since, it's really one of a kind compared to the others.
+  ->What are you talking about? There's no forest.
+    <<set_avatar Woodsman>>
+    Ha-ha very funny, I wouldn't be much of a woodsman if I just had one tree now would I?
+    Anything else?
+    <<set_avatar Player>>
+    ->Yes
+      [[WoodsmanQuestions]]
+    ->No I'm fine..
+->You seem familiar, do we know each other?
+  <<set_avatar Woodsman>>
+  No I don't think we do. I'm very good with faces so I think I would remember.
+  Anything else?
+  <<set_avatar Player>>
+  ->Yes
+    [[WoodsmanQuestions]]
+  ->No I'm fine..
+->How long have you been here?
+  <<set_avatar Woodsman>>
+  Well we come here when we have some time off. This cabin has been in my family for generations.
+  It really reminds me of old times and my daughters love it. Have you been inside the cabin? It's beautiful.
+  Anything else?
+  <<set_avatar Player>>
+  ->Yes
+    [[WoodsmanQuestions]]
+  ->No I'm fine..
 <<set_avatar Player>>
 Cabin? Forest? I'm pretty sure I know you, what's your name?
 <<set_avatar Woodsman>>
 My name? It's *!!*Z$X*
-<<set_avatar Woodsman>>
+<<set_avatar Player>>
 What just happened?
 <<set_avatar Woodsman>>
 Sdkeoa Skoaj...Chop chop! Gotta keep chopping!

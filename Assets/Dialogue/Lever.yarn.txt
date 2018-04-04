@@ -1,0 +1,11 @@
+title: Lever
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+It's a lever!
+->Flip the lever
+    <<flip Lever>>
+->Leave the lever as is.
+===

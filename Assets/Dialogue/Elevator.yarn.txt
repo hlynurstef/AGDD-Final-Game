@@ -46,6 +46,6 @@ position: 503,-77
         <<endif>>
     <<endif>>
 <<else>>
-    You have to pull the lever to use the elevator
+    You have to activate the elevator using the lever down the hall
 <<endif>>
 ===

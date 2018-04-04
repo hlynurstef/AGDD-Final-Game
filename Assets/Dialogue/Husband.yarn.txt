@@ -69,6 +69,7 @@ position: 503,-77
   <<set_avatar ForestHusband>>
   You got more wood, fantastic. We should keep going then.
   <<set $husband_done to false>>
+  <<take ForestHusband wood 10>>
   <<set_avatar Player>>
   ->Let's keep going, I feel like I'm getting weaker.
   ->Wait I have some questions for you, do you mind?

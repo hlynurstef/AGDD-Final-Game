@@ -11,7 +11,7 @@ position: 503,-77
         <<set $lever_pulled to true>>
     ->Leave the lever as is.
 <<else>>
-    This lever doesn't seem to do anything.. hmm..
+    The lever won't do anything until the elevator has been fixed.
 <<endif>>
 ===
 

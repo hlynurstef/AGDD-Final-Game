@@ -680,7 +680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultVariables:
   - name: wood_amount
-    value: 10
+    value: 0
     type: 0
   - name: husband_done
     value: false
@@ -2249,7 +2249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.990326, y: -95.99031}
+  m_AnchoredPosition: {x: 95.994446, y: -95.99448}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224297101876375780
@@ -2478,7 +2478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 336.03867, y: -95.99031}
+  m_AnchoredPosition: {x: 336.0382, y: -95.99448}
   m_SizeDelta: {x: 224, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224912116600235008

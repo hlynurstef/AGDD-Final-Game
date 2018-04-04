@@ -13,12 +13,20 @@ public class OptionResizer : MonoBehaviour
     private TextMeshProUGUI text;
     private LayoutElement layoutElement;
 
-    // Use this for initialization
+    /// <summary>
+    /// This function is called when the object becomes enabled and active.
+    /// </summary>
     void Start()
     {
         text = GetComponentInChildren<TextMeshProUGUI>();
         layoutElement = GetComponent<LayoutElement>();
+    }
 
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
         string optionText = text.text;
         layoutElement.preferredHeight = (1 + (int)(optionText.Length / 50)) * 20;
     }

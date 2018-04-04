@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        AudioManager.instance.Play("PlayerJump");
         //// Jumping down through platforms
         // If pressing down turn off one way platform detection for a frame and set velocity.y to a negative number so we can jump down through one way platforms
         if (movementState.moveVertical == -1.0f)
@@ -185,6 +186,8 @@ public class PlayerController : MonoBehaviour
             // Move player up/down
             if (movementState.moveVertical != 0.0f)
             {
+                if (!AudioManager.instance.IsPlaying("PlayerLadder"))
+                    AudioManager.instance.Play("PlayerLadder");
                 velocity.y = movementState.moveVertical;
                 velocity.y *= (movementState.isSprinting == true) ? walkSpeed : ladderClimbSpeed;
             }

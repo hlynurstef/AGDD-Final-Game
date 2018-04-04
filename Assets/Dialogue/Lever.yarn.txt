@@ -7,5 +7,6 @@ position: 503,-77
 It's a lever!
 ->Flip the lever
     <<flip Lever>>
+    <<set $lever_pulled to true>>
 ->Leave the lever as is.
 ===

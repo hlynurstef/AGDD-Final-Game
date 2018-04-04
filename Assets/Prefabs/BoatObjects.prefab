@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4042073938304884}
   - component: {fileID: 212188579228746192}
   - component: {fileID: 61749572465292956}
+  - component: {fileID: 95443180884018336}
   m_Layer: 15
   m_Name: BoatSprite
   m_TagString: Untagged
@@ -378,6 +379,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 1.65}
   m_EdgeRadius: 0
+--- !u!95 &95443180884018336
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177490684182270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed754811281bf524eb5e4a2c99ac17a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114652773350691730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -431,7 +449,7 @@ SpriteRenderer:
   m_SortingLayerID: 2069082531
   m_SortingLayer: -6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b51e091998b9bd14db004fe70064ea86, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6d155019bb80534f92e3bb080887fa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

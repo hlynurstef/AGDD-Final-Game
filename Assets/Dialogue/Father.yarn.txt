@@ -7,6 +7,8 @@ position: 503,-77
   <<set_avatar Woodsman>>
   Hello! What brings you here?
   <<set_avatar Player>>
+  ->Take me to questions node!
+    [[WoodsmanQuestions]]
   ->You look like the type of man to get me some wood
     <<set_avatar Woodsman>>
     I do look like the type don't I, but not anymore. My lovely axe, Betty, is done for. She broke.
@@ -40,7 +42,6 @@ position: 503,-77
   Chopping chopping ...
 <<endif>>
 ===
-
 title: WoodsmanQuestions
 ---
 <<set_avatar Woodsman>>

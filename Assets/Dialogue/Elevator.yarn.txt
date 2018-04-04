@@ -7,13 +7,13 @@ position: 503,-77
 <<if $elevator_downstairs is true>>
     Do you want to travel upstairs?
     -> Yes
-        <<move MovingPlatform up>>
+        <<move Elevator1 up>>
         <<set $elevator_downstairs to false>>
     -> Maybe later..
 <<else>>
     Do you want to travel downstairs?
     -> Yes
-        <<move MovingPlatform down>>
+        <<move Elevator1 down>>
         <<set $elevator_downstairs to true>>
     -> Maybe later..
 <<endif>>

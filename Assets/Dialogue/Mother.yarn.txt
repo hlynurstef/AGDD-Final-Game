@@ -6,7 +6,7 @@ position: 536,61
 <<if visited("Blacksmith") is false>>
 	<<set_avatar Blacksmith>>
   Hello honey bunny what can I do fer ya. I've been a blacksmith around these parts for almost 30 years now.
-  <<if $broken_axe >= 1>>
+  <<if $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
     <<set_avatar Blacksmith>>
     Is that a broken axe you have in yer hands there? Well let me tell ya repair ain't cheap around here.
     Well I'll be damned, thats Betty.

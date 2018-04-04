@@ -186,6 +186,8 @@ public class PlayerController : MonoBehaviour
             // Move player up/down
             if (movementState.moveVertical != 0.0f)
             {
+                if (!AudioManager.instance.IsPlaying("PlayerLadder"))
+                    AudioManager.instance.Play("PlayerLadder");
                 velocity.y = movementState.moveVertical;
                 velocity.y *= (movementState.isSprinting == true) ? walkSpeed : ladderClimbSpeed;
             }

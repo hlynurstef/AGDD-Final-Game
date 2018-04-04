@@ -10,3 +10,20 @@ It's a lever!
     <<set $lever_pulled to true>>
 ->Leave the lever as is.
 ===
+
+title: Lever2
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+<<if $sister_done is true>>
+    It's a lever!
+    ->Flip the lever
+        <<flip Lever>>
+        <<set $lever_pulled to false>>
+    ->Leave the lever as is.
+<<else>>
+    This lever is broken.. If you want to use it you need to find a way to fix it
+<<endif>>
+===

@@ -30,22 +30,20 @@ position: 503,-77
 ---
 <<set_avatar Player>>
 <<if $sister_done is true>>
-    <<if $lever_pulled is false>>
-        <<if $elevator2_downstairs is true>>
-            Do you want to travel upstairs?
-            -> Yes
-                <<move Elevator2 up>>
-                <<set $elevator2_downstairs to false>>
-            -> Maybe later..
-        <<else>>
-            Do you want to travel downstairs?
-            -> Yes
-                <<move Elevator2 down>>
-                <<set $elevator2_downstairs to true>>
-            -> Maybe later..
-        <<endif>>
+    <<if $elevator2_downstairs is true>>
+        The elevator seems to work now
+        -> Go up
+            <<move Elevator2 up>>
+            <<set $elevator2_downstairs to false>>
+        -> Maybe later...
+    <<else>>
+        The elevator can take me back down
+        -> Go down
+            <<move Elevator2 down>>
+            <<set $elevator2_downstairs to true>>
+        -> Maybe later...
     <<endif>>
 <<else>>
-    You have to pull the lever to use the elevator
+    I have to help the Diamond Master first before I can use the elevator
 <<endif>>
 ===

@@ -54,6 +54,9 @@ position: 536,61
 		<<set_avatar DiamondMaster>>
 		FINE! YOU ARE SO ANNOYING! You must have been raised by...MONKEYS! I fixed your lever thing but just so I don't have to SEE YOUR UGLY FACE!
 	<<set $sister_done to true>>
+	<<set_avatar DiamondMaster>>
+	GIMME THOSE CRYSTAAAAAALS
+	<<take DiamondMaster Diamond 1>>
 <<else>>
 	WHERE ARE MY CRYSTALS???
 <<endif>>

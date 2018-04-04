@@ -1,0 +1,35 @@
+title: Elevator1
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+<<if $elevator_downstairs is true>>
+    Do you want to travel upstairs?
+    -> Yes
+        <<move Elevator1 up>>
+    -> Maybe later..
+<<else>>
+    Do you want to travel downstairs?
+    -> Yes
+        <<move Elevator1 down>>
+    -> Maybe later..
+<<endif>>
+===
+
+title: Elevator2
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+<<if $elevator_downstairs is true>>
+    Do you want to travel upstairs?
+    -> Yes
+    -> Maybe later..
+<<else>>
+    Do you want to travel downstairs?
+    -> Yes
+    -> Maybe later..
+<<endif>>
+===

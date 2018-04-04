@@ -64,4 +64,10 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: PlayerJump
+    clip: {fileID: 8300000, guid: 5f2fd0c5226256748a73e45f321def51, type: 3}
+    volume: 1
+    pitch: 1.63
+    loop: 0
+    source: {fileID: 0}
   audioMixer: {fileID: 24300002, guid: 0d1409a746cf05045bceed391837e494, type: 2}

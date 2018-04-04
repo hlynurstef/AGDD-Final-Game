@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1192255325498284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.803085, y: -0.83, z: 0}
+  m_LocalPosition: {x: -63.984, y: 3.135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4656065374679372}
@@ -170,6 +170,7 @@ MonoBehaviour:
   _interactIcon: {fileID: 1487599958956820}
   _interactNode: Broken Axe Head
   type: 2
+  count: 1
 --- !u!212 &212082683669416894
 SpriteRenderer:
   m_ObjectHideFlags: 1

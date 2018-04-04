@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         playerFrozen = true;
         ProCamera2DShake.Instance.Shake(0);
         Sequence mySeq = DOTween.Sequence();
-        mySeq.Append(forestStairs.DOMoveY(4, 5, false));
+        mySeq.Append(forestStairs.DOMoveY(7, 5, false));
         mySeq.Insert(0, forestStairs.DOShakePosition(mySeq.Duration(), 0.1f, 100, 90, false, true));
         mySeq.OnComplete(() => { this.playerFrozen = false; });
     }

@@ -1,0 +1,17 @@
+title: Crystals
+tags: 
+colorID: 0
+position: 503,-77
+---
+<<set_avatar Player>>
+<<if $pickaxe_amount > 0>>
+    I could mine some of these crystals with my pickaxe
+    ->Mine the crystals
+        <<mine Crystals>>
+        <<break Crystals Diamond 1>>
+        I managed to mine one crystal but my pickaxe broke in the process!
+    ->Leave
+<<else>>
+    These crystals look beautiful, it's a shame I don't have the right tool to mine them.
+<<endif>>
+===

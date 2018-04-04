@@ -87,6 +87,7 @@ What do they call a quarter pounder with cheese in france?
 	<<take Blacksmith BrokenAxeShaft 1>>
 	<<take Blacksmith BrokenAxeHead 1>>
 	<<give Blacksmith WholeAxe 1>>
+	All done. If ya need anything else let me know and I'll give ya a good price.
 ->Mac Fromage De Pund
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.

@@ -2022,6 +2022,9 @@ MonoBehaviour:
   - name: brokenaxehead_amount
     value: 0
     type: 0
+  - name: wholeaxe_amount
+    value: 0
+    type: 0
   debugTextView: {fileID: 114363654812582874}
 --- !u!114 &114968471500393946
 MonoBehaviour:
@@ -2203,7 +2206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132.9, y: 199.4}
+  m_AnchoredPosition: {x: -132.9, y: 226.5}
   m_SizeDelta: {x: 132.36, y: 29.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224410063694171990
@@ -2221,7 +2224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 336.00772, y: -95.949585}
+  m_AnchoredPosition: {x: 336.00638, y: -95.9476}
   m_SizeDelta: {x: 224, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224484401906748246
@@ -2312,7 +2315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.949585, y: -95.949585}
+  m_AnchoredPosition: {x: 95.9476, y: -95.9476}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224573199152620052

@@ -61,7 +61,7 @@ public class InventoryManager : MonoBehaviour
             AddUIElement(type, count);
         }
         string variableName = "$" + type.ToString().ToLower() + "_amount";
-        FindObjectOfType<VariableStorage>().SetValue(variableName, new Yarn.Value(count));
+        FindObjectOfType<VariableStorage>().SetValue(variableName, new Yarn.Value(inventory[type]));
     }
 
     /// <summary>

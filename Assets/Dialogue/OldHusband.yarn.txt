@@ -7,19 +7,19 @@ position: 503,-77
 <<if visited("Husband") is false>>
     Good morning. Or evening? I'm not sure. It's nice to see you though. How long has it been? I can't remember.
     <<set_avatar Player>>
-    -> Where am I?
+    ->Where am I?
     	<<set_avatar Husband>>
     	You're with me now... I was worried the darkness had swallowed you up whole but here you are, beautiful as ever.
-    -> Who are you?
+    ->Who are you?
     	<<set_avatar Husband>>
     	You look confused? What's wrong? You don't... remember me? This is worse than i thought.
     The darkness is growing stronger inside you, but I see a strong burning fire. Your will hasn't been broken.
     To escape the darkness you have to escape this tower. The darkness thrives in these walls.
     <<set_avatar Player>>
-    -> How do I escape?
+    ->How do I escape?
     	<<set_avatar Husband>>
     	Don't fear, I have never left your side and I won't start now. But I need materials if we aim to get higher.
-    -> This doesn't look like a tower
+    ->This doesn't look like a tower
     	<<set_avatar Husband>>
     	Things are not as they seem, I will help you through this. All we need are materials to help us get higher.
     Do you see that box of wood behind me? You left it here the last time you tried to escape, before it took you back.
@@ -27,19 +27,19 @@ position: 503,-77
 <<elseif $husband_done is true>>
 	I've done all I can to help you for now. All you need to do is proceed to the next floor.
 	<<set_avatar Player>>
-	-> It doesn't look like you used any wood to build that staircase...
+	->It doesn't look like you used any wood to build that staircase...
 		<<set_avatar Husband>>
 		Looks can be deceiving
-	-> Look behind you! A three headed monkey!
+	->Look behind you! A three headed monkey!
 		<<set_avatar Husband>>
 		Hahaha... I'm not falling for that one again!
-	-> Goodbye
+	->Goodbye
 		<<set_avatar Husband>>
 		Good luck
 <<else>>
     Did you grab the wood from the box?
     <<set_avatar Player>>
-    -> Yes
+    ->Yes
     	<<if $wood_amount >= 5>>
 			<<set_avatar Husband>>
 			That's great! I'll take the wood and build the staircase to the next floor.
@@ -51,7 +51,7 @@ position: 503,-77
 			<<set_avatar Husband>>
 			Please, I'm not stupid...
 		<<endif>>
-    -> No
+    ->No
     	<<set_avatar Husband>>
     	Please bring me the wood from the box
 <<endif>>

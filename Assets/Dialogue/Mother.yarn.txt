@@ -53,7 +53,7 @@ position: 536,61
 <<else>>
   <<set_avatar Blacksmith>>
   Lovely to see you again deary.
-  <<if visited("ToyMaster") is true>>
+  <<if visited("DiamondMaster") is true and $pickaxe_amount < 1>>
     <<set_avatar Player>>
     ->I need to get some crystals but I cant mine them myself, can you help?
     ->Can I lend your tools to mine some crystal?
@@ -61,6 +61,9 @@ position: 536,61
     I suppose I can lend ya some tools but as you know I like me puzzles.
     <<set_avatar Player>>
     Alright, what do you want to do now?
+		<<set_avatar Blacksmith>>
+		Let me hit ya with some riddles.
+			[[BlacksmithRiddle2]]
   <<endif>>
 <<endif>>
 ===
@@ -72,15 +75,15 @@ title: BlacksmithRiddle1
 <<set_avatar Blacksmith>>
 What do they call a quarter pounder with cheese in france?
 <<set_avatar Player>>
--> Quart de livre du fromage
+->Quart de livre du fromage
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle1]]
--> Le Quart Pound
+->Le Quart Pound
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle1]]
--> Royale with cheese
+->Royale with cheese
 	<<set_avatar Blacksmith>>
 	That's right! That's just a line from one of my favorite movies. You're alright, let me get this fixed.
 	After all idle hands are the devils plaything, am I right?
@@ -92,4 +95,49 @@ What do they call a quarter pounder with cheese in france?
 	<<set_avatar Blacksmith>>
 	Not exactly, try again.
 		[[BlacksmithRiddle1]]
+===
+
+===
+title: BlacksmithRiddle2
+---
+<<set_avatar Blacksmith>>
+What is the chemical symbol for iron?
+<<set_avatar Player>>
+->Y
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle2]]
+->RB
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle2]]
+->Hr
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle2]]
+
+->Fe
+	<<set_avatar Blacksmith>>
+	Correct!
+<<set_avatar Blacksmith>>
+A very famous chemist was found murdered in his kitchen today. The police have narrowed it down to six suspects. They know it was a two man job. Their names: Felice, Maxwel, Nicolas, Jordan, and Xavier.
+A note was also found with the body: '26-3-58/28-27-57-16'. Who were the killers?
+<<set_avatar Player>>
+->Xavier and Jordan
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle2]]
+->Felini and Nicolas
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle2]]
+->Maxwell and Felini
+	<<set_avatar Blacksmith>>
+	Correct, you're a smart one you know that. You're parents must be proud. Now here take me tools and get cracking!
+	<<give Blacksmith Pickaxe 1>>
+->Fe
+	<<set_avatar Blacksmith>>
+	Not exactly, try again.
+		[[BlacksmithRiddle2]]
+
 ===

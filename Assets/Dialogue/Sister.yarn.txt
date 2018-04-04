@@ -28,6 +28,32 @@ position: 536,61
     ...if I find more crystals will you help me then?
   <<set_avatar DiamondMaster>>
   I can help...I can...Can I? I'm a tinker and fixer so maybe I can fix you're broken lever. Get me some crystals and I'll try my best mmmmkay! CRYSTAL TIME!
+<<elseif $diamound_amount >= 1>>
+	<<set_avatar DiamondMaster>>
+	HELLO SLAVE! What has thy brought to thy master! Muhahahaha
+	<<set_avatar Player>>
+	->I....uhm...have thy crystals my master?
+		<<set_avatar DiamondMaster>>
+		EXCELLENT JOB MY SLAVE! A slave in thy level of excellence is deserving of a price! WHAT IS THY WISH?
+		<<set_avatar Player>>
+		Uhm..My wish beeth? that I caneth goeth up? Fix the lever please my master?
+		<<set_avatar DiamondMaster>>
+		WISH GRAAAANTED!!! YOU MAY PROCEED!
+	->I brought you the crystals, can you fix the handle now?
+		<<set_avatar DiamondMaster>>
+		YES! Thy Queen is willing to stepeth down from her throne for you today for thy has brought her the b-e-a-utiful crystals that I seeketh.
+		<<set_avatar Player>>
+		Thank you...Queen lady.
+		<<set_avatar DiamondMaster>>
+		You're very welcome, I bid the good luck on your travels.
+	->First of all I'm not your slave and second of all a deal is a deal, I have your crystals and now you have to fix the handle.
+		<<set_avatar DiamondMaster>>
+		YOU'RE NO FUN! "Bluhh bluh bluh I'm ugly and just want to repair my levery lever thingy magingy" - Thats you, you sound like that.
+		<<set_avatar Player>>
+		Listen! I brought you the crystals and you have to help me! We made a deal! Now you help me or I'll twist your ear little girl!
+		<<set_avatar DiamondMaster>>
+		FINE! YOU ARE SO ANNOYING! You must have been raised by...MONKEYS! I fixed your lever thing but just so I don't have to SEE YOUR UGLY FACE!
+	<<set $sister_done to true>>
 <<else>>
 	WHERE ARE MY CRYSTALS???
 <<endif>>

@@ -11,17 +11,17 @@ position: 503,-77
     <<set_avatar EntranceHusband>>
     What am I talking about? You don't remember me? Oh boy this isn't good. The darkness is growing stronger inside you.
     <<set_avatar Player>>
-    -> HOLD UP! Darkness? Inside me?
-    -> ...
+    ->HOLD UP! Darkness? Inside me?
+    ->...
     <<set_avatar EntranceHusband>>
     The more time you spend here the more the darkness grows.
     <<set_avatar Player>>
-    -> So I'm becoming weaker? I'm not dying here!
-    -> So i'm being consumed by darkness...and you're smiling.
+    ->So I'm becoming weaker? I'm not dying here!
+    ->So i'm being consumed by darkness...and you're smiling.
       <<set_avatar EntranceHusband>>
       If you lose hope you lose the battle, you taught me that.
       <<set_avatar Player>>
-      -> So I'm becoming weaker? I'm not dying here!
+      ->So I'm becoming weaker? I'm not dying here!
     <<set_avatar EntranceHusband>>
     No you're not! I won't lose you so we have to keep going.
     Do you see that box of wood behind me?  It's just enough to build the staircase to the next floor. Bring it to me, please.
@@ -37,7 +37,7 @@ position: 503,-77
 <<else>>
     Did you grab the wood from the box?
     <<set_avatar Player>>
-    -> Yes
+    ->Yes
     	<<if $wood_amount >= 5>>
 			<<set_avatar EntranceHusband>>
 			Good, give it to me so I can build the staircase to the next floor.
@@ -49,7 +49,7 @@ position: 503,-77
 			<<set_avatar EntranceHusband>>
 			Thank y... There's no wood?
 		<<endif>>
-    -> No
+    ->No
     	<<set_avatar EntranceHusband>>
     	Please bring me the wood from the box
 <<endif>>
@@ -103,6 +103,8 @@ position: 503,-77
 <<if visited("LeverHusband") is false>>
   <<set_avatar LeverHusband>>
   This place doesn't want us to leave as you can see this lever is broken. You need to find someone to fix it, I'm afraid.
+<<elseif $sister_done is true>>
+
 <<else>>
   <<set_avatar LeverHusband>>
   We need to hurry up, darling.

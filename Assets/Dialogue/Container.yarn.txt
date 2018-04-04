@@ -6,10 +6,10 @@ position: 503,-77
 <<set_avatar Player>>
 <<if $woodcontainer_amount > 0>>
     This container appears to have some wood inside
-    -> Take it
+    ->Take it
         <<take WoodsmanContainer all>>
         I took the wood from the container
-    -> Leave
+    ->Leave
 <<else>>
     The container is empty
 <<endif>>

@@ -22,6 +22,9 @@ position: 503,-77
   Next thing I know the pieces start floating and fly in separate directions.
   I don't understand how it could have happened, there was NOTHING I could do.
   I'm not chopping anymore. So if you need wood you have to get it yourself, you can try finding the pieces if you want but it wont do you any good.
+  <<if $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
+    You found the pieces? Well it doesn’t matter much... It’s still broken.
+  <<endif>>
 <<elseif $wholeaxe_amount >= 1>>
   <<set_happy Woodsman>>
   <<set_avatar Woodsman>>

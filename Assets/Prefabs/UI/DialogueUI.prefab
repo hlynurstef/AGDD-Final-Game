@@ -715,6 +715,9 @@ MonoBehaviour:
   - name: elevator2_downstairs
     value: true
     type: 2
+  - name: forest_husband_done
+    value: false
+    type: 2
   debugTextView: {fileID: 114956991634369050}
 --- !u!114 &114236579159371164
 MonoBehaviour:

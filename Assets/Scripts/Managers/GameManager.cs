@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject Player;
 
+    public GameObject EndScene;
+
     void Awake()
     {
         // Singleton pattern
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        EndScene = GameObject.FindGameObjectWithTag("End");
+        EndScene.SetActive(false);
 
         // If it looks stupid but it works, it ain't stupid!
         forestStairs = GameObject.FindWithTag("Stairs 1").transform;

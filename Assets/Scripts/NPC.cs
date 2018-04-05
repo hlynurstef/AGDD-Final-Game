@@ -6,6 +6,35 @@ using Yarn.Unity;
 [RequireComponent(typeof(CanSpeak))]
 public class NPC : InteractableBase
 {
+    public bool isFacingRight = true;
+
+    private SpriteRenderer spriteRenderer;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void Update()
+    {
+        if (isFacingRight)
+        {
+            if (GameManager.Instance.Player.transform.position.x > transform.position.x && spriteRenderer.flipX ||
+                GameManager.Instance.Player.transform.position.x < transform.position.x && !spriteRenderer.flipX)
+            {
+                spriteRenderer.flipX = !spriteRenderer.flipX;
+            }
+        }
+        else
+        {
+            if (GameManager.Instance.Player.transform.position.x > transform.position.x && !spriteRenderer.flipX ||
+                GameManager.Instance.Player.transform.position.x < transform.position.x && spriteRenderer.flipX)
+            {
+                spriteRenderer.flipX = !spriteRenderer.flipX;
+            }
+        }
+    }
+
     [YarnCommand("take")]
     public void TakePlayerItems(string type, string count)
     {

@@ -897,6 +897,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
+        type: 2}
+      propertyPath: defaultVariables.Array.size
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 224912116600235008, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1231,6 +1236,21 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 151.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
+        type: 2}
+      propertyPath: defaultVariables.Array.data[12].name
+      value: forest_husband_done
+      objectReference: {fileID: 0}
+    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
+        type: 2}
+      propertyPath: defaultVariables.Array.data[12].value
+      value: false
+      objectReference: {fileID: 0}
+    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
+        type: 2}
+      propertyPath: defaultVariables.Array.data[12].type
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49b0d7ce361cff54db4e6e9ba52110f6, type: 2}

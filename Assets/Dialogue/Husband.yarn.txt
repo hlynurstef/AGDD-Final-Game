@@ -65,11 +65,12 @@ position: 503,-77
   I'm afraid I used up all of the wood building that staircase and we're not nearly at the top.
   I will need 10 more wood to build an elevator for you.
   Take a look around and see if you find anything.
-<<elseif $wood_amount >= 10>>
+<<elseif $wood_amount >= 10> and $forest_husband_done is false>
   <<set_avatar ForestHusband>>
   You got more wood, fantastic. We should keep going then.
   <<set $husband_done to false>>
   <<take ForestHusband wood 10>>
+  <<set $forest_husband_done to true>>
   <<set_avatar Player>>
   ->Let's keep going, I feel like I'm getting weaker.
   ->Wait I have some questions for you, do you mind?

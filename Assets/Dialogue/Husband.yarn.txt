@@ -24,7 +24,7 @@ position: 503,-77
       ->So I'm becoming weaker? I'm not dying here!
     <<set_avatar EntranceHusband>>
     No you're not! I won't lose you so we have to keep going.
-    Do you see that box of wood behind me?  It's just enough to build the staircase to the next floor. Bring it to me, please.
+    Do you see that stack of wood behind me?  It's just enough to build the staircase to the next floor. Bring it to me, please.
 <<elseif $husband_done is true>>
 	I've done all I can for now. There's no time to lose you have to keep going.
 	<<set_avatar Player>>
@@ -35,7 +35,7 @@ position: 503,-77
 		<<set_avatar EntranceHusband>>
 		Good luck love
 <<else>>
-    Did you grab the wood from the box?
+    Did you grab the wood?
     <<set_avatar Player>>
     ->Yes
     	<<if $wood_amount >= 5>>
@@ -51,7 +51,7 @@ position: 503,-77
 		<<endif>>
     ->No
     	<<set_avatar EntranceHusband>>
-    	Please bring me the wood from the box
+    	Please bring me the wood
 <<endif>>
 ===
 

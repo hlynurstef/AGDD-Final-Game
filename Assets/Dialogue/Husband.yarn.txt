@@ -105,7 +105,7 @@ position: 503,-77
 ---
 <<if visited("LeverHusband") is false>>
   <<set_avatar LeverHusband>>
-  This place doesn't want us to leave as you can see this lever is broken. You need to find someone to fix it, I'm afraid.
+  This place doesn't want us to leave as you can see this elevator is broken. You need to find someone to fix it, I'm afraid.
 <<elseif $sister_done is true>>
   <<set_avatar LeverHusband>>
   I can't believe you've come this far. You're looking better and better, just like old times. You must reach the end and finish this everlasting nightmare. We've been alone for so long. This is...

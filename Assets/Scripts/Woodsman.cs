@@ -19,10 +19,12 @@ public class Woodsman : NPC
     private bool hasWholeAxe = false;
     private float chopTimer = 0.0f;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -42,6 +44,23 @@ public class Woodsman : NPC
             if (Random.Range(0f, 1f) < 0.001f)
             {
                 animator.SetTrigger("isSweating");
+            }
+        }
+
+        if (isFacingRight)
+        {
+            if (GameManager.Instance.Player.transform.position.x > transform.position.x && spriteRenderer.flipX ||
+                GameManager.Instance.Player.transform.position.x < transform.position.x && !spriteRenderer.flipX)
+            {
+                spriteRenderer.flipX = !spriteRenderer.flipX;
+            }
+        }
+        else
+        {
+            if (GameManager.Instance.Player.transform.position.x > transform.position.x && !spriteRenderer.flipX ||
+                GameManager.Instance.Player.transform.position.x < transform.position.x && spriteRenderer.flipX)
+            {
+                spriteRenderer.flipX = !spriteRenderer.flipX;
             }
         }
     }

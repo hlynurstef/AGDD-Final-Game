@@ -14,7 +14,7 @@ position: 503,-77
     But it's over. Betty is gone and you should be on your way.
   ->I'm trying to get some wood so I don't get eaten alive by a shadow that's apparently consuming my soul from the inside.
     <<set_avatar Woodsman>>
-    Straight to the point. I would love to help you out little lady but my axe, Betty, is broken. This place isn't what it used to be, just look at my Betty. There is no help for you here, go on leave me be.
+    Straight to the point. I would love to help you out little lady but my axe, Betty, is broken and I've lost the pieces. This place isn't what it used to be. There is no help for you here, go on leave me be.
   <<set_avatar Player>>
   Can I at least ask you what happened?
   <<set_avatar Woodsman>>

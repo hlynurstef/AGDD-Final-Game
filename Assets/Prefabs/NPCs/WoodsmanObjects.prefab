@@ -180,7 +180,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082500495584492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7900009, y: -0.15625, z: 0}
+  m_LocalPosition: {x: 1.7900009, y: -0.15885425, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4930280456962112}
@@ -222,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046485156949408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.084999084, y: 0.010416746, z: 0}
+  m_LocalPosition: {x: -0.084999084, y: 0.013020754, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4096165071516568}
@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactIcon: {fileID: 1602822332545744}
   _interactNode: Woodsman
+  isFacingRight: 1
 --- !u!114 &114145990411515924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,6 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactIcon: {fileID: 1488521456099692}
   _interactNode: Woodsman
+  isFacingRight: 1
   woodContainer: {fileID: 1082500495584492}
   happyAvatar: {fileID: 21300000, guid: aa38392afa1c44b42bf6d145bd6cdd9e, type: 3}
 --- !u!114 &114210464053837812

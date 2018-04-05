@@ -50,7 +50,7 @@ public class Boat : InteractableBase
 			rightCollider.enabled = (currentSide == rightSide) ? false : true;
 			GameManager.Instance.playerFrozen = false;
 			//_interactIcon.SetActive(true);
-			GameObject.FindWithTag("End").SetActive(true);
+			GameManager.Instance.EndScene.SetActive(true);
 		});
     }
 }

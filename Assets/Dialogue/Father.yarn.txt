@@ -58,6 +58,7 @@ title: WoodsmanQuestions
   <<set_avatar Woodsman>>
   Inside this place? You mean the forest, tree's grow in the forest. This tree was planted by my father's father's father's mother.
   It has been with us ever since, it's really one of a kind compared to the others.
+  <<set_avatar Player>>
   ->What are you talking about? There's no forest.
     <<set_avatar Woodsman>>
     Ha-ha very funny, I wouldn't be much of a woodsman if I just had one tree now would I?

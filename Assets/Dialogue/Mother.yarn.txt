@@ -134,8 +134,8 @@ A note was also found with the body: '26-3-58/28-27-57-16'. Who were the killers
 	<<set_avatar Blacksmith>>
 	Correct, you're a smart one you know that. You're parents must be proud. Now here take me tools and get cracking!
 	<<give Blacksmith Pickaxe 1>>
-->Fe
+->Ryan Gosling and Angelina Jolie
 	<<set_avatar Blacksmith>>
-	Not exactly, try again.
+	That would've been awesome! But unfortunately that's incorrect.
 		[[BlacksmithRiddle2]]
 ===

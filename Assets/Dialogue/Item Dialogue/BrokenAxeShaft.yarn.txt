@@ -5,8 +5,8 @@ position: 503,-77
 ---
 <<set_avatar Player>>
 It's the Shaft of Betty!
--> Pick up the shaft.
+->Pick up the shaft.
     <<pickup BrokenAxeShaft BrokenShaft>>
     I picked it up!
--> Leave it on the ground.
+->Leave it on the ground.
 ===

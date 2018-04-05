@@ -28,9 +28,9 @@ position: 503,-77
 <<elseif $husband_done is true>>
 	I've done all I can for now. There's no time to lose you have to keep going.
 	<<set_avatar Player>>
-	->It doesn't look like you used any wood to build that staircase...
+	->Look behind you, a three headed monkey!
 		<<set_avatar EntranceHusband>>
-		Looks can be deceiving
+		Fool me once, shame on you. Fool me twice, shame on me!
 	->Goodbye
 		<<set_avatar EntranceHusband>>
 		Good luck love
@@ -65,7 +65,7 @@ position: 503,-77
   I'm afraid I used up all of the wood building that staircase and we're not nearly at the top.
   I will need 10 more wood to build an elevator for you.
   Take a look around and see if you find anything.
-<<elseif $wood_amount >= 10> and $forest_husband_done is false>
+<<elseif $wood_amount >= 10 and $forest_husband_done is false>>
   <<set_avatar ForestHusband>>
   You got more wood, fantastic. We should keep going then.
   <<set $husband_done to false>>
@@ -113,7 +113,7 @@ position: 503,-77
   ->Hey, you taught me to stay strong! Now you have to do the same, we're ending this!
     <<set_avatar LeverHusband>>
     You're right. Let's leave this place.
-  ->No whining allowed! I just left a little girl who thought she was a queen so don't you go all crazy on me as well.
+  ->I just left a little girl who thought she was a queen so don't you go all crazy on me as well.
     <<set_avatar LeverHusband>>
     You're right, stay strong. But she really is something that little girl, isn't she.
   ->Sssh...there is no try, only do.

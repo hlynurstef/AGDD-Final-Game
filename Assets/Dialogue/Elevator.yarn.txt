@@ -7,16 +7,16 @@ position: 503,-77
 <<if $lever_pulled is true>>
     <<if $elevator_downstairs is true>>
         Should I travel upstairs?
-        -> Yes
+        ->Yes
             <<move Elevator1 up>>
             <<set $elevator_downstairs to false>>
-        -> Maybe later..
+        ->Maybe later..
     <<else>>
         Should I travel downstairs?
-        -> Yes
+        ->Yes
             <<move Elevator1 down>>
             <<set $elevator_downstairs to true>>
-        -> Maybe later..
+        ->Maybe later..
     <<endif>>
 <<else>>
     I have to pull the lever to use the elevator
@@ -32,16 +32,16 @@ position: 503,-77
 <<if $sister_done is true>>
     <<if $elevator2_downstairs is true>>
         The elevator seems to work now
-        -> Go up
+        ->Go up
             <<move Elevator2 up>>
             <<set $elevator2_downstairs to false>>
-        -> Maybe later...
+        ->Maybe later...
     <<else>>
         The elevator can take me back down
-        -> Go down
+        ->Go down
             <<move Elevator2 down>>
             <<set $elevator2_downstairs to true>>
-        -> Maybe later...
+        ->Maybe later...
     <<endif>>
 <<else>>
     I have to help the Diamond Master first before I can use the elevator

@@ -4,9 +4,9 @@ colorID: 0
 position: 503,-77
 ---
 <<set_avatar Player>>
-You find 5 pieces of wood lying about.
--> Pick up the wood.
+It looks like there is some wood lying around here.
+->Pick up the wood.
     <<pickup Wood Wood>>
     You picked up 5 pieces of wood.
--> Leave it on the ground.
+->Leave it on the ground.
 ===

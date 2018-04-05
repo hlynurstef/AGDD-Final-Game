@@ -24,14 +24,14 @@ position: 536,61
 	<<set_avatar Player>>
 	->I didn't come all this way to get eaten. Can we use the boat?
 		<<set_avatar Boatman>>
-		Yes but the monsters have been chewing on it. If you can get me 10 pieces of wood and a crystal I can repair it for you.
+		Yes but the monsters have been chewing on it. If you can get me 10 pieces of wood I can repair it for you.
 	->Monsters? Those exist? Can we use this boat to pass?
 		<<set_avatar Boatman>>
-		The monsters are very real and they have been chewing at the boat. If you can get 10 pieces of wood and a crystal I can repair it.
-<<elseif $wood_amount >= 10 and $diamond_amount >= 1 and visited("EndDialogue") is false>>
+		The monsters are very real and they have been chewing at the boat. If you can get 10 pieces of wood I can repair it.
+<<elseif $wood_amount >= 10 and and visited("EndDialogue") is false>>
 	[[EndDialogue]]
 <<elseif $wood_amount <= 9 and $diamond_amount <= 0>>
-	Please hurry up darling. I need 10 pieces of wood and a crystal to fix the boat.
+	Please hurry up darling. I need 10 pieces of wood to fix the boat.
 <<else>>
 	Please hurry up my angel.
 <<endif>>
@@ -40,7 +40,7 @@ position: 536,61
 title: EndDialogue
 ---
 <<set_avatar Boatman>>
-You brought wood and crystal. Fanstastic.
+You brought the wood. Fanstastic.
 <<set_avatar Player>>
 Yes and you know I'm starting to feel much better. In fact I now feel like I know you.
 When I saw you last I was so young but I remember now. I remember how you used to play with me and hold me. It is you isn't it grandpa.

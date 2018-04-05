@@ -10,7 +10,7 @@ public class Woodsman : NPC
     private GameObject woodContainer;
 
     [SerializeField]
-    private const float addWoodInterval = 10.0f;
+    private const float addWoodInterval = 2.5f;
 
     [SerializeField]
     private Sprite happyAvatar;
@@ -34,7 +34,7 @@ public class Woodsman : NPC
             chopTimer += Time.deltaTime;
             if (chopTimer >= addWoodInterval)
             {
-                woodContainer.GetComponent<Container>().AddItem(ItemType.Wood, 5);
+                woodContainer.GetComponent<Container>().AddItem(ItemType.Wood, 20);
                 chopTimer = 0.0f;
 
                 string variableName = "$woodcontainer_amount";

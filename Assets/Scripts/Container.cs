@@ -17,7 +17,7 @@ public class Container : InteractableBase
     [SerializeField, Tooltip("The type of resources stored in this container. There can only be one type per container..")]
     private ItemType type;
 
-    private int capacity = 15;  // The maximum amount of resources this container can carry, possibly upgradable by talking to people
+    private int capacity = 20;  // The maximum amount of resources this container can carry, possibly upgradable by talking to people
 
     /// <summary>
     /// Should get called when, for example, the lumberjack is adding wood to the container

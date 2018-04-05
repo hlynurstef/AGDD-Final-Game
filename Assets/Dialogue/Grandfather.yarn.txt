@@ -28,11 +28,13 @@ position: 536,61
 	->Monsters? Those exist? Can we use this boat to pass?
 		<<set_avatar Boatman>>
 		The monsters are very real and they have been chewing at the boat. If you can get 10 pieces of wood I can repair it.
-<<elseif $wood_amount >= 10 and and visited("EndDialogue") is false>>
+<<elseif $wood_amount >= 10 and visited("EndDialogue") is false>>
 	[[EndDialogue]]
 <<elseif $wood_amount <= 9 and $diamond_amount <= 0>>
+	<<set_avatar Boatman>>
 	Please hurry up darling. I need 10 pieces of wood to fix the boat.
 <<else>>
+	<<set_avatar Boatman>>
 	Please hurry up my angel.
 <<endif>>
 ===

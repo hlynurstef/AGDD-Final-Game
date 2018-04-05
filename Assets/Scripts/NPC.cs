@@ -8,7 +8,7 @@ public class NPC : InteractableBase
 {
     public bool isFacingRight = true;
 
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
 
     void Start()
     {

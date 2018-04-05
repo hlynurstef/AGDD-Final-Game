@@ -5,6 +5,7 @@ using DG.Tweening;
 using Yarn.Unity;
 using Com.LuisPedroFonseca.ProCamera2D;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject EndScene;
 
+    public bool isPlayingEndScene = false;
+
     void Awake()
     {
         // Singleton pattern
@@ -34,6 +37,21 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+    }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        if (isPlayingEndScene)
+        {
+            if (Player.GetComponent<PlayerController>().rewiredPlayer.GetAnyButtonDown())
+            {
+                isPlayingEndScene = false;
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 
     void Start()
@@ -48,11 +66,13 @@ public class GameManager : MonoBehaviour
         DarkMap.origin = BlurredMap.origin = BackgroundMap.origin;
         DarkMap.size = BlurredMap.size = BackgroundMap.size;
 
-        foreach (Vector3Int p in DarkMap.cellBounds.allPositionsWithin) {
+        foreach (Vector3Int p in DarkMap.cellBounds.allPositionsWithin)
+        {
             DarkMap.SetTile(p, DarkTile);
         }
 
-        foreach (Vector3Int p in BlurredMap.cellBounds.allPositionsWithin) {
+        foreach (Vector3Int p in BlurredMap.cellBounds.allPositionsWithin)
+        {
             BlurredMap.SetTile(p, BlurredTile);
         }
     }

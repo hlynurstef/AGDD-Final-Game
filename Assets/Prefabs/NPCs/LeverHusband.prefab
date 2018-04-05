@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactIcon: {fileID: 1128262572636480}
   _interactNode: LeverHusband
+  isFacingRight: 1
 --- !u!114 &114353858539144924
 MonoBehaviour:
   m_ObjectHideFlags: 1

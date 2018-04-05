@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627823604131012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.395836, y: 3.3958335, z: 0}
+  m_LocalPosition: {x: -36.46875, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4016278040580914}
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactIcon: {fileID: 1696337675451590}
   _interactNode: ForestHusband
+  isFacingRight: 1
 --- !u!212 &212677916204673092
 SpriteRenderer:
   m_ObjectHideFlags: 1

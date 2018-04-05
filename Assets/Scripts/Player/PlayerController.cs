@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private int rewiredPlayerId = 0;
-    private Player rewiredPlayer;
+    [HideInInspector]
+    public Player rewiredPlayer;
     private CharacterController2D controller;
     private PlayerMovementState movementState = new PlayerMovementState();
     private Animator animator;

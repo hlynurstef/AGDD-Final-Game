@@ -33,11 +33,12 @@ position: 503,-77
   I know that I said earlier that you would have to cut the wood yourself, but now that you fixed Betty for me don't stress it. I'll take care of the cuttin' and choppin' for us all.
   I collect all that I chop in this chest, you're free to take what you need.
   <<chop Woodsman>>
+  <<set $woodsman_done to true>>
 <<elseif $brokenaxeshaft_amount >= 1 and $brokenaxehead_amount >= 1>>
   <<set_avatar Woodsman>>
   You found the pieces? Well it doesn’t matter much... It’s still broken.
 <<else>>
-  <<if visited("WoodsmanQuestions") is false>>
+  <<if $woodsman_done is false>>
     <<set_avatar Woodsman>>
     Is there something else I can help you with?
     <<set_avatar Player>>
@@ -46,8 +47,10 @@ position: 503,-77
     Not at all, go ahead.
     [[WoodsmanQuestions]]
   <<endif>>
-  <<set_avatar Woodsman>>
-  Chopping chopping...
+  <<if $woodsman_done is true>>
+    <<set_avatar Woodsman>>
+    Chopping chopping...
+  <<endif>>
 <<endif>>
 
 ===
@@ -85,11 +88,11 @@ title: WoodsmanQuestions
     [[WoodsmanQuestions]]
   ->No I'm fine..
 <<set_avatar Player>>
-Cabin? Forest? I'm pretty sure I know you, what's your name?
+I'm pretty sure I know you, what's your name?
 <<set_avatar Woodsman>>
 My name? It's *!!*Z$X*
 <<set_avatar Player>>
 What just happened?
 <<set_avatar Woodsman>>
-Sdkeoa Skoaj...Chop chop! Gotta keep chopping!
+Sdkeoa Skoaj... Chop chop! Gotta keep chopping!
 ===

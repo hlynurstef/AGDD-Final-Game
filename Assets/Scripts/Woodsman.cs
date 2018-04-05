@@ -19,7 +19,6 @@ public class Woodsman : NPC
     private bool hasWholeAxe = false;
     private float chopTimer = 0.0f;
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
 
     void Start()
     {

@@ -5,7 +5,11 @@ position: 503,-77
 ---
 <<set_avatar Player>>
 It's a boat!
-->Sail away
-    <<sail Boat all>>
-->Abandon ship.
+<<if visited("EndDialogue") is false>>
+    It doesn't seem to work, it needs to be fixed
+<<else>>
+    ->Sail away
+        <<sail Boat all>>
+    ->Abandon ship.
+<<endif>>
 ===

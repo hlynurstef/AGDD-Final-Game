@@ -715,6 +715,9 @@ MonoBehaviour:
   - name: elevator2_downstairs
     value: true
     type: 2
+  - name: woodsman_done
+    value: false
+    type: 2
   debugTextView: {fileID: 114956991634369050}
 --- !u!114 &114236579159371164
 MonoBehaviour:
@@ -2249,7 +2252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.99298, y: -95.99298}
+  m_AnchoredPosition: {x: 95.9915, y: -95.9915}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224297101876375780
@@ -2307,10 +2310,10 @@ RectTransform:
   m_Father: {fileID: 224774352192671788}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -133, y: 200}
-  m_SizeDelta: {x: 132.36, y: 29.65}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 268, y: -25}
+  m_SizeDelta: {x: 132.35999, y: 29.649994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224433929162747416
 RectTransform:
@@ -2478,7 +2481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 336.03903, y: -95.99298}
+  m_AnchoredPosition: {x: 336.03897, y: -95.9915}
   m_SizeDelta: {x: 224, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224912116600235008

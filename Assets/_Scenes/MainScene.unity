@@ -897,11 +897,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
-        type: 2}
-      propertyPath: defaultVariables.Array.size
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 224912116600235008, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1100,7 +1095,7 @@ Prefab:
     - target: {fileID: 224433929162747416, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -19.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224433929162747416, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1110,7 +1105,7 @@ Prefab:
     - target: {fileID: 224433929162747416, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 19.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224701517081836378, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1130,7 +1125,7 @@ Prefab:
     - target: {fileID: 224701517081836378, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -47.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224701517081836378, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1140,7 +1135,7 @@ Prefab:
     - target: {fileID: 224701517081836378, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224758166189792656, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1160,7 +1155,7 @@ Prefab:
     - target: {fileID: 224758166189792656, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -75.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224758166189792656, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1170,7 +1165,7 @@ Prefab:
     - target: {fileID: 224758166189792656, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224367151900752614, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1190,7 +1185,7 @@ Prefab:
     - target: {fileID: 224367151900752614, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -103.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224367151900752614, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1200,7 +1195,7 @@ Prefab:
     - target: {fileID: 224367151900752614, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224166825995341570, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1220,7 +1215,7 @@ Prefab:
     - target: {fileID: 224166825995341570, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -131.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224166825995341570, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
@@ -1230,27 +1225,12 @@ Prefab:
     - target: {fileID: 224166825995341570, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224297101876375780, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 151.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
-        type: 2}
-      propertyPath: defaultVariables.Array.data[12].name
-      value: forest_husband_done
-      objectReference: {fileID: 0}
-    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
-        type: 2}
-      propertyPath: defaultVariables.Array.data[12].value
-      value: false
-      objectReference: {fileID: 0}
-    - target: {fileID: 114215261337293642, guid: 49b0d7ce361cff54db4e6e9ba52110f6,
-        type: 2}
-      propertyPath: defaultVariables.Array.data[12].type
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49b0d7ce361cff54db4e6e9ba52110f6, type: 2}

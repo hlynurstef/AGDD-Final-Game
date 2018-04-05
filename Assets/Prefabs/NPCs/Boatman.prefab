@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactIcon: {fileID: 1396407099911684}
-  _interactNode: LeverHusband
+  _interactNode: Boatman
 --- !u!212 &212095251332178914
 SpriteRenderer:
   m_ObjectHideFlags: 1

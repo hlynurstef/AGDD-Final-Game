@@ -7,8 +7,12 @@ position: 503,-77
 <<if $woodcontainer_amount > 0>>
     This container appears to have some wood inside
     ->Take it
-        <<take WoodsmanContainer all>>
-        I took the wood from the container
+        <<if $wood_amount >= 20>>
+            I don't think I need any more wood right now...
+        <<else>>
+            <<take WoodsmanContainer all>>
+            I took the wood from the container
+        <<endif>>
     ->Leave
 <<else>>
     The container is empty
